@@ -22,6 +22,6 @@
         {
             super.onCreate(savedInstanceState);
 
-            setContentView(R.layout.activity_sound_board);
+            this.setContentView(R.layout.activity_sound_board);
         }
     }

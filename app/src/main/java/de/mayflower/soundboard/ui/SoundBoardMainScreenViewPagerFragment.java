@@ -7,6 +7,8 @@
     import  android.view.View;
     import  android.view.ViewGroup;
     import  de.mayflower.soundboard.R;
+    import de.mayflower.soundboard.R.id;
+    import de.mayflower.soundboard.R.layout;
     import  de.mayflower.soundboard.SoundBoardDebug;
 
     /************************************************************************
@@ -35,10 +37,10 @@
 
             // TODO refactor!
 
-            SoundBoardDebug.major.out("onCreateView for fragment [" + index + "]");
+            SoundBoardDebug.major.out("onCreateView for fragment [" + this.index + "]");
 
-            View      rootView = inflater.inflate( R.layout.soundboard_main_screen_view_pager_fragment, container, false );
-            ViewGroup sv       = (ViewGroup)rootView.findViewById( R.id.view_pager_scrollview_content );
+            View      rootView = inflater.inflate( layout.soundboard_main_screen_view_pager_fragment, container, false );
+            ViewGroup sv       = (ViewGroup)rootView.findViewById( id.view_pager_scrollview_content );
 /*
             SoundBoardPatternCountService countService = new SoundBoardPatternCountService();
             countService.init(this.getActivity());

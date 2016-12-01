@@ -27,7 +27,7 @@
             context.startActivity( launchActivity );
 
             //set animation if desired
-            if ( animIn != -1 && animOut != -1 )
+            if ( ( animIn != -1 ) && ( animOut != -1 ) )
             {
                 Lib.overridePendingTransition( context, animIn, animOut );
             }

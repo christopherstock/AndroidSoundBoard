@@ -1,6 +1,8 @@
 
     package de.mayflower.soundboard;
 
+    import de.mayflower.soundboard.SoundBoardSettings.Paramounts;
+
     /***************************************************************************************************
     *   Logs all versions of this app.
     *
@@ -39,12 +41,12 @@
         ******************************************************************************************/
         private SoundBoardVersion(String aClientVersionNumber, int aVersionCode, String aBackendVersionNumber, String aReleaseDate, String aCodename, String aLog)
         {
-            iClientVersionNumber    = aClientVersionNumber;
-            iVersionCode            = aVersionCode;
-            iBackendVersionNumber   = aBackendVersionNumber;
-            iReleaseDate            = aReleaseDate;
-            iCodeName               = aCodename;
-            iLog                    = aLog;
+            this.iClientVersionNumber = aClientVersionNumber;
+            this.iVersionCode = aVersionCode;
+            this.iBackendVersionNumber = aBackendVersionNumber;
+            this.iReleaseDate = aReleaseDate;
+            this.iCodeName = aCodename;
+            this.iLog = aLog;
         }
 
         /******************************************************************************************
@@ -54,7 +56,7 @@
         ******************************************************************************************/
         public final String getCompileTime()
         {
-            return iReleaseDate;
+            return this.iReleaseDate;
         }
 
         /******************************************************************************************
@@ -64,7 +66,7 @@
         ******************************************************************************************/
         public final String getClientVersionNumber()
         {
-            return iClientVersionNumber;
+            return this.iClientVersionNumber;
         }
 
         /******************************************************************************************
@@ -74,7 +76,7 @@
         ******************************************************************************************/
         public final String getBackendVersionNumber()
         {
-            return iBackendVersionNumber;
+            return this.iBackendVersionNumber;
         }
 
         /******************************************************************************************
@@ -84,7 +86,7 @@
         ******************************************************************************************/
         public static final String getVersion()
         {
-            String ret = ( SoundBoardSettings.Paramounts.PROJECT_NAME + ", SoundBoardVersion [" + values()[ 0 ].iClientVersionNumber + "] codename [" + values()[ 0 ].iCodeName + "] released on [" + values()[ 0 ].iReleaseDate + "]" );
+            String ret = ( Paramounts.PROJECT_NAME + ", SoundBoardVersion [" + values()[ 0 ].iClientVersionNumber + "] codename [" + values()[ 0 ].iCodeName + "] released on [" + values()[ 0 ].iReleaseDate + "]" );
             return ret;
         }
 

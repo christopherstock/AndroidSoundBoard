@@ -24,13 +24,13 @@
         ;
 
         /** The stacktrace-String to send via email. */
-        public      static          boolean             DEBUG_MODE                  = Debug.DEBUG_MODE;
+        public      static          boolean             debugMode                   = Debug.DEBUG_MODE;
 
         /** The stacktrace-String to send via email. */
         public      static          String              stackTraceString            = "";
 
         /** The debug flag for this debug group. */
-        private                     boolean             iDebug                      = false;
+        private                     boolean             debug                       = false;
 
         /*****************************************************************************
         *   Creates a new debug group with the specified debug flag.
@@ -40,27 +40,32 @@
         *****************************************************************************/
         SoundBoardDebug(boolean aDebugOut)
         {
-            iDebug = aDebugOut;
+            this.debug = aDebugOut;
         }
 
         @Override
-        public final void out( Object obj )
+        public final void out( Object msg )
         {
-            if ( iDebug ) DEBUG_OUT( toString(), obj );
+            if (this.debug)
+            {
+                DEBUG_OUT(this.toString(), msg );
+            }
         }
 
         @Override
-        public final void err( Object obj )
+        public final void err( Object msg )
         {
-            DEBUG_ERR( toString(), obj );
+            DEBUG_ERR(this.toString(), msg );
         }
 
         @Override
         public final void trace( Throwable t )
         {
-            if ( iDebug ) DEBUG_THROWABLE( t );
+            if (this.debug)
+            {
+                DEBUG_THROWABLE( t );
+            }
         }
-
 
         /*****************************************************************************
         *   Shows the stack-trace of the specified throwable in a scrollable dialog.
@@ -109,9 +114,9 @@
         *****************************************************************************/
         private static final void DEBUG_OUT( String tag, Object msg )
         {
-            if ( SoundBoardDebug.DEBUG_MODE )
+            if ( debugMode)
             {
-                Log.i( tag, "" + msg );
+                Log.i( tag, String.valueOf( msg ) );
             }
         }
 
@@ -124,9 +129,9 @@
         *****************************************************************************/
         private static final void DEBUG_ERR( String tag, Object msg )
         {
-            if ( SoundBoardDebug.DEBUG_MODE )
+            if ( debugMode)
             {
-                Log.e( tag, "" + msg );
+                Log.e( tag, String.valueOf( msg ) );
             }
         }
 
@@ -137,7 +142,7 @@
         *****************************************************************************/
         public static final void DEBUG_OUT_THROWABLE( Throwable t )
         {
-            if ( SoundBoardDebug.DEBUG_MODE )
+            if ( debugMode)
             {
                 DEBUG_OUT( "[throwable]", Log.getStackTraceString( t ) );
             }

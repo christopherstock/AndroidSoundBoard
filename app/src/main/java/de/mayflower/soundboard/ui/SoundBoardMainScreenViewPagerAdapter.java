@@ -27,33 +27,33 @@
 /*
             Category[] cats = SoundBoardHydrator.categories;
 */
-            fragments = new SoundBoardMainScreenViewPagerFragment[5];
+            this.fragments = new SoundBoardMainScreenViewPagerFragment[5];
 
-            for ( int i = 0; i < fragments.length; i++ )
+            for (int i = 0; i < this.fragments.length; i++ )
             {
-                fragments[i] = new SoundBoardMainScreenViewPagerFragment();
+                this.fragments[i] = new SoundBoardMainScreenViewPagerFragment();
 /*
                 fragments[i].init( SoundBoardHydrator.categories[i].getId(), SoundBoardHydrator.categories[i].getName());
 */
-                fragments[i].init( i, "muuh name " + i);
+                this.fragments[i].init( i, "muuh name " + i);
             }
         }
 
         @Override
         public Fragment getItem( int position )
         {
-            return fragments[ position ];
+            return this.fragments[ position ];
         }
 
         @Override
         public int getCount()
         {
-            return fragments.length;
+            return this.fragments.length;
         }
 
         @Override
         public CharSequence getPageTitle( int position )
         {
-            return fragments[ position ].getTitle();
+            return this.fragments[ position ].getTitle();
         }
     }

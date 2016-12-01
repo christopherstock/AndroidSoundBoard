@@ -2,6 +2,7 @@
     package de.mayflower.lib;
 
     import  android.app.Activity;
+    import android.os.Build.VERSION;
 
     /*********************************************************************************
     *   Determines device api.
@@ -26,7 +27,7 @@
 
         /*********************************************************************************
         *   Checks if this device's API-Level is lower than given API-Level.
-        *   The field {@link android.os.Build.VERSION#SDK_INT} is read to determine this.
+        *   The field {@link VERSION#SDK_INT} is read to determine this.
         *
         *   @param apiLevel The API level to check.
         *   @return         true if this device uses an API-Level lower than specified.
@@ -34,6 +35,6 @@
         *********************************************************************************/
         public static final boolean isSdkLevelLowerThan( int apiLevel )
         {
-            return ( android.os.Build.VERSION.SDK_INT < apiLevel );
+            return ( VERSION.SDK_INT < apiLevel );
         }
     }

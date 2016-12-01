@@ -1,10 +1,11 @@
 
     package de.mayflower.soundboard.ui;
 
-    import android.app.Activity;
-import android.view.View;
+    import  android.app.Activity;
+    import  android.view.View;
+    import android.view.View.OnClickListener;
 
-import de.mayflower.soundboard.SoundBoardDebug;
+    import  de.mayflower.soundboard.SoundBoardDebug;
 
     /**********************************************************************************************
     *   This class represents the item click listener for an item lists.
@@ -12,7 +13,7 @@ import de.mayflower.soundboard.SoundBoardDebug;
     *   @author     Christian Heldt.
     *   @version    1.0
     ***********************************************************************************************/
-    public class SoundBoardItemClickListener implements View.OnClickListener
+    public class SoundBoardItemClickListener implements OnClickListener
     {
         private                 int                 index                       = 0;
         private                 Activity            context                     = null;

@@ -4,6 +4,8 @@
     import  android.support.v7.app.AppCompatActivity;
     import  android.os.Bundle;
 
+    import de.mayflower.soundboard.R.layout;
+
     /*******************************************************************************************
     *   The main activity of the SoundBoard application.
     *
@@ -22,6 +24,6 @@
         {
             super.onCreate(savedInstanceState);
 
-            this.setContentView(R.layout.activity_sound_board);
+            this.setContentView(layout.activity_sound_board);
         }
     }

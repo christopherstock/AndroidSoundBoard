@@ -11,8 +11,6 @@
     /*******************************************************************************************
     *   The main activity of the SoundBoardWelcomeScreen application.
     *
-    *   TODO ASAP   Remove all static Context classes.
-    *
     *   TODO ASAP   Prune ALL unused drawables, layouts, values and other resources!!
     *   TODO ASAP   Welcome ViewPager like in PicFood?
     *   TODO WEAK   Remove all old classes and references.

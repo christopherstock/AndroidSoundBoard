@@ -3,6 +3,8 @@
 
     import android.content.Context;
     import android.content.res.Resources;
+    import android.text.Html;
+    import android.text.Spanned;
 
     /*********************************************************************************
     *   All functions for accessing system resources.
@@ -64,5 +66,17 @@
             int       resId = res.getIdentifier( id, "array", context.getPackageName() );
 
             return LibResource.getResourceStringArray( context, resId );
+        }
+
+        /*********************************************************************************
+        *   Delivers a String resource as a Spanned-object.
+        *
+        *   @param  context     The current system context.
+        *   @param  id          The resource-id of the String to pick.
+        *   @return             A Spanned String object.
+        *********************************************************************************/
+        public static final Spanned getResourceSpannedString( Context context, int id )
+        {
+            return Html.fromHtml( context.getResources().getString( id ) );
         }
     }

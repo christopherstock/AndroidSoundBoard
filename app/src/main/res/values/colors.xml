@@ -111,9 +111,15 @@
     <!-- debug console -->
     <color name="text_debug_console">@color/screen_fg_bright</color>
 
+
+
+
     <!-- button text -->
-    <color name="text_button_black_unselect">@color/screen_fg_bright</color>
-    <color name="text_button_black_hover">@color/screen_fg_bright</color>
+    <color name="text_button_black_unselect">#ffffffff</color>
+    <color name="text_button_black_hover">#ffcccccc</color>
+    <color name="text_button_black_select">#ffffffff</color>
+
+
 
     <!-- items -->
     <color name="text_item">@color/project_black</color>

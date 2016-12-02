@@ -1,8 +1,8 @@
 
     /*************************************************************************************************
-    *   General library classes offering independent and encapsulated functionality.
+    *   Library classes for the user interface.
     *
     *   @author     Christopher Stock
     *   @version    1.0
     **************************************************************************************************/
-    package de.mayflower.lib;
+    package de.mayflower.lib.ui;

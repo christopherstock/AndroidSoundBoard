@@ -4,18 +4,18 @@
     import  android.app.Activity;
     import  android.os.Bundle;
     import  android.support.v7.app.AppCompatActivity;
-    import android.view.KeyEvent;
-
+    import  android.view.KeyEvent;
     import  de.mayflower.lib.ui.LibUI;
     import  de.mayflower.soundboard.R;
     import  de.mayflower.soundboard.SoundBoardAction;
-    import de.mayflower.soundboard.SoundBoardDebug;
+    import  de.mayflower.soundboard.SoundBoardDebug;
 
     /*******************************************************************************************
     *   The main activity of the SoundBoardWelcomeScreen application.
     *
     *   TODO ASAP   Prune ALL unused drawables, layouts, values and other resources!!
     *   TODO ASAP   Welcome ViewPager like in PicFood?
+    *   TODO ASAP   App icon!
     *
     *   TODO ASAP   Rename remove 'SoundBoardWelcomeScreen' from all classes.
     *   TODO ASAP   Move classes to appropriate subpackages.

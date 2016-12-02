@@ -40,7 +40,7 @@
                 this,
                 R.id.button_test,
                 R.string.button_test,
-                SoundBoardAction.SHOW_WELCOME_ACTIVITY
+                SoundBoardAction.SHOW_WELCOME_ACTIVITY_FROM_TEST_ACTIVITY
             );
         }
 
@@ -51,7 +51,7 @@
             {
                 case KeyEvent.KEYCODE_BACK:
                 {
-                    SoundBoardAction.SHOW_WELCOME_ACTIVITY.run();
+                    SoundBoardAction.SHOW_WELCOME_ACTIVITY_FROM_TEST_ACTIVITY.run();
 
                     //prevent this event from being propagated further
                     return true;

@@ -1,7 +1,7 @@
 
     package de.mayflower.soundboard;
 
-    import de.mayflower.lib.Lib;
+    import  de.mayflower.lib.Lib;
     import  de.mayflower.lib.LibLauncher;
     import  de.mayflower.soundboard.state.SoundBoardMainScreen;
     import  de.mayflower.soundboard.state.SoundBoardTestScreen;
@@ -18,8 +18,11 @@
         /** Shows the test activity. */
         SHOW_TEST_ACTIVITY,
 
-        /** Shows the welcome activity. */
-        SHOW_WELCOME_ACTIVITY,
+        /** Shows the welcome activity from the test state. */
+        SHOW_WELCOME_ACTIVITY_FROM_TEST_ACTIVITY,
+
+        /** Shows the welcome activity from the main state. */
+        SHOW_WELCOME_ACTIVITY_FROM_MAIN_ACTIVITY,
 
         /** Shows the main-screen activity. */
         SHOW_MAIN_SCREEN_ACTIVITY,
@@ -46,11 +49,23 @@
                     break;
                 }
 
-                case SHOW_WELCOME_ACTIVITY:
+                case SHOW_WELCOME_ACTIVITY_FROM_TEST_ACTIVITY:
                 {
                     LibLauncher.launchActivity
                     (
                         SoundBoardTestScreen.singleton,
+                        SoundBoardWelcomeScreen.class,
+                        R.anim.push_right_in,
+                        R.anim.push_right_out
+                    );
+                    break;
+                }
+
+                case SHOW_WELCOME_ACTIVITY_FROM_MAIN_ACTIVITY:
+                {
+                    LibLauncher.launchActivity
+                    (
+                        SoundBoardMainScreen.singleton,
                         SoundBoardWelcomeScreen.class,
                         R.anim.push_right_in,
                         R.anim.push_right_out

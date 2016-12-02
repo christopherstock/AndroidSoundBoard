@@ -3,8 +3,8 @@
 
     import  android.os.Bundle;
     import  android.support.v7.app.AppCompatActivity;
-
-    import de.mayflower.soundboard.R;
+    import  android.widget.Button;
+    import  de.mayflower.soundboard.R;
 
     /*******************************************************************************************
     *   The main activity of the SoundBoardWelcomeScreen application.
@@ -24,6 +24,10 @@
         {
             super.onCreate(savedInstanceState);
 
-            this.setContentView(R.layout.activity_sound_board);
+            this.setContentView(R.layout.activity_sound_board_welcome_screen);
+
+            Button welcomeButton = (Button)this.findViewById(R.id.button_welcome);
+
+
         }
     }

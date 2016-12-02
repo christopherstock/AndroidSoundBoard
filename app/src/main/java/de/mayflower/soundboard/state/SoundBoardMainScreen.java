@@ -28,20 +28,6 @@
             this.setupPagerAdapter();
         }
 
-        /*****************************************************************************
-        *   Being invoked when the menu key is pressed.
-        *****************************************************************************/
-        @Override
-        public boolean onCreateOptionsMenu( Menu menu )
-        {
-            SoundBoardDebug.major.out( SoundBoardMainScreen.class + "::onCreateOptionsMenu()" );
-
-            MenuInflater inflater = this.getMenuInflater();
-            inflater.inflate( R.menu.menu_main, menu );
-
-            return true;
-        }
-
         @Override
         public boolean onOptionsItemSelected(MenuItem item)
         {

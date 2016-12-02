@@ -8,6 +8,7 @@
     import  android.support.v7.app.AppCompatActivity;
     import  android.view.KeyEvent;
     import  java.util.ArrayList;
+    import  de.mayflower.lib.LibSound;
     import  de.mayflower.lib.ui.LibUI;
     import  de.mayflower.soundboard.R;
     import  de.mayflower.soundboard.SoundBoardAction;
@@ -103,16 +104,19 @@
                             if ( match.equalsIgnoreCase( "ich greife an" ) )
                             {
                                 SoundBoardDebug.major.out("Play sound 'attack'");
+                                LibSound.playSound( this, R.raw.sound_attack );
                                 break;
                             }
                             else if ( match.equalsIgnoreCase( "ich ziehe mich zurück" ) )
                             {
                                 SoundBoardDebug.major.out("Play sound 'retreat'");
+                                LibSound.playSound( this, R.raw.sound_retreat );
                                 break;
                             }
                             else if ( match.equalsIgnoreCase( "ich gebe auf" ) )
                             {
                                 SoundBoardDebug.major.out("Play sound 'resign'");
+                                LibSound.playSound( this, R.raw.sound_resign );
                                 break;
                             }
                         }

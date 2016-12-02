@@ -16,9 +16,6 @@
     ***********************************************************************************************/
     public class SoundBoardMainScreen extends FragmentActivity
     {
-        /** The singleton instance. */
-        public      static      FragmentActivity            singleton           = null;
-
         /*****************************************************************************
         *   Being invoked when this activity is being created.
         *****************************************************************************/
@@ -27,12 +24,7 @@
         {
             super.onCreate(savedInstanceState);
 
-            singleton = this;
-
-            SoundBoardDebug.major.out("Welcome to [" + SoundBoardVersion.getVersion() + "]");
-
             this.setContentView(R.layout.soundboard_main_screen);
-
             this.setupPagerAdapter();
         }
 
@@ -81,7 +73,7 @@
             {
                 case KeyEvent.KEYCODE_BACK:
                 {
-                    SoundBoardAction.SHOW_WELCOME_ACTIVITY_FROM_MAIN_ACTIVITY.run();
+                    new SoundBoardAction( SoundBoardAction.Event.SHOW_WELCOME_ACTIVITY_FROM_MAIN_ACTIVITY, this ).run();
 
                     //prevent this event from being propagated further
                     return true;

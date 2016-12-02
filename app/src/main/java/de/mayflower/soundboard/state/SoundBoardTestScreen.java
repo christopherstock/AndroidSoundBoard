@@ -8,7 +8,7 @@
     import  android.support.v7.app.AppCompatActivity;
     import  android.view.KeyEvent;
     import  java.util.ArrayList;
-    import de.mayflower.lib.io.LibSound;
+    import  de.mayflower.lib.io.LibSound;
     import  de.mayflower.lib.ui.LibUI;
     import  de.mayflower.soundboard.R;
     import  de.mayflower.soundboard.SoundBoardAction;
@@ -25,9 +25,6 @@
         /** The request id  */
         public      static  final   int             REQUEST_CODE_RECORD_AUDIO       = 1;
 
-        /** The singleton instance. */
-        public      static          Activity        singleton                       = null;
-
         /*******************************************************************************************
         *   Being invoked when the application starts and resumes.
         *
@@ -38,8 +35,6 @@
         {
             super.onCreate(savedInstanceState);
 
-            singleton = this;
-
             this.setContentView(R.layout.activity_sound_board_test_screen);
 
             LibUI.setupButton
@@ -47,7 +42,7 @@
                 this,
                 R.id.button_test,
                 R.string.button_test,
-                SoundBoardAction.SHOW_WELCOME_ACTIVITY_FROM_TEST_ACTIVITY
+                new SoundBoardAction( SoundBoardAction.Event.SHOW_WELCOME_ACTIVITY_FROM_TEST_ACTIVITY, this )
             );
 
             LibUI.setupButton
@@ -55,7 +50,7 @@
                 this,
                 R.id.button_voice_input,
                 R.string.button_voice_test,
-                SoundBoardAction.SHOW_VOICE_INPUT_DIALOG
+                    new SoundBoardAction( SoundBoardAction.Event.SHOW_VOICE_INPUT_DIALOG, this )
             );
         }
 
@@ -66,7 +61,7 @@
             {
                 case KeyEvent.KEYCODE_BACK:
                 {
-                    SoundBoardAction.SHOW_WELCOME_ACTIVITY_FROM_TEST_ACTIVITY.run();
+                    new SoundBoardAction( SoundBoardAction.Event.SHOW_WELCOME_ACTIVITY_FROM_TEST_ACTIVITY, this ).run();
 
                     //prevent this event from being propagated further
                     return true;
@@ -78,7 +73,7 @@
         }
 
         @Override
-        protected void onActivityResult(int requestCode, int resultCode, Intent data)
+        protected void onActivityResult( int requestCode, int resultCode, Intent data )
         {
             SoundBoardDebug.major.out(
                 "onActivityResult in TestScreen Activity .. [" + requestCode + "][" + resultCode + "][" + data + "]"

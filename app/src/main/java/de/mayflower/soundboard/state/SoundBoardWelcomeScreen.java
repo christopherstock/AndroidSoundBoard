@@ -1,14 +1,12 @@
 
     package de.mayflower.soundboard.state;
 
-    import  android.app.Activity;
     import  android.os.Bundle;
     import  android.support.v7.app.AppCompatActivity;
     import  android.view.KeyEvent;
     import  de.mayflower.lib.ui.LibUI;
     import  de.mayflower.soundboard.R;
     import  de.mayflower.soundboard.SoundBoardAction;
-    import  de.mayflower.soundboard.SoundBoardDebug;
 
     /*******************************************************************************************
     *   The main activity of the SoundBoardWelcomeScreen application.
@@ -28,9 +26,6 @@
     *******************************************************************************************/
     public class SoundBoardWelcomeScreen extends AppCompatActivity
     {
-        /** The singleton instance. */
-        public      static      Activity            singleton           = null;
-
         /*******************************************************************************************
         *   Being invoked when the application starts and resumes.
         *
@@ -41,10 +36,6 @@
         {
             super.onCreate(savedInstanceState);
 
-            SoundBoardDebug.major.out( "onCreate() in Welcome Screen" );
-
-            singleton = this;
-
             this.setContentView(R.layout.activity_sound_board_welcome_screen);
 
             LibUI.setupButton
@@ -52,7 +43,7 @@
                 this,
                 R.id.button_welcome,
                 R.string.button_welcome,
-                SoundBoardAction.SHOW_TEST_ACTIVITY
+                new SoundBoardAction( SoundBoardAction.Event.SHOW_TEST_ACTIVITY, this )
             );
 
             LibUI.setupButton
@@ -60,7 +51,7 @@
                 this,
                 R.id.button_show_main_screen,
                 R.string.button_show_main_screen,
-                SoundBoardAction.SHOW_MAIN_SCREEN_ACTIVITY
+                new SoundBoardAction( SoundBoardAction.Event.SHOW_MAIN_SCREEN_ACTIVITY, this )
             );
         }
 
@@ -71,7 +62,7 @@
             {
                 case KeyEvent.KEYCODE_BACK:
                 {
-                    SoundBoardAction.SHOW_HOMESCREEN.run();
+                    new SoundBoardAction( SoundBoardAction.Event.SHOW_HOMESCREEN, this ).run();
 
                     //prevent this event from being propagated further
                     return true;

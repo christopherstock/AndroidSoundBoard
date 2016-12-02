@@ -2,7 +2,7 @@
     package de.mayflower.soundboard;
 
     import  android.util.Log;
-    import  de.mayflower.soundboard.SoundBoardSettings.*;
+
     import  de.mayflower.lib.LibDebug;
 
     /*****************************************************************************
@@ -24,7 +24,7 @@
         ;
 
         /** The stacktrace-String to send via email. */
-        public      static          boolean             debugMode                   = Debug.DEBUG_MODE;
+        public      static  final   boolean             DEBUG_MODE                  = SoundBoardSettings.Debug.DEBUG_MODE;
 
         /** The stacktrace-String to send via email. */
         public      static          String              stackTraceString            = "";
@@ -48,14 +48,14 @@
         {
             if (this.debug)
             {
-                DEBUG_OUT(this.toString(), msg );
+                SoundBoardDebug.DEBUG_OUT(this.toString(), msg );
             }
         }
 
         @Override
         public final void err( Object msg )
         {
-            DEBUG_ERR(this.toString(), msg );
+            SoundBoardDebug.DEBUG_ERR(this.toString(), msg );
         }
 
         @Override
@@ -63,7 +63,7 @@
         {
             if (this.debug)
             {
-                DEBUG_THROWABLE( t );
+                SoundBoardDebug.DEBUG_THROWABLE( t );
             }
         }
 
@@ -74,7 +74,7 @@
         *****************************************************************************/
         private static final void DEBUG_THROWABLE( Throwable t )
         {
-            DEBUG_THROWABLE( t, null );
+            SoundBoardDebug.DEBUG_THROWABLE( t, null );
         }
 
         /*****************************************************************************
@@ -88,10 +88,10 @@
         public static final void DEBUG_THROWABLE( Throwable t, String extraMessage )
         {
             //debug out the throwable
-            DEBUG_OUT_THROWABLE( t );
+            SoundBoardDebug.DEBUG_OUT_THROWABLE( t );
 
             //pack stackTraceString
-            stackTraceString =
+            SoundBoardDebug.stackTraceString =
             (
                     "["
                 +   t.getMessage()
@@ -114,7 +114,7 @@
         *****************************************************************************/
         private static final void DEBUG_OUT( String tag, Object msg )
         {
-            if ( debugMode)
+            if (SoundBoardDebug.DEBUG_MODE)
             {
                 Log.i( tag, String.valueOf( msg ) );
             }
@@ -129,7 +129,7 @@
         *****************************************************************************/
         private static final void DEBUG_ERR( String tag, Object msg )
         {
-            if ( debugMode)
+            if (SoundBoardDebug.DEBUG_MODE)
             {
                 Log.e( tag, String.valueOf( msg ) );
             }
@@ -142,9 +142,9 @@
         *****************************************************************************/
         public static final void DEBUG_OUT_THROWABLE( Throwable t )
         {
-            if ( debugMode)
+            if ( SoundBoardDebug.DEBUG_MODE )
             {
-                DEBUG_OUT( "[throwable]", Log.getStackTraceString( t ) );
+                SoundBoardDebug.DEBUG_OUT( "[throwable]", Log.getStackTraceString( t ) );
             }
         }
     }

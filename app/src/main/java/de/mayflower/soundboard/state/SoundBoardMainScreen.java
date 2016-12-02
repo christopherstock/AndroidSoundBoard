@@ -8,17 +8,14 @@
     import  android.view.MenuInflater;
     import  android.view.MenuItem;
     import  de.mayflower.soundboard.R;
-    import de.mayflower.soundboard.R.id;
-    import de.mayflower.soundboard.R.layout;
-    import de.mayflower.soundboard.R.menu;
     import  de.mayflower.soundboard.SoundBoardDebug;
-    import de.mayflower.soundboard.SoundBoardVersion;
+    import  de.mayflower.soundboard.SoundBoardVersion;
     import  de.mayflower.soundboard.ui.SoundBoardMainScreenViewPagerAdapter;
 
     /**********************************************************************************************
     *   The startup activity class.
     *
-    *   TODO ASAP   Rename remove 'SoundBoard' from all classes.
+    *   TODO ASAP   Rename remove 'SoundBoardWelcomeScreen' from all classes.
     *   TODO ASAP   Move classes to appropriate subpackages.
     *   TODO ASAP   Button in detailed view for returning.
     *   TODO WEAK   Hold and pass all data in instance fields!
@@ -47,7 +44,7 @@
 
             SoundBoardHydrator.hydrate(this, countService);
 */
-            this.setContentView(layout.soundboard_main_screen);
+            this.setContentView(R.layout.soundboard_main_screen);
 
             this.setupPagerAdapter();
         }
@@ -61,7 +58,7 @@
             SoundBoardDebug.major.out( SoundBoardMainScreen.class + "::onCreateOptionsMenu()" );
 
             MenuInflater inflater = this.getMenuInflater();
-            inflater.inflate( menu.menu_main, menu );
+            inflater.inflate( R.menu.menu_main, menu );
 
             return true;
         }
@@ -86,7 +83,7 @@
 
             pagerAdapter.init();
 
-            ViewPager viewPager = (ViewPager)this.findViewById( id.main_screen_pager );
+            ViewPager viewPager = (ViewPager)this.findViewById( R.id.main_screen_pager );
             viewPager.setAdapter( pagerAdapter );
         }
     }

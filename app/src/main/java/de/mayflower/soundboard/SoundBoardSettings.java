@@ -7,7 +7,7 @@
     *   @author     Christopher Stock
     *   @version    1.0
     *****************************************************************************************/
-    public class SoundBoardSettings
+    public abstract class SoundBoardSettings
     {
         /*****************************************************************************************
         *   The paramount settings. Make sure to check these before each release build.
@@ -15,7 +15,7 @@
         public static final class Paramounts
         {
             /** The internal name of this project. This value is used in the exception emails. */
-            public      static      final   String      PROJECT_NAME            = "SoundBoard";
+            public      static      final   String      PROJECT_NAME            = "SoundBoardWelcomeScreen";
         }
 
         /*****************************************************************************************

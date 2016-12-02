@@ -3,7 +3,6 @@
 
     import  android.app.Activity;
     import  android.view.View;
-    import android.view.View.OnClickListener;
 
     import  de.mayflower.soundboard.SoundBoardDebug;
 
@@ -13,7 +12,7 @@
     *   @author     Christian Heldt.
     *   @version    1.0
     ***********************************************************************************************/
-    public class SoundBoardItemClickListener implements OnClickListener
+    public class SoundBoardItemClickListener implements View.OnClickListener
     {
         private                 int                 index                       = 0;
         private                 Activity            context                     = null;
@@ -25,7 +24,7 @@
         }
 
         @Override
-        public void onClick( View view )
+        public void onClick( View v )
         {
             SoundBoardDebug.major.out("Item [" + this.index + "] in page [" + this.index + "] touched!");
 /*

@@ -6,7 +6,6 @@
     import  android.view.MotionEvent;
     import  de.mayflower.lib.Lib;
     import  de.mayflower.soundboard.R;
-    import de.mayflower.soundboard.R.anim;
     import  de.mayflower.soundboard.SoundBoardDebug;
 
     /**********************************************************************************************
@@ -92,13 +91,14 @@
 
                     float deltaX = this.touchEndX - this.touchStartX;
 
-                    if (deltaX > MIN_SWIPE_DISTANCE) {
+                    if (deltaX > SoundBoardDetailScreen.MIN_SWIPE_DISTANCE) {
                         super.onBackPressed();
                         this.animateTransition();
                     }
 
                     break;
-
+                default:
+                    break;
             }
             return super.onTouchEvent(event);
         }
@@ -109,8 +109,8 @@
             Lib.overridePendingTransition
             (
                                 this,
-                                anim.push_right_in,
-                                anim.push_right_out
+                                R.anim.push_right_in,
+                                R.anim.push_right_out
             );
         }
     }

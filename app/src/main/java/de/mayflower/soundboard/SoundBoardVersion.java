@@ -1,8 +1,6 @@
 
     package de.mayflower.soundboard;
 
-    import de.mayflower.soundboard.SoundBoardSettings.Paramounts;
-
     /***************************************************************************************************
     *   Logs all versions of this app.
     *
@@ -16,18 +14,17 @@
         ;
 
         /** The version string of the client version. */
-        private         String              iClientVersionNumber        = null;
+        private         String              clientVersionNumber         = null;
         /** The integer version code for the Android Manifest. */
-        @SuppressWarnings( "unused" )
-        private         int                 iVersionCode                = 0;
+        private         int                 versionCode                 = 0;
         /** The version string of the backend version. */
-        private         String              iBackendVersionNumber       = null;
+        private         String              backendVersionNumber        = null;
         /** The completion time of this version. */
-        private         String              iReleaseDate                = null;
+        private         String              releaseDate                 = null;
         /** The internal codename of this version. */
-        private         String              iCodeName                   = null;
+        private         String              codeName                    = null;
         /** The log for this version contains latest changes. */
-        private         String              iLog                        = null;
+        private         String              log                         = null;
 
         /******************************************************************************************
         *   Creates one app version enum constant.
@@ -41,12 +38,12 @@
         ******************************************************************************************/
         private SoundBoardVersion(String aClientVersionNumber, int aVersionCode, String aBackendVersionNumber, String aReleaseDate, String aCodename, String aLog)
         {
-            this.iClientVersionNumber = aClientVersionNumber;
-            this.iVersionCode = aVersionCode;
-            this.iBackendVersionNumber = aBackendVersionNumber;
-            this.iReleaseDate = aReleaseDate;
-            this.iCodeName = aCodename;
-            this.iLog = aLog;
+            this.clientVersionNumber = aClientVersionNumber;
+            this.versionCode = aVersionCode;
+            this.backendVersionNumber = aBackendVersionNumber;
+            this.releaseDate = aReleaseDate;
+            this.codeName = aCodename;
+            this.log = aLog;
         }
 
         /******************************************************************************************
@@ -54,9 +51,9 @@
         *
         *   @return     The last release date for this version.
         ******************************************************************************************/
-        public final String getCompileTime()
+        public final String getReleaseDate()
         {
-            return this.iReleaseDate;
+            return this.releaseDate;
         }
 
         /******************************************************************************************
@@ -66,7 +63,7 @@
         ******************************************************************************************/
         public final String getClientVersionNumber()
         {
-            return this.iClientVersionNumber;
+            return this.clientVersionNumber;
         }
 
         /******************************************************************************************
@@ -76,7 +73,7 @@
         ******************************************************************************************/
         public final String getBackendVersionNumber()
         {
-            return this.iBackendVersionNumber;
+            return this.backendVersionNumber;
         }
 
         /******************************************************************************************
@@ -86,8 +83,7 @@
         ******************************************************************************************/
         public static final String getVersion()
         {
-            String ret = ( Paramounts.PROJECT_NAME + ", SoundBoardVersion [" + values()[ 0 ].iClientVersionNumber + "] codename [" + values()[ 0 ].iCodeName + "] released on [" + values()[ 0 ].iReleaseDate + "]" );
-            return ret;
+            return ( SoundBoardSettings.Paramounts.PROJECT_NAME + ", SoundBoardVersion [" + SoundBoardVersion.values()[ 0 ].clientVersionNumber + "] codename [" + SoundBoardVersion.values()[ 0 ].codeName + "] released on [" + SoundBoardVersion.values()[ 0 ].releaseDate + "]" );
         }
 
         /******************************************************************************************
@@ -99,9 +95,9 @@
         public static final String getVersionLog()
         {
             StringBuffer ret = new StringBuffer();
-            for ( int i = 0; i < values().length; ++i )
+            for (int i = 0; i < SoundBoardVersion.values().length; ++i )
             {
-                ret.append( values()[ i ].iClientVersionNumber + " " + values()[ i ].iCodeName + " " + values()[ i ].iReleaseDate + " " + values()[ i ].iLog + "\n" );
+                ret.append(SoundBoardVersion.values()[ i ].clientVersionNumber + " " + SoundBoardVersion.values()[ i ].codeName + " " + SoundBoardVersion.values()[ i ].releaseDate + " " + SoundBoardVersion.values()[ i ].log + "\n" );
             }
             ret.append( "\n" );
             return ret.toString();

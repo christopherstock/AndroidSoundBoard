@@ -1,18 +1,18 @@
 
-    package de.mayflower.soundboard;
+    package de.mayflower.soundboard.state;
 
-    import  android.support.v7.app.AppCompatActivity;
     import  android.os.Bundle;
+    import  android.support.v7.app.AppCompatActivity;
 
-    import de.mayflower.soundboard.R.layout;
+    import de.mayflower.soundboard.R;
 
     /*******************************************************************************************
-    *   The main activity of the SoundBoard application.
+    *   The main activity of the SoundBoardWelcomeScreen application.
     *
     *   @author  Christopher Stock
     *   @version 1.0
     *******************************************************************************************/
-    public class SoundBoard extends AppCompatActivity
+    public class SoundBoardWelcomeScreen extends AppCompatActivity
     {
         /*******************************************************************************************
         *   Being invoked when the application starts and resumes.
@@ -24,6 +24,6 @@
         {
             super.onCreate(savedInstanceState);
 
-            this.setContentView(layout.activity_sound_board);
+            this.setContentView(R.layout.activity_sound_board);
         }
     }

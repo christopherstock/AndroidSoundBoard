@@ -48,7 +48,7 @@
             Resources res   = context.getResources();
             int       resId = res.getIdentifier( id, "string", context.getPackageName() );
 
-            return getResourceString( context, resId );
+            return LibResource.getResourceString( context, resId );
         }
 
         /*********************************************************************************
@@ -63,6 +63,6 @@
             Resources res   = context.getResources();
             int       resId = res.getIdentifier( id, "array", context.getPackageName() );
 
-            return getResourceStringArray( context, resId );
+            return LibResource.getResourceStringArray( context, resId );
         }
     }

@@ -1,18 +1,32 @@
 
     package de.mayflower.lib.ui;
 
-    import  android.app.*;
-    import  android.content.*;
-    import  android.content.res.*;
-    import  android.graphics.*;
-    import  android.graphics.drawable.*;
-    import  android.text.*;
-    import  android.view.*;
-    import  android.view.inputmethod.*;
-    import  android.widget.*;
-    import  java.util.*;
-    import  de.mayflower.lib.*;
-    import  de.mayflower.soundboard.R;
+    import android.app.Activity;
+import android.content.Context;
+import android.content.res.ColorStateList;
+import android.content.res.XmlResourceParser;
+import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.TransitionDrawable;
+import android.text.TextWatcher;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.Vector;
+
+import de.mayflower.lib.LibResource;
 
     /************************************************************************
     *   All independent UI-functions.
@@ -50,13 +64,13 @@
         *
         *   @param  activity        The current system context.
         *   @param  buttonId        The id of the button to configure.
-        *   @param  textID          The resource-ID for the caption of this button.
+        *   @param  textId          The resource-ID for the caption of this button.
         *   @param  action          The OnClick-action.
         ************************************************************************/
-        public static final void setupButton( Activity activity, int buttonId, int textID, Runnable action )
+        public static final void setupButton( Activity activity, int buttonId, int textId, Runnable action )
         {
-            Button  button = (Button)activity.findViewById(R.id.button_welcome);
-            Spanned text   = LibResource.getResourceSpannedString( activity, textID );
+            Button button = (Button)activity.findViewById( buttonId );
+            String text   = LibResource.getResourceString( activity, textId );
 
             button.setText( text, TextView.BufferType.SPANNABLE );
 

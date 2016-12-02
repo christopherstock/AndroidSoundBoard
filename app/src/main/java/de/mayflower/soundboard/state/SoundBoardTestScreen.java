@@ -9,26 +9,15 @@
     import  de.mayflower.soundboard.SoundBoardAction;
 
     /*******************************************************************************************
-    *   The main activity of the SoundBoardWelcomeScreen application.
-    *
-    *   TODO ASAP   Prune ALL unused drawables, layouts, values and other resources!!
-    *   TODO ASAP   Welcome ViewPager like in PicFood?
-    *
-    *   TODO ASAP   Rename remove 'SoundBoardWelcomeScreen' from all classes.
-    *   TODO ASAP   Move classes to appropriate subpackages.
-    *   TODO ASAP   Button in detailed view for returning.
-    *   TODO WEAK   Hold and pass all data in instance fields!
-    *   TODO WEAK   Support latest API Level.
-    *   TODO WEAK   Remove all old classes and references.
-    *   TODO WEAK   Remove ALL inspection issues AND/OR warnings and confectionate Inspection profile!
+    *   The test activity.
     *
     *   @author     Christopher Stock
     *   @version    1.0
     *******************************************************************************************/
-    public class SoundBoardWelcomeScreen extends AppCompatActivity
+    public class SoundBoardTestScreen extends AppCompatActivity
     {
         /** The singleton instance. */
-        public      static      Activity            singleton           = null;
+        public      static          Activity            singleton           = null;
 
         /*******************************************************************************************
         *   Being invoked when the application starts and resumes.
@@ -42,14 +31,14 @@
 
             singleton = this;
 
-            this.setContentView(R.layout.activity_sound_board_welcome_screen);
+            this.setContentView(R.layout.activity_sound_board_test_screen);
 
             LibUI.setupButton
             (
                 this,
-                R.id.button_welcome,
-                R.string.button_welcome,
-                SoundBoardAction.SHOW_TEST_ACTIVITY
+                R.id.button_test,
+                R.string.button_test,
+                SoundBoardAction.SHOW_WELCOME_ACTIVITY
             );
         }
     }

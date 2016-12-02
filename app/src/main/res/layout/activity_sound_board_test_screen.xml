@@ -9,7 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="#ffffff00"
+    android:background="#ffff0000"
     tools:context="de.mayflower.soundboard.state.SoundBoardWelcomeScreen"
     >
 
@@ -18,11 +18,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:textAlignment="center"
-        android:text="@string/hello"
+        android:text="@string/test"
         />
 
     <include
-        android:id="@+id/button_welcome"
+        android:id="@+id/button_test"
         layout="@layout/button_black_small"
         />
 

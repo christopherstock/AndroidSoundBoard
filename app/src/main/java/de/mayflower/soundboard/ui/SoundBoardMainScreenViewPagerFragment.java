@@ -6,8 +6,7 @@
     import  android.view.LayoutInflater;
     import  android.view.View;
     import  android.view.ViewGroup;
-
-    import de.mayflower.soundboard.R;
+    import  de.mayflower.soundboard.R;
     import  de.mayflower.soundboard.SoundBoardDebug;
 
     /************************************************************************

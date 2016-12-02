@@ -4,8 +4,7 @@
     import  android.app.Activity;
     import  android.os.Bundle;
     import  android.support.v7.app.AppCompatActivity;
-    import android.view.KeyEvent;
-
+    import  android.view.KeyEvent;
     import  de.mayflower.lib.ui.LibUI;
     import  de.mayflower.soundboard.R;
     import  de.mayflower.soundboard.SoundBoardAction;
@@ -41,6 +40,14 @@
                 R.id.button_test,
                 R.string.button_test,
                 SoundBoardAction.SHOW_WELCOME_ACTIVITY_FROM_TEST_ACTIVITY
+            );
+
+            LibUI.setupButton
+            (
+                this,
+                R.id.button_voice_input,
+                R.string.button_voice_test,
+                SoundBoardAction.SHOW_VOICE_INPUT_DIALOG
             );
         }
 

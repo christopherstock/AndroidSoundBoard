@@ -13,8 +13,6 @@
     /************************************************************************
     *   The fragment for the ViewPager.
     *
-    *   TODO To Lib! :D
-    *
     *   @author     Christopher Stock
     *   @version    1.0
     ************************************************************************/
@@ -34,7 +32,7 @@
         {
             super.onCreateView( inflater, container, savedInstanceState );
 
-            // TODO refactor!
+
 
             SoundBoardDebug.major.out("onCreateView for fragment [" + this.index + "]");
 

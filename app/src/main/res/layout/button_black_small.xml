@@ -9,6 +9,6 @@
     android:textColor="@drawable/net_picfood_button_black_fg"
     android:background="@drawable/net_picfood_button_black_small_bg"
     android:minWidth="@dimen/button_small_min_width"
-    android:paddingLeft="@dimen/button_small_padding_horizontal"
-    android:paddingRight="@dimen/button_small_padding_horizontal"
+    android:padding="@dimen/button_small_padding"
+    android:layout_margin="@dimen/button_small_margin"
     />

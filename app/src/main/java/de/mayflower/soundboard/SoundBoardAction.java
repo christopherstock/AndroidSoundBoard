@@ -30,6 +30,9 @@
         /** Eclipses the app and shows the android homescreen. */
         SHOW_HOMESCREEN,
 
+        /** Show the 'voice input' dialog. */
+        SHOW_VOICE_INPUT_DIALOG,
+
         ;
 
         @Override
@@ -91,8 +94,15 @@
                     break;
                 }
 
+                case SHOW_VOICE_INPUT_DIALOG:
+                {
+                    SoundBoardDebug.major.out( "Show the voice input dialog.." );
 
 
+
+
+                    break;
+                }
             }
         }
     }

@@ -25,4 +25,9 @@
         layout="@layout/button_black_small"
         />
 
+    <include
+        android:id="@+id/button_voice_input"
+        layout="@layout/button_black_small"
+        />
+
 </LinearLayout>

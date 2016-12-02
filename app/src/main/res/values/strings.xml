@@ -12,5 +12,6 @@
     <string name="button_welcome">Show test activity</string>
     <string name="button_test">Back to welcome screen</string>
     <string name="button_show_main_screen">Show main screen</string>
+    <string name="button_voice_test">Test voice Input</string>
 
 </resources>

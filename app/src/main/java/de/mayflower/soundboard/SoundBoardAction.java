@@ -1,6 +1,9 @@
 
     package de.mayflower.soundboard;
 
+    import android.content.Intent;
+    import android.speech.RecognizerIntent;
+
     import  de.mayflower.lib.Lib;
     import  de.mayflower.lib.LibLauncher;
     import  de.mayflower.soundboard.state.SoundBoardMainScreen;
@@ -97,6 +100,16 @@
                 case SHOW_VOICE_INPUT_DIALOG:
                 {
                     SoundBoardDebug.major.out( "Show the voice input dialog.." );
+
+                    Intent intent = new Intent( RecognizerIntent.ACTION_RECOGNIZE_SPEECH );
+                    intent.putExtra( RecognizerIntent.EXTRA_LANGUAGE_MODEL, "de-DE" );
+                    SoundBoardTestScreen.singleton.startActivityForResult(
+                        intent,
+                        SoundBoardTestScreen.REQUEST_CODE_RECORD_AUDIO
+                    );
+
+
+
 
 
 

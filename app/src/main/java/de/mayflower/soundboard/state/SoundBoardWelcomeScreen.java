@@ -25,6 +25,7 @@
     *   TODO LOW    SoundBoardMainScreenViewPagerAdapter to lib!
     *   TODO WEAK   Hold and pass all data in instance fields!
     *   TODO WEAK   Support latest API Level.
+    *   TODO WEAK   Fix all inspection issues.
     *   TODO WEAK   Remove all old classes and references.
     *   TODO WEAK   Remove ALL inspection issues AND/OR warnings and confectionate Inspection profile!
     *

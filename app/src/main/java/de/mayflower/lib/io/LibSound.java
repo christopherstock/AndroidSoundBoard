@@ -22,7 +22,7 @@
         {
             try
             {
-                MediaPlayer.create( context, id ).start ();
+                MediaPlayer.create( context, id ).start();
             }
             catch ( Exception e )
             {

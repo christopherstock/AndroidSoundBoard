@@ -1,10 +1,8 @@
 
     package de.mayflower.lib;
 
-    import  android.app.Activity;
-    import  android.content.Context;
-    import  android.content.Intent;
-    import  android.os.Build;
+    import  android.app.*;
+    import  android.content.*;
 
     /*********************************************************************************
     *   Determines device api.
@@ -22,22 +20,9 @@
         *   @param  animIn      The resource-ID of the animation for the new activity to appear.
         *   @param  animOut     The resource-ID of the animation for the old activity to disappear.
         *********************************************************************************/
-        public static final void overridePendingTransition(Activity activity, int animIn, int animOut )
+        public static final void overridePendingTransition( Activity activity, int animIn, int animOut )
         {
             activity.overridePendingTransition( animIn, animOut );
-        }
-
-        /*********************************************************************************
-        *   Checks if this device's API-Level is lower than given API-Level.
-        *   The field {@link Build.VERSION#SDK_INT} is read to determine this.
-        *
-        *   @param apiLevel The API level to check.
-        *   @return         true if this device uses an API-Level lower than specified.
-        *                   Otherwise false.
-        *********************************************************************************/
-        public static final boolean isSdkLevelLowerThan( int apiLevel )
-        {
-            return ( Build.VERSION.SDK_INT < apiLevel );
         }
 
         /*********************************************************************************

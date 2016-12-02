@@ -24,7 +24,7 @@
         {
             super.onCreate(savedInstanceState);
 
-            this.setContentView(R.layout.soundboard_main_screen);
+            this.setContentView(R.layout.activity_main_screen);
             this.setupPagerAdapter();
         }
 

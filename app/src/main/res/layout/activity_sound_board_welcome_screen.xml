@@ -22,12 +22,12 @@
 
     <include
         android:id="@+id/button_welcome"
-        layout="@layout/button_black_small"
+        layout="@layout/button_default"
         />
 
     <include
         android:id="@+id/button_show_main_screen"
-        layout="@layout/button_black_small"
+        layout="@layout/button_default"
         />
 
 </LinearLayout>

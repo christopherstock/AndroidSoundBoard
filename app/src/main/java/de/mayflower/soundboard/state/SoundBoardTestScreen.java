@@ -50,7 +50,7 @@
                 this,
                 R.id.button_voice_input,
                 R.string.button_voice_test,
-                    new SoundBoardAction( SoundBoardAction.Event.SHOW_VOICE_INPUT_DIALOG, this )
+                new SoundBoardAction( SoundBoardAction.Event.SHOW_VOICE_INPUT_DIALOG, this )
             );
         }
 

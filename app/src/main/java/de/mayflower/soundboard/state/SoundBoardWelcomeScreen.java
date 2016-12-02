@@ -36,7 +36,7 @@
         {
             super.onCreate(savedInstanceState);
 
-            this.setContentView(R.layout.activity_sound_board_welcome_screen);
+            this.setContentView( R.layout.activity_sound_board_welcome_screen );
 
             LibUI.setupButton
             (

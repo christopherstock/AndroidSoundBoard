@@ -22,12 +22,12 @@
 
     <include
         android:id="@+id/button_test"
-        layout="@layout/button_black_small"
+        layout="@layout/button_default"
         />
 
     <include
         android:id="@+id/button_voice_input"
-        layout="@layout/button_black_small"
+        layout="@layout/button_default"
         />
 
 </LinearLayout>

@@ -1,18 +1,12 @@
 
     package de.mayflower.soundboard.state;
 
-    import  android.os.Bundle;
+    import  android.os.*;
     import  android.support.v4.app.FragmentActivity;
     import  android.support.v4.view.ViewPager;
-    import  android.view.KeyEvent;
-    import  android.view.Menu;
-    import  android.view.MenuInflater;
-    import  android.view.MenuItem;
-    import  de.mayflower.soundboard.R;
-    import  de.mayflower.soundboard.SoundBoardAction;
-    import  de.mayflower.soundboard.SoundBoardDebug;
-    import  de.mayflower.soundboard.SoundBoardVersion;
-    import  de.mayflower.soundboard.ui.SoundBoardMainScreenViewPagerAdapter;
+    import  android.view.*;
+    import  de.mayflower.soundboard.*;
+    import  de.mayflower.soundboard.ui.*;
 
     /**********************************************************************************************
     *   The startup activity class.

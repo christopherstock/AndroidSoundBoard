@@ -1,6 +1,6 @@
 
     /*************************************************************************************************
-    *   All app states.
+    *   Specifies all app states.
     *
     *   @author     Christopher Stock
     *   @version    1.0

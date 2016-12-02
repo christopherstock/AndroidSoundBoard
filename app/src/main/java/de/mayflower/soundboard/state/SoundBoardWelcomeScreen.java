@@ -51,5 +51,13 @@
                 R.string.button_welcome,
                 SoundBoardAction.SHOW_TEST_ACTIVITY
             );
+
+            LibUI.setupButton
+            (
+                this,
+                R.id.button_show_main_screen,
+                R.string.button_show_main_screen,
+                SoundBoardAction.SHOW_MAIN_SCREEN_ACTIVITY
+            );
         }
     }

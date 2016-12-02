@@ -1,8 +1,8 @@
 
     package de.mayflower.soundboard;
 
-    import  android.util.Log;
     import  de.mayflower.lib.LibLauncher;
+    import  de.mayflower.soundboard.state.SoundBoardMainScreen;
     import  de.mayflower.soundboard.state.SoundBoardTestScreen;
     import  de.mayflower.soundboard.state.SoundBoardWelcomeScreen;
 
@@ -20,6 +20,9 @@
         /** Shows the welcome activity. */
         SHOW_WELCOME_ACTIVITY,
 
+        /** Shows the main-screen activity. */
+        SHOW_MAIN_SCREEN_ACTIVITY,
+
         ;
 
         @Override
@@ -29,8 +32,6 @@
             {
                 case SHOW_TEST_ACTIVITY:
                 {
-                    Log.i("Test", "Button Welcome pressed!");
-
                     LibLauncher.launchActivity
                     (
                         SoundBoardWelcomeScreen.singleton,
@@ -43,14 +44,24 @@
 
                 case SHOW_WELCOME_ACTIVITY:
                 {
-                    Log.i("Test", "Button Test pressed!");
-
                     LibLauncher.launchActivity
                     (
                         SoundBoardTestScreen.singleton,
                         SoundBoardWelcomeScreen.class,
                         R.anim.push_right_in,
                         R.anim.push_right_out
+                    );
+                    break;
+                }
+
+                case SHOW_MAIN_SCREEN_ACTIVITY:
+                {
+                    LibLauncher.launchActivity
+                    (
+                        SoundBoardWelcomeScreen.singleton,
+                        SoundBoardMainScreen.class,
+                        R.anim.push_left_in,
+                        R.anim.push_left_out
                     );
                     break;
                 }

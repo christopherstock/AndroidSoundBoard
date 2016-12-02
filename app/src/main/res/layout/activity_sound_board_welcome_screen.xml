@@ -18,11 +18,16 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:textAlignment="center"
-        android:text="@string/hello"
+        android:text="@string/title_welcome_activity"
         />
 
     <include
         android:id="@+id/button_welcome"
+        layout="@layout/button_black_small"
+        />
+
+    <include
+        android:id="@+id/button_show_main_screen"
         layout="@layout/button_black_small"
         />
 

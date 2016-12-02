@@ -18,6 +18,8 @@
 
         <activity android:name="de.mayflower.soundboard.state.SoundBoardTestScreen" />
 
+        <activity android:name="de.mayflower.soundboard.state.SoundBoardMainScreen" />
+
     </application>
 
 </manifest>

@@ -140,7 +140,7 @@
     <dimen name="button_small_height">32.5dp</dimen>
     <dimen name="button_small_width">70.0dp</dimen>
     <dimen name="button_small_min_width">50.0dp</dimen>
-    <dimen name="button_small_padding_horizontal">7.5dp</dimen>
+    <dimen name="button_small_padding_horizontal">12.0dp</dimen>
     <dimen name="button_small_corner_radius">@dimen/corner_radius_normal</dimen>
 
     <!-- button wide -->

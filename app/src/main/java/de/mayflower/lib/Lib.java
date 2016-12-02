@@ -2,6 +2,8 @@
     package de.mayflower.lib;
 
     import  android.app.Activity;
+    import android.content.Context;
+    import android.content.Intent;
     import  android.os.Build;
 
     /*********************************************************************************
@@ -36,5 +38,21 @@
         public static final boolean isSdkLevelLowerThan( int apiLevel )
         {
             return ( Build.VERSION.SDK_INT < apiLevel );
+        }
+
+        /*********************************************************************************
+        *   Launches the Android Homescreen Activity. This will show the user's
+        *   homescreen immediately and pushes this application in the background.
+        *
+        *   @param  context The current application context.
+        *********************************************************************************/
+        public static final void showHomescreenActivity( Context context )
+        {
+            Intent intent = new Intent();
+            intent.setAction(   Intent.ACTION_MAIN      );
+            intent.addCategory( Intent.CATEGORY_HOME    );
+
+            //start this activity
+            context.startActivity( intent );
         }
     }

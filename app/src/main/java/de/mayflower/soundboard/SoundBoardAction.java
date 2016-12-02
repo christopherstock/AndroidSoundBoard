@@ -1,6 +1,7 @@
 
     package de.mayflower.soundboard;
 
+    import de.mayflower.lib.Lib;
     import  de.mayflower.lib.LibLauncher;
     import  de.mayflower.soundboard.state.SoundBoardMainScreen;
     import  de.mayflower.soundboard.state.SoundBoardTestScreen;
@@ -22,6 +23,9 @@
 
         /** Shows the main-screen activity. */
         SHOW_MAIN_SCREEN_ACTIVITY,
+
+        /** Eclipses the app and shows the android homescreen. */
+        SHOW_HOMESCREEN,
 
         ;
 
@@ -63,6 +67,12 @@
                         R.anim.push_left_in,
                         R.anim.push_left_out
                     );
+                    break;
+                }
+
+                case SHOW_HOMESCREEN:
+                {
+                    Lib.showHomescreenActivity( SoundBoardWelcomeScreen.singleton );
                     break;
                 }
 

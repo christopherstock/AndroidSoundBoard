@@ -4,9 +4,12 @@
     import  android.app.Activity;
     import  android.os.Bundle;
     import  android.support.v7.app.AppCompatActivity;
+    import android.view.KeyEvent;
+
     import  de.mayflower.lib.ui.LibUI;
     import  de.mayflower.soundboard.R;
     import  de.mayflower.soundboard.SoundBoardAction;
+    import de.mayflower.soundboard.SoundBoardDebug;
 
     /*******************************************************************************************
     *   The main activity of the SoundBoardWelcomeScreen application.
@@ -40,6 +43,8 @@
         {
             super.onCreate(savedInstanceState);
 
+            SoundBoardDebug.major.out( "onCreate() in Welcome Screen" );
+
             singleton = this;
 
             this.setContentView(R.layout.activity_sound_board_welcome_screen);
@@ -59,5 +64,23 @@
                 R.string.button_show_main_screen,
                 SoundBoardAction.SHOW_MAIN_SCREEN_ACTIVITY
             );
+        }
+
+        @Override
+        public boolean onKeyDown( int keyCode, KeyEvent event )
+        {
+            switch ( keyCode )
+            {
+                case KeyEvent.KEYCODE_BACK:
+                {
+                    SoundBoardAction.SHOW_HOMESCREEN.run();
+
+                    //prevent this event from being propagated further
+                    return true;
+                }
+            }
+
+            //let the system handle this event
+            return false;
         }
     }

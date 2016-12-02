@@ -4,6 +4,8 @@
     import  android.app.Activity;
     import  android.os.Bundle;
     import  android.support.v7.app.AppCompatActivity;
+    import android.view.KeyEvent;
+
     import  de.mayflower.lib.ui.LibUI;
     import  de.mayflower.soundboard.R;
     import  de.mayflower.soundboard.SoundBoardAction;
@@ -40,5 +42,23 @@
                 R.string.button_test,
                 SoundBoardAction.SHOW_WELCOME_ACTIVITY
             );
+        }
+
+        @Override
+        public boolean onKeyDown( int keyCode, KeyEvent event )
+        {
+            switch ( keyCode )
+            {
+                case KeyEvent.KEYCODE_BACK:
+                {
+                    SoundBoardAction.SHOW_WELCOME_ACTIVITY.run();
+
+                    //prevent this event from being propagated further
+                    return true;
+                }
+            }
+
+            //let the system handle this event
+            return false;
         }
     }

@@ -35,7 +35,7 @@
 /*
                 fragments[i].init( SoundBoardHydrator.categories[i].getId(), SoundBoardHydrator.categories[i].getName());
 */
-                this.fragments[i].init( i, "muuh name " + i);
+                this.fragments[i].init( i, "Fragment # " + i);
             }
         }
 

@@ -48,14 +48,14 @@
         {
             if (this.debug)
             {
-                SoundBoardDebug.DEBUG_OUT(this.toString(), msg );
+                DEBUG_OUT(this.toString(), msg );
             }
         }
 
         @Override
         public final void err( Object msg )
         {
-            SoundBoardDebug.DEBUG_ERR(this.toString(), msg );
+            DEBUG_ERR(this.toString(), msg );
         }
 
         @Override
@@ -63,7 +63,7 @@
         {
             if (this.debug)
             {
-                SoundBoardDebug.DEBUG_THROWABLE( t );
+                DEBUG_THROWABLE( t );
             }
         }
 
@@ -74,7 +74,7 @@
         *****************************************************************************/
         private static final void DEBUG_THROWABLE( Throwable t )
         {
-            SoundBoardDebug.DEBUG_THROWABLE( t, null );
+            DEBUG_THROWABLE( t, null );
         }
 
         /*****************************************************************************
@@ -88,10 +88,10 @@
         public static final void DEBUG_THROWABLE( Throwable t, String extraMessage )
         {
             //debug out the throwable
-            SoundBoardDebug.DEBUG_OUT_THROWABLE( t );
+            DEBUG_OUT_THROWABLE( t );
 
             //pack stackTraceString
-            SoundBoardDebug.stackTraceString =
+            stackTraceString =
             (
                     "["
                 +   t.getMessage()
@@ -114,7 +114,7 @@
         *****************************************************************************/
         private static final void DEBUG_OUT( String tag, Object msg )
         {
-            if (SoundBoardDebug.DEBUG_MODE)
+            if (DEBUG_MODE)
             {
                 Log.i( tag, String.valueOf( msg ) );
             }
@@ -129,7 +129,7 @@
         *****************************************************************************/
         private static final void DEBUG_ERR( String tag, Object msg )
         {
-            if (SoundBoardDebug.DEBUG_MODE)
+            if (DEBUG_MODE)
             {
                 Log.e( tag, String.valueOf( msg ) );
             }
@@ -142,9 +142,9 @@
         *****************************************************************************/
         public static final void DEBUG_OUT_THROWABLE( Throwable t )
         {
-            if ( SoundBoardDebug.DEBUG_MODE )
+            if ( DEBUG_MODE )
             {
-                SoundBoardDebug.DEBUG_OUT( "[throwable]", Log.getStackTraceString( t ) );
+                DEBUG_OUT( "[throwable]", Log.getStackTraceString( t ) );
             }
         }
     }

@@ -8,7 +8,7 @@
     import  android.support.v7.app.AppCompatActivity;
     import  android.view.KeyEvent;
     import  java.util.ArrayList;
-    import  de.mayflower.lib.LibSound;
+    import de.mayflower.lib.io.LibSound;
     import  de.mayflower.lib.ui.LibUI;
     import  de.mayflower.soundboard.R;
     import  de.mayflower.soundboard.SoundBoardAction;

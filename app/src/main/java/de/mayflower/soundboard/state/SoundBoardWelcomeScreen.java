@@ -13,20 +13,13 @@
     /*******************************************************************************************
     *   The main activity of the SoundBoardWelcomeScreen application.
     *
-    *   TODO ASAP   Proof of concept: Speech recognizer.
-    *
+    *   TODO WEAK   Fix all inspection issues.
     *   TODO ASAP   Prune ALL unused drawables, layouts, values and other resources!!
     *   TODO ASAP   Welcome ViewPager like in PicFood?
-    *   TODO ASAP   App icon!
-    *
-    *   TODO ASAP   Rename remove 'SoundBoardWelcomeScreen' from all classes.
-    *   TODO ASAP   Move classes to appropriate subpackages.
-    *   TODO ASAP   Button in detailed view for returning.
-    *   TODO LOW    SoundBoardMainScreenViewPagerAdapter to lib!
-    *   TODO WEAK   Hold and pass all data in instance fields!
-    *   TODO WEAK   Support latest API Level.
-    *   TODO WEAK   Fix all inspection issues.
     *   TODO WEAK   Remove all old classes and references.
+    *   TODO LOW    SoundBoardMainScreenViewPagerAdapter to lib?
+    *   TODO ASAP   Button in detailed view for returning.
+    *   TODO WEAK   Hold and pass all data in instance fields!
     *   TODO WEAK   Remove ALL inspection issues AND/OR warnings and confectionate Inspection profile!
     *
     *   @author     Christopher Stock

@@ -1,10 +1,8 @@
 
     package de.mayflower.lib;
 
-    import android.content.Context;
-    import android.content.res.Resources;
-    import android.text.Html;
-    import android.text.Spanned;
+    import  android.content.Context;
+    import  android.content.res.Resources;
 
     /*********************************************************************************
     *   All functions for accessing system resources.
@@ -50,7 +48,7 @@
             Resources res   = context.getResources();
             int       resId = res.getIdentifier( id, "string", context.getPackageName() );
 
-            return LibResource.getResourceString( context, resId );
+            return getResourceString( context, resId );
         }
 
         /*********************************************************************************
@@ -65,18 +63,6 @@
             Resources res   = context.getResources();
             int       resId = res.getIdentifier( id, "array", context.getPackageName() );
 
-            return LibResource.getResourceStringArray( context, resId );
-        }
-
-        /*********************************************************************************
-        *   Delivers a String resource as a Spanned-object.
-        *
-        *   @param  context     The current system context.
-        *   @param  id          The resource-id of the String to pick.
-        *   @return             A Spanned String object.
-        *********************************************************************************/
-        public static final Spanned getResourceSpannedString( Context context, int id )
-        {
-            return Html.fromHtml( context.getResources().getString( id ) );
+            return getResourceStringArray( context, resId );
         }
     }

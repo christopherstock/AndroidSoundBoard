@@ -1,9 +1,8 @@
 
     package de.mayflower.soundboard;
 
-    import android.content.Intent;
-    import android.speech.RecognizerIntent;
-
+    import  android.content.Intent;
+    import  android.speech.RecognizerIntent;
     import  de.mayflower.lib.Lib;
     import  de.mayflower.lib.LibLauncher;
     import  de.mayflower.soundboard.state.SoundBoardMainScreen;
@@ -107,13 +106,6 @@
                         intent,
                         SoundBoardTestScreen.REQUEST_CODE_RECORD_AUDIO
                     );
-
-
-
-
-
-
-
                     break;
                 }
             }

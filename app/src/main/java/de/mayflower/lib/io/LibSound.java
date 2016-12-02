@@ -1,13 +1,11 @@
 
-    package de.mayflower.lib;
+    package de.mayflower.lib.io;
 
     import  android.content.Context;
     import  android.media.MediaPlayer;
 
     /*********************************************************************************
     *   Manages sound playback.
-    *
-    *   TODO to package io !
     *
     *   @author     Christopher Stock
     *   @version    1.0

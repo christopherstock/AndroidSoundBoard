@@ -3,8 +3,6 @@
 
     import android.app.Activity;
 import android.content.Context;
-import android.content.res.ColorStateList;
-import android.content.res.XmlResourceParser;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.TransitionDrawable;
@@ -12,6 +10,7 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewManager;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
@@ -19,7 +18,6 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,7 +33,7 @@ import de.mayflower.lib.LibResource;
     *   @version    $Rev: 50546 $ $Date: 2013-08-09 16:19:00 +0200 (Fr, 09 Aug 2013) $
     *   @see        "$URL: http://svn.synapsy.net/svn/Synapsy/PicFood/android/PicFood_1_0/trunk/src_lib/com/synapsy/android/lib/ui/LibUI.java $"
     ************************************************************************/
-    public class LibUI
+    public abstract class LibUI
     {
         /************************************************************************
         *   Removes all views of the specified ViewGroup.
@@ -74,20 +72,7 @@ import de.mayflower.lib.LibResource;
 
             button.setText( text, TextView.BufferType.SPANNABLE );
 
-            LibUI.setOnClickAction( button, action );
-        }
-
-        /************************************************************************
-        *   Sets up a {@link TextView} with the major attributes.
-        *
-        *   @param  context         The current system context.
-        *   @param  textView        The TextView to configure.
-        *   @param  typeface        The typeface to use for the caption.
-        *   @param  textID          The resource-ID for the caption of this button.
-        ************************************************************************/
-        public static final void setupTextView( Context context, TextView textView, Typeface typeface, int textID )
-        {
-            LibUI.setupTextView( textView, typeface,  LibResource.getResourceSpannedString( context, textID ) );
+            setOnClickAction( button, action );
         }
 
         /************************************************************************
@@ -101,46 +86,6 @@ import de.mayflower.lib.LibResource;
         {
             textView.setTypeface(   typeface    );
             textView.setText(       text        );
-        }
-
-        /************************************************************************
-        *   Sets up a {@link TextView} with a color-state-list. Different colors
-        *   for different states ( unselected, pressed, selected, hover )
-        *   can be assigned this way.
-        *
-        *   @param  context             The current system context.
-        *   @param  textView            The TextView to configure.
-        *   @param  colorStateListID    The resource-ID of the color state list.
-        ************************************************************************/
-        public static final void setupTextViewColorStateList( Context context, TextView textView, int colorStateListID )
-        {
-            try
-            {
-                XmlResourceParser xrp = context.getResources().getXml( colorStateListID );
-                ColorStateList    csl = ColorStateList.createFromXml( context.getResources(), xrp );
-                textView.setTextColor( csl );
-            }
-            catch ( Throwable t )
-            {
-            }
-        }
-
-        /************************************************************************
-        *   Sets up an item in The according activity context.
-        *   This is represented by a TextView and a LinearLayout in the bg.
-        *
-        *   @param  activity            The activity where this item is specified.
-        *   @param  itemID              The resource-layout-ID of the item's background layout.
-        *   @param  textID              The resource-ID of the TextView component.
-        *   @param  backgroundID        The resource-color-ID for the background of the bg layout.
-        *   @param  captionID           The resource-ID of the caption to assign to the TextView.
-        *   @param  action              The action to launch when this item is clicked.
-        *   @param  typeface            The Typeface to use for the caption.
-        *   @return                     The assembled item in a view container.
-        ************************************************************************/
-        public static final ViewGroup setupItem( Activity activity, int itemID, int textID, int backgroundID, int captionID, Runnable action, Typeface typeface )
-        {
-            return LibUI.setupItem( activity, itemID, textID, backgroundID, LibResource.getResourceSpannedString( activity, captionID ), action, typeface );
         }
 
         /************************************************************************
@@ -158,12 +103,12 @@ import de.mayflower.lib.LibResource;
         ************************************************************************/
         public static final ViewGroup setupItem( Activity activity, int itemID, int textID, int backgroundID, CharSequence caption, Runnable action, Typeface typeface )
         {
-            ViewGroup bgItem = (LinearLayout)activity.findViewById( itemID );
-            LibUI.setOnClickAction( bgItem, action );
+            ViewGroup bgItem = (ViewGroup)activity.findViewById( itemID );
+            setOnClickAction( bgItem, action );
             bgItem.setBackgroundResource( backgroundID );
 
             TextView textItem = (TextView)activity.findViewById( textID );
-            LibUI.setupTextView( textItem, typeface, caption );
+            setupTextView( textItem, typeface, caption );
 
             return bgItem;
         }
@@ -185,7 +130,7 @@ import de.mayflower.lib.LibResource;
                     new View.OnClickListener()
                     {
                         @Override
-                        public void onClick( View aArg0 )
+                        public void onClick( View v)
                         {
                             //mark this view as selected
                             view.setSelected( true );
@@ -215,7 +160,7 @@ import de.mayflower.lib.LibResource;
                     new View.OnLongClickListener()
                     {
                         @Override
-                        public boolean onLongClick( View aArg0 )
+                        public boolean onLongClick( View v)
                         {
                             //mark this view as selected
                             view.setSelected( true );
@@ -263,7 +208,7 @@ import de.mayflower.lib.LibResource;
         {
             if ( view.getParent() != null )
             {
-                ( (ViewGroup)view.getParent() ).removeView( view );
+                ( (ViewManager)view.getParent() ).removeView( view );
             }
         }
 
@@ -433,7 +378,7 @@ import de.mayflower.lib.LibResource;
         *
         *   @param  activity    The according activity context.
         *********************************************************************************/
-        public static final void hideSoftKeyboard( final Activity activity )
+        public static final void hideSoftKeyboard( Activity activity )
         {
             activity.getWindow().setSoftInputMode( WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN );
         }
@@ -492,7 +437,10 @@ import de.mayflower.lib.LibResource;
         public static final void requestFullscreen( Activity activity, boolean showStatusBar )
         {
             activity.requestWindowFeature( Window.FEATURE_NO_TITLE );
-            if ( !showStatusBar ) activity.getWindow().setFlags( WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN );
+            if ( !showStatusBar )
+            {
+                activity.getWindow().setFlags( WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN );
+            }
         }
 
         /************************************************************************
@@ -501,21 +449,19 @@ import de.mayflower.lib.LibResource;
         *   @param  viewGroup       The group to search the other view in.
         *   @param  view            The view to find in the viewGroup.
         *   @return                 The 0-based child-index of the view inside of
-        *                           the viewGroup or <code>-1</code> if the view
+        *                           the viewGroup or -1 if the view
         *                           if NOT contained in the viewGroup.
         ************************************************************************/
         public static final int getChildIndex( ViewGroup viewGroup, View view )
         {
-            int ret = -1;
-
             for ( int i = 0; i < viewGroup.getChildCount(); ++i )
             {
-                if ( viewGroup.getChildAt( i ) == view )
+                if ( viewGroup.getChildAt( i ).equals( view ) )
                 {
                     return i;
                 }
             }
 
-            return ret;
+            return -1;
         }
     }

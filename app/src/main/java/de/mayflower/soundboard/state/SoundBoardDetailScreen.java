@@ -91,7 +91,7 @@
 
                     float deltaX = this.touchEndX - this.touchStartX;
 
-                    if (deltaX > SoundBoardDetailScreen.MIN_SWIPE_DISTANCE) {
+                    if (deltaX > MIN_SWIPE_DISTANCE) {
                         super.onBackPressed();
                         this.animateTransition();
                     }

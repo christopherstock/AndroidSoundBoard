@@ -8,7 +8,7 @@
     android:textStyle="normal"
     android:textColor="@drawable/button_black_fg"
     android:background="@drawable/button_black_bg"
-    android:minWidth="@dimen/button_small_min_width"
-    android:padding="@dimen/button_small_padding"
-    android:layout_margin="@dimen/button_small_margin"
+    android:minWidth="@dimen/button_min_width"
+    android:padding="@dimen/button_padding"
+    android:layout_margin="@dimen/button_margin"
     />

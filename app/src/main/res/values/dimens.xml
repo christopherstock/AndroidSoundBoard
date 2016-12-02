@@ -115,11 +115,12 @@
     <dimen name="register_camera_icon_size">@dimen/icon_size</dimen>
 
     <!-- gridview items -->
+<!--
     <dimen name="gridview_item_border_vertical">5.0dp</dimen>
     <dimen name="gridview_item_icon_size">@dimen/icon_size</dimen>
     <dimen name="grid_item_border_horizontal">5.0dp</dimen>
     <dimen name="gridview_item_detailed_image_user_icon_size">@dimen/icon_size</dimen>
-
+-->
     <!-- items -->
     <dimen name="item_height">50.0dp</dimen>
     <dimen name="item_padding_left">@dimen/content_distance_wmx_normal</dimen>
@@ -130,48 +131,8 @@
     <dimen name="item_border_size">2.5dp</dimen>
 
     <!-- buttons -->
-
-    <!-- button default -->
-    <dimen name="button_default_height">45.0dp</dimen>
-    <dimen name="button_default_width">130.0dp</dimen>
-    <dimen name="button_default_min_width">107.8dp</dimen>
-    <dimen name="button_default_padding_horizontal">15.0dp</dimen>
-
-    <!-- button small -->
-    <dimen name="button_small_height">32.5dp</dimen>
-    <dimen name="button_small_width">70.0dp</dimen>
-    <dimen name="button_small_min_width">50.0dp</dimen>
-
-    <dimen name="button_small_padding">12.0dp</dimen>
-    <dimen name="button_small_margin">10.0dp</dimen>
-
-    <dimen name="button_small_corner_radius">@dimen/corner_radius_normal</dimen>
-
-    <!-- button wide -->
-    <dimen name="button_facebook_height">45.0dp</dimen>
-
-    <!-- button smiley -->
-    <dimen name="button_smiley">75.0dp</dimen>
-
-    <!-- texts -->
-
-    <dimen name="text_image_default">13.0sp</dimen>
-    <dimen name="text_image_link">13.0sp</dimen>
-    <dimen name="text_button">19.0sp</dimen>
-    <dimen name="text_button_small">13.0sp</dimen>
-    <dimen name="text_button_wide_black">22.5sp</dimen>
-    <dimen name="text_button_facebook">15.0sp</dimen>
-    <dimen name="text_tiny">13.0sp</dimen>
-    <dimen name="text_new_entry">14.0sp</dimen>
-    <dimen name="text_item_caption">17.0sp</dimen>
-    <dimen name="text_profile">13.0sp</dimen>
-    <dimen name="text_view_pager_indicator_title">17.0sp</dimen>
-    <dimen name="text_gridview_item_title">13.0sp</dimen>
-    <dimen name="text_gridview_item_description">13.0sp</dimen>
-
-    <!-- debug console -->
-    <dimen name="text_debug_console">15.5sp</dimen>
-    <dimen name="text_debug_console_line_spacing_extra">0.0dp</dimen>
-    <item  name="text_debug_console_line_spacing_multiplier" format="float" type="dimen">1.0</item>
+    <dimen name="button_min_width">50.0dp</dimen>
+    <dimen name="button_padding">12.0dp</dimen>
+    <dimen name="button_margin">10.0dp</dimen>
 
 </resources>

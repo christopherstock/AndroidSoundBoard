@@ -7,7 +7,7 @@
     android:scrollbarStyle="insideOverlay"
     android:scrollbarThumbHorizontal="@drawable/scrollbar"
     android:scrollbarThumbVertical="@drawable/scrollbar"
-    android:scrollbarSize="@dimen/scrollbar_width"
+    android:scrollbarSize="@dimen/scrollbar_size"
     android:fadingEdgeLength="@dimen/fading_edge_size"
     android:fadeScrollbars="true"
     android:paddingLeft="@dimen/screen_border_x"

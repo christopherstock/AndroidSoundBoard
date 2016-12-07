@@ -14,10 +14,10 @@
     <string name="text_recorder">This is the test Activity. This is the test Activity. This is the test Activity. This is the test Activity. This is the test Activity. This is the test Activity.</string>
     <string name="text_viewpager">The ViewPager fragment\'s content.</string>
 
-    <string name="button_welcome">Show test activity</string>
-    <string name="button_test">Back to welcome screen</string>
-    <string name="button_show_main_screen">Show main screen</string>
-    <string name="button_voice_test">Test voice Input</string>
+    <string name="button_back">Back</string>
+    <string name="button_show_recorder">Show recorder</string>
+    <string name="button_show_viewpager">Show ViewPager</string>
+    <string name="button_show_voice_input">Test voice Input</string>
 
     <string name="menu_settings">Settings</string>
 

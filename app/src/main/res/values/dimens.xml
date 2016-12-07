@@ -18,7 +18,7 @@
     <dimen name="button_margin">10.0dp</dimen>
 
     <!-- scrollbar -->
-    <dimen name="scrollbar_width">4.0dp</dimen>
+    <dimen name="scrollbar_size">4.0dp</dimen>
     <dimen name="scrollbar_corner_radius">4.0dp</dimen>
 
     <!-- title logo -->

@@ -10,9 +10,9 @@
     /*******************************************************************************************
     *   The main activity of the SoundBoardWelcome application.
     *
-    *   TODO INIT   Create tabbed view pager.
-    *   TODO HIGH   Pimp the ViewPager! Icon items and new style!
-    *   TODO WEAK   Welcome ViewPager (with circle view-pager-indicator) like in PicFood?
+    *   TODO WEAK   Create tabbed view pager with TabHost?
+    *   TODO WEAK   Pimp ViewPager with icon items and new style?
+    *   TODO WEAK   Create new ViewPager with circle view-pager-indicator?
     *
     *   @author     Christopher Stock
     *   @version    1.0
@@ -43,7 +43,7 @@
             (
                 this,
                 R.id.button_welcome,
-                R.string.button_welcome,
+                R.string.button_show_recorder,
                 new SoundBoardAction( SoundBoardAction.Event.ENTER_ACTIVITY_RECORDER, this )
             );
 
@@ -51,7 +51,7 @@
             (
                 this,
                 R.id.button_show_main_screen,
-                R.string.button_show_main_screen,
+                R.string.button_show_viewpager,
                 new SoundBoardAction( SoundBoardAction.Event.ENTER_ACTIVITY_VIEWPAGER, this )
             );
 

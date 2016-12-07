@@ -48,7 +48,7 @@
             (
                 this,
                 R.id.button_test,
-                R.string.button_test,
+                R.string.button_back,
                 new SoundBoardAction( SoundBoardAction.Event.RETURN_TO_ACTIVITY_WELCOME, this )
             );
 
@@ -56,7 +56,7 @@
             (
                 this,
                 R.id.button_voice_input,
-                R.string.button_voice_test,
+                R.string.button_show_voice_input,
                 new SoundBoardAction( SoundBoardAction.Event.SHOW_VOICE_INPUT_DIALOG, this )
             );
 

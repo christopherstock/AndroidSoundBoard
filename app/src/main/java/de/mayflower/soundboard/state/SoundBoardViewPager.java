@@ -21,7 +21,7 @@
         *******************************************************************************************/
         public SoundBoardViewPager()
         {
-            super(SoundBoardAction.Event.RETURN_TO_ACTIVITY_WELCOME);
+            super( SoundBoardAction.Event.RETURN_TO_ACTIVITY_WELCOME, true );
         }
 
         /*****************************************************************************

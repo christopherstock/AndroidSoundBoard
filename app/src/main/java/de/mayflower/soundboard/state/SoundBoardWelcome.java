@@ -10,7 +10,6 @@
     /*******************************************************************************************
     *   The main activity of the SoundBoardWelcome application.
     *
-    *   TODO ASAP   Show back button in header?
     *   TODO ASAP   Show menu button in header?
     *   TODO HIGH   Pimp the ViewPager! Icon items and new style!
     *   TODO HIGH   Add title screen image.
@@ -31,7 +30,7 @@
         *******************************************************************************************/
         public SoundBoardWelcome()
         {
-            super( SoundBoardAction.Event.SHOW_HOMESCREEN );
+            super( SoundBoardAction.Event.SHOW_HOMESCREEN, false );
         }
 
         /*******************************************************************************************

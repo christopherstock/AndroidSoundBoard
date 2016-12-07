@@ -2,7 +2,6 @@
     package de.mayflower.soundboard.state;
 
     import  android.os.Bundle;
-    import  android.view.KeyEvent;
     import  de.mayflower.lib.ui.LibUI;
     import  de.mayflower.soundboard.R;
     import  de.mayflower.soundboard.SoundBoardAction;
@@ -11,16 +10,15 @@
     /*******************************************************************************************
     *   The main activity of the SoundBoardWelcome application.
     *
-    *   TODO HIGH   New parent class for all activity classes that handle a back key?
-    *
-    *   TODO HIGH   Show back button in header?
-    *   TODO HIGH   Show menu button in header?
+    *   TODO ASAP   Clearer names for all activities.
+    *   TODO ASAP   Show back button in header?
+    *   TODO ASAP   Show menu button in header?
     *   TODO HIGH   Fix DE recognition for speech.
-    *   TODO ASAP   Create tabbed view pager.
-    *   TODO ASAP   Pimp the ViewPager! Icon items and new style!
-    *   TODO ASAP   Prune ALL unused drawables, layouts, values and other resources!!
-    *   TODO ASAP   Welcome ViewPager like in PicFood?
-    *   TODO HIGH   Button in main view for returning?
+    *   TODO HIGH   Create tabbed view pager.
+    *   TODO HIGH   Pimp the ViewPager! Icon items and new style!
+    *   TODO HIGH   Prune ALL unused drawables, layouts, values and other resources!!
+    *   TODO INIT   Welcome ViewPager like in PicFood?
+    *   TODO INIT   Button in main view for returning?
     *   TODO INIT   Hold and pass all data in instance fields? Eliminate all static fields?
     *   TODO LOW    SoundBoardMainScreenViewPagerAdapter to lib?
     *   TODO WEAK   Remove ALL inspection issues AND/OR warnings and confectionate Inspection profile!
@@ -65,23 +63,5 @@
                 R.string.button_show_main_screen,
                 new SoundBoardAction( SoundBoardAction.Event.ENTER_MAIN_SCREEN_ACTIVITY, this )
             );
-        }
-
-        @Override
-        public boolean onKeyDown( int keyCode, KeyEvent event )
-        {
-            switch ( keyCode )
-            {
-                case KeyEvent.KEYCODE_BACK:
-                {
-                    new SoundBoardAction( SoundBoardAction.Event.SHOW_HOMESCREEN, this ).run();
-
-                    //prevent this event from being propagated further
-                    return true;
-                }
-            }
-
-            //let the system handle this event
-            return false;
         }
     }

@@ -5,7 +5,6 @@
     import  android.content.Intent;
     import  android.os.Bundle;
     import  android.speech.RecognizerIntent;
-    import  android.view.KeyEvent;
     import  java.util.ArrayList;
     import  de.mayflower.lib.io.LibSound;
     import  de.mayflower.lib.ui.LibUI;
@@ -59,24 +58,6 @@
                 R.string.button_voice_test,
                 new SoundBoardAction( SoundBoardAction.Event.SHOW_VOICE_INPUT_DIALOG, this )
             );
-        }
-
-        @Override
-        public boolean onKeyDown( int keyCode, KeyEvent event )
-        {
-            switch ( keyCode )
-            {
-                case KeyEvent.KEYCODE_BACK:
-                {
-                    new SoundBoardAction( SoundBoardAction.Event.RETURN_TO_WELCOME_ACTIVITY, this ).run();
-
-                    //prevent this event from being propagated further
-                    return true;
-                }
-            }
-
-            //let the system handle this event
-            return false;
         }
 
         @Override

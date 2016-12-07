@@ -3,7 +3,6 @@
 
     import  android.os.Bundle;
     import  android.support.v4.view.ViewPager;
-    import  android.view.KeyEvent;
     import  de.mayflower.soundboard.R;
     import  de.mayflower.soundboard.SoundBoardAction;
     import  de.mayflower.soundboard.state.activities.SoundBoardActivity;
@@ -59,23 +58,5 @@
 
             ViewPager viewPager = (ViewPager)this.findViewById( R.id.main_screen_pager );
             viewPager.setAdapter( pagerAdapter );
-        }
-
-        @Override
-        public boolean onKeyDown( int keyCode, KeyEvent event )
-        {
-            switch ( keyCode )
-            {
-                case KeyEvent.KEYCODE_BACK:
-                {
-                    new SoundBoardAction( SoundBoardAction.Event.RETURN_TO_WELCOME_ACTIVITY, this ).run();
-
-                    //prevent this event from being propagated further
-                    return true;
-                }
-            }
-
-            //let the system handle this event
-            return false;
         }
     }

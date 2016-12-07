@@ -11,10 +11,8 @@
     *   The main activity of the SoundBoardWelcome application.
     *
     *   TODO ASAP   Show menu button in header?
-    *   TODO INIT   Parent layout class for TextView.
     *   TODO HIGH   Pimp the ViewPager! Icon items and new style!
     *   TODO INIT   Create tabbed view pager.
-    *   TODO WEAK   Fix DE recognition for speech.
     *   TODO WEAK   Welcome ViewPager (with circle view-pager-indicator) like in PicFood?
     *
     *   @author     Christopher Stock

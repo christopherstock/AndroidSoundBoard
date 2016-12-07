@@ -6,11 +6,11 @@
     import  android.os.Bundle;
     import  android.speech.RecognizerIntent;
     import  java.util.ArrayList;
-    import  de.mayflower.lib.io.LibSound;
     import  de.mayflower.lib.ui.LibUI;
     import  de.mayflower.soundboard.R;
     import  de.mayflower.soundboard.SoundBoardAction;
     import  de.mayflower.soundboard.SoundBoardDebug;
+    import  de.mayflower.soundboard.service.SoundBoardPlaybackService;
     import  de.mayflower.soundboard.state.activities.SoundBoardActivity;
 
     /*******************************************************************************************
@@ -21,7 +21,7 @@
     *******************************************************************************************/
     public class SoundBoardRecorder extends SoundBoardActivity
     {
-        /** The request id  */
+        /** The request id for the external activity 'speech recognizer'. */
         public      static  final   int             REQUEST_CODE_RECORD_AUDIO       = 1;
 
         /*******************************************************************************************
@@ -86,35 +86,12 @@
 
                     if (resultCode == Activity.RESULT_OK)
                     {
-                        // TODO to service!
-
                         SoundBoardDebug.major.out("Received correct audio.");
 
                         ArrayList<String> matches = data.getStringArrayListExtra( RecognizerIntent.EXTRA_RESULTS );
 
-                        for ( String match : matches )
-                        {
-                            SoundBoardDebug.major.out("[" + match + "]");
-
-                            if ( match.equalsIgnoreCase( "ich greife an" ) )
-                            {
-                                SoundBoardDebug.major.out("Play sound 'attack'");
-                                LibSound.playSound( this, R.raw.sound_attack );
-                                break;
-                            }
-                            else if ( match.equalsIgnoreCase( "ich ziehe mich zurück" ) )
-                            {
-                                SoundBoardDebug.major.out("Play sound 'retreat'");
-                                LibSound.playSound( this, R.raw.sound_retreat );
-                                break;
-                            }
-                            else if ( match.equalsIgnoreCase( "ich gebe auf" ) )
-                            {
-                                SoundBoardDebug.major.out("Play sound 'resign'");
-                                LibSound.playSound( this, R.raw.sound_resign );
-                                break;
-                            }
-                        }
+                        SoundBoardPlaybackService service = new SoundBoardPlaybackService();
+                        service.handleReceivedSpeechStrings( this, matches.toArray( new String[] {} ) );
                     }
                     else
                     {

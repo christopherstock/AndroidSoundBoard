@@ -5,7 +5,6 @@
     import  android.content.Intent;
     import  android.os.Bundle;
     import  android.speech.RecognizerIntent;
-    import  android.support.v7.app.AppCompatActivity;
     import  android.view.KeyEvent;
     import  java.util.ArrayList;
     import  de.mayflower.lib.io.LibSound;
@@ -13,6 +12,7 @@
     import  de.mayflower.soundboard.R;
     import  de.mayflower.soundboard.SoundBoardAction;
     import  de.mayflower.soundboard.SoundBoardDebug;
+    import  de.mayflower.soundboard.state.activities.SoundBoardActivity;
 
     /*******************************************************************************************
     *   The test activity.
@@ -20,7 +20,7 @@
     *   @author     Christopher Stock
     *   @version    1.0
     *******************************************************************************************/
-    public class SoundBoardTest extends AppCompatActivity
+    public class SoundBoardTest extends SoundBoardActivity
     {
         /** The request id  */
         public      static  final   int             REQUEST_CODE_RECORD_AUDIO       = 1;

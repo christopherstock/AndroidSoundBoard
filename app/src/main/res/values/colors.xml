@@ -3,7 +3,7 @@
 
     <!-- project -->
     <color name="project_mayflower_orange_default">#ffed7304</color>
-    <color name="project_mayflower_orange_light">#ffeca768</color>
+    <color name="project_mayflower_orange_light">#ffffac61</color>
 
     <color name="project_light_grey">#ffededed</color>
     <color name="project_medium_grey">#ffcccccc</color>

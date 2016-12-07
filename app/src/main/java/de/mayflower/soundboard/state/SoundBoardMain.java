@@ -1,14 +1,13 @@
 
     package de.mayflower.soundboard.state;
 
-    import android.os.Bundle;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.view.KeyEvent;
-
-import de.mayflower.soundboard.R;
-import de.mayflower.soundboard.SoundBoardAction;
-import de.mayflower.soundboard.ui.SoundBoardMainScreenViewPagerAdapter;
+    import  android.os.Bundle;
+    import  android.support.v4.view.ViewPager;
+    import  android.view.KeyEvent;
+    import  de.mayflower.soundboard.R;
+    import  de.mayflower.soundboard.SoundBoardAction;
+    import  de.mayflower.soundboard.state.activities.SoundBoardActivity;
+    import  de.mayflower.soundboard.ui.SoundBoardMainScreenViewPagerAdapter;
 
     /**********************************************************************************************
     *   The startup activity class.
@@ -16,7 +15,7 @@ import de.mayflower.soundboard.ui.SoundBoardMainScreenViewPagerAdapter;
     *   @author     Christopher Stock
     *   @version    1.0
     ***********************************************************************************************/
-    public class SoundBoardMain extends AppCompatActivity
+    public class SoundBoardMain extends SoundBoardActivity
     {
         /*****************************************************************************
         *   Being invoked when this activity is being created.

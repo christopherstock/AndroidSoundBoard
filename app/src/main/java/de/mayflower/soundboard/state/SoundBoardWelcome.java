@@ -2,11 +2,11 @@
     package de.mayflower.soundboard.state;
 
     import  android.os.Bundle;
-    import  android.support.v7.app.AppCompatActivity;
     import  android.view.KeyEvent;
     import  de.mayflower.lib.ui.LibUI;
     import  de.mayflower.soundboard.R;
     import  de.mayflower.soundboard.SoundBoardAction;
+    import  de.mayflower.soundboard.state.activities.SoundBoardActivity;
 
     /*******************************************************************************************
     *   The main activity of the SoundBoardWelcome application.
@@ -29,7 +29,7 @@
     *   @author     Christopher Stock
     *   @version    1.0
     *******************************************************************************************/
-    public class SoundBoardWelcome extends AppCompatActivity
+    public class SoundBoardWelcome extends SoundBoardActivity
     {
         /*******************************************************************************************
         *   Being invoked when the application starts and resumes.

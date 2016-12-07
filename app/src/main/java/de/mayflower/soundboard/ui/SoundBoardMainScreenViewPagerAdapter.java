@@ -8,6 +8,8 @@
     /************************************************************************
     *   The adapter for the main screen view pager.
     *
+    *   TODO To lib!
+    *
     *   @author     Christopher Stock
     *   @version    1.0
     ************************************************************************/
@@ -27,7 +29,7 @@
 */
             this.fragments = new SoundBoardMainScreenViewPagerFragment[5];
 
-            for (int i = 0; i < this.fragments.length; i++ )
+            for ( int i = 0; i < this.fragments.length; i++ )
             {
                 this.fragments[i] = new SoundBoardMainScreenViewPagerFragment();
 /*

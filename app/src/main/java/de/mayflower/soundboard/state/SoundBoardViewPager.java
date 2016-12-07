@@ -2,11 +2,10 @@
     package de.mayflower.soundboard.state;
 
     import  android.os.Bundle;
-    import  android.support.v4.view.ViewPager;
+    import  de.mayflower.lib.ui.LibUI;
     import  de.mayflower.soundboard.R;
     import  de.mayflower.soundboard.SoundBoardAction;
     import  de.mayflower.soundboard.state.activities.SoundBoardActivity;
-    import  de.mayflower.soundboard.ui.SoundBoardMainScreenViewPagerAdapter;
 
     /**********************************************************************************************
     *   The viewPager activity.
@@ -34,23 +33,10 @@
 
             this.setContentView( R.layout.activity_viewpager );
 
-            // TODO to LibUI
-            this.setupPagerAdapter();
-        }
-
-        /*****************************************************************************
-        *   Sets up the pager-adapter for the pager view.
-        *****************************************************************************/
-        private void setupPagerAdapter()
-        {
-            SoundBoardMainScreenViewPagerAdapter pagerAdapter = new SoundBoardMainScreenViewPagerAdapter
+            LibUI.setupViewPagerAdapter
             (
-                this.getSupportFragmentManager()
+                this,
+                R.id.viewpager_pager
             );
-
-            pagerAdapter.init();
-
-            ViewPager viewPager = (ViewPager)this.findViewById( R.id.main_screen_pager );
-            viewPager.setAdapter( pagerAdapter );
         }
     }

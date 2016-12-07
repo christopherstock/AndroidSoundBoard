@@ -3,6 +3,8 @@
 
     import  android.app.Activity;
     import  android.content.Context;
+    import  android.support.v4.app.FragmentActivity;
+    import  android.support.v4.view.ViewPager;
     import  android.view.LayoutInflater;
     import  android.view.View;
     import  android.view.ViewGroup;
@@ -11,6 +13,7 @@
     import  android.widget.Toast;
     import  java.util.Vector;
     import  de.mayflower.lib.LibResource;
+    import  de.mayflower.soundboard.ui.SoundBoardMainScreenViewPagerAdapter;
 
     /************************************************************************
     *   All independent UI-functions.
@@ -21,28 +24,6 @@
     ************************************************************************/
     public abstract class LibUI
     {
-        /************************************************************************
-        *   Removes all views of the specified ViewGroup.
-        *   This method is performed on the UI-Thread.
-        *
-        *   @param  activity        The according activity context.
-        *   @param  viewGroup       The ViewGroup to remove all views from.
-        ************************************************************************/
-        public static final void removeAllViewsUIThreaded( Activity activity, final ViewGroup viewGroup )
-        {
-            activity.runOnUiThread
-            (
-                new Runnable()
-                {
-                    @Override
-                    public void run()
-                    {
-                        viewGroup.removeAllViews();
-                    }
-                }
-            );
-        }
-
         /************************************************************************
         *   Sets up a {@link Button} with the major attributes.
         *
@@ -77,6 +58,24 @@
         }
 
         /************************************************************************
+        *   Sets up a {@link TextView} with the major attributes.
+        *
+        *   @param  fragmentActivity The current system context.
+        *   @param  viewPagerId      The ID of the ViewPager to setup.
+        ************************************************************************/
+        public static final void setupViewPagerAdapter( FragmentActivity fragmentActivity, int viewPagerId )
+        {
+            SoundBoardMainScreenViewPagerAdapter pagerAdapter = new SoundBoardMainScreenViewPagerAdapter
+            (
+                fragmentActivity.getSupportFragmentManager()
+            );
+            pagerAdapter.init();
+
+            ViewPager viewPager = (ViewPager)fragmentActivity.findViewById( viewPagerId );
+            viewPager.setAdapter( pagerAdapter );
+        }
+
+        /************************************************************************
         *   Assigns the specified action to the specified view.
         *   The action is invoked if the view's OnClick-event is invoked.
         *   The view is marked as selected in addition.
@@ -104,6 +103,28 @@
                     }
                 );
             }
+        }
+
+        /************************************************************************
+        *   Removes all views of the specified ViewGroup.
+        *   This method is performed on the UI-Thread.
+        *
+        *   @param  activity        The according activity context.
+        *   @param  viewGroup       The ViewGroup to remove all views from.
+        ************************************************************************/
+        public static final void removeAllViewsUIThreaded( Activity activity, final ViewGroup viewGroup )
+        {
+            activity.runOnUiThread
+            (
+                new Runnable()
+                {
+                    @Override
+                    public void run()
+                    {
+                        viewGroup.removeAllViews();
+                    }
+                }
+            );
         }
 
         /*********************************************************************************

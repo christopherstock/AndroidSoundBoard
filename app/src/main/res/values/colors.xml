@@ -2,36 +2,38 @@
 <resources>
 
     <!-- project -->
-    <color name="project_mayflower_orange">#ffed7304</color>
+    <color name="project_mayflower_orange_default">#ffed7304</color>
+    <color name="project_mayflower_orange_light">#ffeca768</color>
+
     <color name="project_light_grey">#ffededed</color>
     <color name="project_medium_grey">#ffcccccc</color>
-    <color name="project_dark_grey">#ff8b8b8b</color>
+    <color name="project_dark_grey">#ff969696</color>
 
     <!-- primal -->
-    <color name="primal_light">@color/project_mayflower_orange</color>
+    <color name="primal_light">@color/project_mayflower_orange_default</color>
     <color name="primal_dark">@color/project_dark_grey</color>
-    <color name="primal_accent">@color/project_mayflower_orange</color>
+    <color name="primal_accent">@color/project_mayflower_orange_default</color>
 
     <!-- screen -->
     <color name="screen_bg">#ffffffff</color>
 
     <!-- scrollbar -->
-    <color name="scrollbar_start">@color/project_mayflower_orange</color>
-    <color name="scrollbar_end">@color/project_mayflower_orange</color>
+    <color name="scrollbar_start">@color/project_mayflower_orange_default</color>
+    <color name="scrollbar_end">@color/project_mayflower_orange_default</color>
 
     <!-- button default -->
     <color name="button_default_fg_unselect">#ffffffff</color>
-    <color name="button_default_fg_hover">@color/project_medium_grey</color>
+    <color name="button_default_fg_hover">#ffffffff</color>
     <color name="button_default_fg_select">#ffffffff</color>
     <color name="button_default_bg_unselect">@color/project_medium_grey</color>
-    <color name="button_default_bg_hover">@color/project_light_grey</color>
-    <color name="button_default_bg_select">@color/project_mayflower_orange</color>
+    <color name="button_default_bg_hover">@color/project_dark_grey</color>
+    <color name="button_default_bg_select">@color/project_mayflower_orange_default</color>
 
     <!-- button special -->
     <color name="button_special_fg_unselect">@color/button_default_fg_unselect</color>
     <color name="button_special_fg_hover">@color/button_default_fg_hover</color>
     <color name="button_special_fg_select">@color/button_default_fg_select</color>
-    <color name="button_special_bg_unselect">@color/project_mayflower_orange</color>
+    <color name="button_special_bg_unselect">@color/project_mayflower_orange_light</color>
     <color name="button_special_bg_hover">@color/button_default_bg_hover</color>
     <color name="button_special_bg_select">@color/button_default_bg_select</color>
 

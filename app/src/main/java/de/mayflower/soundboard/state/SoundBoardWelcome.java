@@ -12,12 +12,14 @@
     *   The main activity of the SoundBoardWelcome application.
     *
     *   TODO HIGH   New parent class for all activity classes that handle a back key?
+    *
+    *   TODO HIGH   Show back button in header?
+    *   TODO HIGH   Show menu button in header?
     *   TODO HIGH   Fix DE recognition for speech.
     *   TODO ASAP   Create tabbed view pager.
     *   TODO ASAP   Pimp the ViewPager! Icon items and new style!
     *   TODO ASAP   Prune ALL unused drawables, layouts, values and other resources!!
     *   TODO ASAP   Welcome ViewPager like in PicFood?
-    *   TODO HIGH   Show back button in header.
     *   TODO HIGH   Button in main view for returning?
     *   TODO INIT   Hold and pass all data in instance fields? Eliminate all static fields?
     *   TODO LOW    SoundBoardMainScreenViewPagerAdapter to lib?

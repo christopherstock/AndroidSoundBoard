@@ -10,7 +10,6 @@
     /*******************************************************************************************
     *   The main activity of the SoundBoardWelcome application.
     *
-    *   TODO WEAK   Clarify 9-patch drawable size problem.
     *   TODO ASAP   Show back button in header?
     *   TODO ASAP   Show menu button in header?
     *   TODO HIGH   Create tabbed view pager.

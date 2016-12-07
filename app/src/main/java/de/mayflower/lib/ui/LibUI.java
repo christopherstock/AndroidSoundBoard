@@ -13,7 +13,6 @@
     import  android.widget.Toast;
     import  java.util.Vector;
     import  de.mayflower.lib.LibResource;
-    import  de.mayflower.soundboard.ui.SoundBoardMainScreenViewPagerAdapter;
 
     /************************************************************************
     *   All independent UI-functions.
@@ -65,7 +64,7 @@
         ************************************************************************/
         public static final void setupViewPagerAdapter( FragmentActivity fragmentActivity, int viewPagerId )
         {
-            SoundBoardMainScreenViewPagerAdapter pagerAdapter = new SoundBoardMainScreenViewPagerAdapter
+            LibViewPagerAdapter pagerAdapter = new LibViewPagerAdapter
             (
                 fragmentActivity.getSupportFragmentManager()
             );

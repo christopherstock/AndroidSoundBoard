@@ -1,15 +1,14 @@
 
-    package de.mayflower.soundboard.ui;
+    package de.mayflower.lib.ui;
 
-    import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-    import android.widget.TextView;
-
-    import de.mayflower.soundboard.R;
-import de.mayflower.soundboard.SoundBoardDebug;
+    import  android.os.Bundle;
+    import  android.support.v4.app.Fragment;
+    import  android.view.LayoutInflater;
+    import  android.view.View;
+    import  android.view.ViewGroup;
+    import  android.widget.TextView;
+    import  de.mayflower.soundboard.R;
+    import  de.mayflower.soundboard.SoundBoardDebug;
 
     /************************************************************************
     *   The fragment for the ViewPager.
@@ -17,7 +16,7 @@ import de.mayflower.soundboard.SoundBoardDebug;
     *   @author     Christopher Stock
     *   @version    1.0
     ************************************************************************/
-    public class SoundBoardMainScreenViewPagerFragment extends Fragment
+    public class LibViewPagerFragment extends Fragment
     {
         private                             int         index                   = 0;
         private                             String      title                   = null;
@@ -37,13 +36,11 @@ import de.mayflower.soundboard.SoundBoardDebug;
 
             SoundBoardDebug.major.out("onCreateView for fragment [" + this.index + "]");
 
-            View      rootView = inflater.inflate( R.layout.activity_viewpager_fragment, container, false );
-/*
-            ViewGroup sv       = (ViewGroup)rootView.findViewById( R.id.view_pager_scrollview_content );
-*/
-
-            TextView tv = (TextView)rootView.findViewById( R.id.text_viewpager );
+            View     rootView = inflater.inflate( R.layout.activity_viewpager_fragment, container, false );
+            TextView tv       = (TextView)rootView.findViewById( R.id.text_viewpager );
             tv.setText( R.string.text_viewpager );
+
+          //ViewGroup sv       = (ViewGroup)rootView.findViewById( R.id.view_pager_scrollview_content );
 /*
             LibUI.setupTextView
             (

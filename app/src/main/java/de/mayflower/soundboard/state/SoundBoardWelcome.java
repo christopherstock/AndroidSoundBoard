@@ -32,6 +32,14 @@
     public class SoundBoardWelcome extends SoundBoardActivity
     {
         /*******************************************************************************************
+        *   Creates a new Activity.
+        *******************************************************************************************/
+        public SoundBoardWelcome()
+        {
+            super( SoundBoardAction.Event.SHOW_HOMESCREEN );
+        }
+
+        /*******************************************************************************************
         *   Being invoked when the application starts and resumes.
         *
         *   @param savedInstanceState The data bundle being passed if any.

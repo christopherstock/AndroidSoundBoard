@@ -26,6 +26,14 @@
         public      static  final   int             REQUEST_CODE_RECORD_AUDIO       = 1;
 
         /*******************************************************************************************
+        *   Creates a new Activity.
+        *******************************************************************************************/
+        public SoundBoardTest()
+        {
+            super(SoundBoardAction.Event.RETURN_TO_WELCOME_ACTIVITY );
+        }
+
+        /*******************************************************************************************
         *   Being invoked when the application starts and resumes.
         *
         *   @param savedInstanceState The data bundle being passed if any.

@@ -10,13 +10,21 @@
     import  de.mayflower.soundboard.ui.SoundBoardMainScreenViewPagerAdapter;
 
     /**********************************************************************************************
-    *   The startup activity class.
+    *   The viewPager activity.
     *
     *   @author     Christopher Stock
     *   @version    1.0
     ***********************************************************************************************/
     public class SoundBoardMain extends SoundBoardActivity
     {
+        /*******************************************************************************************
+        *   Creates a new Activity.
+        *******************************************************************************************/
+        public SoundBoardMain()
+        {
+            super(SoundBoardAction.Event.RETURN_TO_WELCOME_ACTIVITY );
+        }
+
         /*****************************************************************************
         *   Being invoked when this activity is being created.
         *****************************************************************************/

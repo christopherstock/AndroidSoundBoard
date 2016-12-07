@@ -7,11 +7,7 @@
     import  android.view.LayoutInflater;
     import  android.view.View;
     import  android.view.ViewGroup;
-    import  android.view.WindowManager;
-    import  android.view.inputmethod.EditorInfo;
-    import  android.view.inputmethod.InputMethodManager;
     import  android.widget.Button;
-    import  android.widget.EditText;
     import  android.widget.TextView;
     import  android.widget.Toast;
     import  java.util.Vector;
@@ -162,46 +158,6 @@
                     }
                 }
             );
-        }
-
-        /*********************************************************************************
-        *   Lets the soft keyboard pop up.
-        *
-        *   @param  activity    The according activity context.
-        *   @param  view        The EditText that is provided with input from this soft keyboards.
-        *********************************************************************************/
-        public static final void showSoftKeyboard( final Activity activity, final EditText view )
-        {
-            activity.runOnUiThread
-            (
-                new Runnable()
-                {
-                    @Override
-                    public void run()
-                    {
-                        try
-                        {
-                            InputMethodManager mgr = (InputMethodManager)activity.getSystemService( Context.INPUT_METHOD_SERVICE );
-                            view.setImeOptions( EditorInfo.IME_ACTION_SEARCH|EditorInfo.IME_FLAG_NO_EXTRACT_UI );
-                            mgr.showSoftInput( view, InputMethodManager.SHOW_FORCED );
-                        }
-                        catch ( Throwable t )
-                        {
-                            //thrown if the soft keyboard has never been shown before
-                        }
-                    }
-                }
-            );
-        }
-
-        /*********************************************************************************
-        *   Lets the soft keyboard pop down.
-        *
-        *   @param  activity    The according activity context.
-        *********************************************************************************/
-        public static final void hideSoftKeyboard( Activity activity )
-        {
-            activity.getWindow().setSoftInputMode( WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN );
         }
 
         /************************************************************************

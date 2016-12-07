@@ -35,15 +35,7 @@
 
             this.setupPagerAdapter();
         }
-/*
-        @Override
-        public boolean onOptionsItemSelected(MenuItem item)
-        {
-            SoundBoardDebug.major.out( SoundBoardViewPager.class + "::onOptionsItemSelected()" );
 
-            return super.onOptionsItemSelected(item);
-        }
-*/
         /*****************************************************************************
         *   Sets up the pager-adapter for the pager view.
         *****************************************************************************/

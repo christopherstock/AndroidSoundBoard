@@ -1,42 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/view_pager_fragment"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="left|top"
-    android:background="@color/screen_bg"
+    android:layout_height="wrap_content"
+    android:scrollbarStyle="outsideOverlay"
+    android:scrollbarThumbHorizontal="@drawable/scrollbar"
+    android:scrollbarThumbVertical="@drawable/scrollbar"
+    android:scrollbarSize="@dimen/scrollbar_width"
+    android:fadingEdgeLength="@dimen/fading_edge_size"
+    android:requiresFadingEdge="vertical"
+    android:fadeScrollbars="true"
     >
 
-    <!-- TODO try pruning parent LL -->
-
-    <ScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    <!-- scrollbar content -->
+    <LinearLayout
+        android:id="@+id/view_pager_scrollview_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scrollbarStyle="outsideOverlay"
-        android:scrollbarThumbHorizontal="@drawable/scrollbar"
-        android:scrollbarThumbVertical="@drawable/scrollbar"
-        android:scrollbarSize="@dimen/scrollbar_width"
-        android:fadingEdgeLength="@dimen/fading_edge_size"
-        android:requiresFadingEdge="vertical"
-        android:fadeScrollbars="true"
+        android:orientation="vertical"
+        android:gravity="center_horizontal|top"
+        android:paddingLeft="@dimen/content_distance_wmx_normal"
+        android:paddingRight="@dimen/content_distance_wmx_normal"
+        android:paddingBottom="@dimen/content_distance_wmx_normal"
         >
 
-        <!-- scrollbar content -->
-        <LinearLayout
-            android:id="@+id/view_pager_scrollview_content"
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center_horizontal|top"
-            android:paddingLeft="@dimen/content_distance_wmx_normal"
-            android:paddingRight="@dimen/content_distance_wmx_normal"
-            android:paddingBottom="@dimen/content_distance_wmx_normal"
-            >
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+            android:text="@string/text_viewpager_activity"
+            />
 
-        </LinearLayout>
+    </LinearLayout>
 
-    </ScrollView>
-
-</LinearLayout>
+</ScrollView>

@@ -10,15 +10,15 @@
     /*******************************************************************************************
     *   The main activity of the SoundBoardWelcome application.
     *
+    *   TODO ASAP   Remove ALL inspection issues AND/OR warnings and confectionate Inspection profile!
+    *
     *   TODO ASAP   Show menu button in header?
     *   TODO HIGH   Pimp the ViewPager! Icon items and new style!
-    *   TODO HIGH   Add title screen image.
-    *   TODO INIT   Button in main view for returning?
-    *   TODO INIT   Welcome ViewPager like in PicFood?
     *   TODO INIT   Create tabbed view pager.
+    *   TODO INIT   Parent layout class for TextView.
     *   TODO LOW    SoundBoardMainScreenViewPagerAdapter to lib?
-    *   TODO WEAK   Remove ALL inspection issues AND/OR warnings and confectionate Inspection profile!
     *   TODO WEAK   Fix DE recognition for speech.
+    *   TODO WEAK   Welcome ViewPager (with circle view-pager-indicator) like in PicFood?
     *
     *   @author     Christopher Stock
     *   @version    1.0

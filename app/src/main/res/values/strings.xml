@@ -7,6 +7,7 @@
 
     <string name="text_welcome_activity">Welcome to this test activity. Welcome to this test activity. Welcome to this test activity. Welcome to this test activity. Welcome to this test activity.</string>
     <string name="text_test_activity">This is the test Activity. This is the test Activity. This is the test Activity. This is the test Activity. This is the test Activity. This is the test Activity.</string>
+    <string name="text_viewpager_activity">The ViewPager fragment\'s content.</string>
 
     <string name="button_welcome">Show test activity</string>
     <string name="button_test">Back to welcome screen</string>

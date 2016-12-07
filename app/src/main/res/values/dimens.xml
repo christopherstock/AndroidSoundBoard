@@ -25,7 +25,7 @@
     <!-- content wmx -->
     <dimen name="content_distance_wmx_normal">10.0dp</dimen>
 
-
-    <dimen name="title_logo_height">75.0dp</dimen>
+    <!-- title logo -->
+    <dimen name="title_logo_height">100.0dp</dimen>
 
 </resources>

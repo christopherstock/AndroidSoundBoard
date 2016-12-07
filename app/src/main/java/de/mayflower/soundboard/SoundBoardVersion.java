@@ -38,12 +38,12 @@
         ******************************************************************************************/
         private SoundBoardVersion(String aClientVersionNumber, int aVersionCode, String aBackendVersionNumber, String aReleaseDate, String aCodename, String aLog)
         {
-            this.clientVersionNumber = aClientVersionNumber;
-            this.versionCode = aVersionCode;
+            this.clientVersionNumber  = aClientVersionNumber;
+            this.versionCode          = aVersionCode;
             this.backendVersionNumber = aBackendVersionNumber;
-            this.releaseDate = aReleaseDate;
-            this.codeName = aCodename;
-            this.log = aLog;
+            this.releaseDate          = aReleaseDate;
+            this.codeName             = aCodename;
+            this.log                  = aLog;
         }
 
         /******************************************************************************************
@@ -83,7 +83,17 @@
         ******************************************************************************************/
         public static final String getVersion()
         {
-            return ( SoundBoardSettings.Paramounts.PROJECT_NAME + ", SoundBoardVersion [" + SoundBoardVersion.values()[ 0 ].clientVersionNumber + "] codename [" + SoundBoardVersion.values()[ 0 ].codeName + "] released on [" + SoundBoardVersion.values()[ 0 ].releaseDate + "]" );
+            return
+            (
+                    SoundBoardSettings.Paramounts.PROJECT_NAME
+                +   ", SoundBoardVersion ["
+                +   SoundBoardVersion.values()[ 0 ].clientVersionNumber
+                +   "] codename ["
+                +   SoundBoardVersion.values()[ 0 ].codeName
+                +   "] released on ["
+                +   SoundBoardVersion.values()[ 0 ].releaseDate
+                +   "]"
+            );
         }
 
         /******************************************************************************************
@@ -95,11 +105,22 @@
         public static final String getVersionLog()
         {
             StringBuffer ret = new StringBuffer();
-            for (int i = 0; i < SoundBoardVersion.values().length; ++i )
+            for ( int i = 0; i < SoundBoardVersion.values().length; ++i )
             {
-                ret.append(SoundBoardVersion.values()[ i ].clientVersionNumber + " " + SoundBoardVersion.values()[ i ].codeName + " " + SoundBoardVersion.values()[ i ].releaseDate + " " + SoundBoardVersion.values()[ i ].log + "\n" );
+                ret.append
+                (
+                        SoundBoardVersion.values()[ i ].clientVersionNumber
+                    +   " "
+                    +   SoundBoardVersion.values()[ i ].codeName
+                    +   " "
+                    +   SoundBoardVersion.values()[ i ].releaseDate
+                    +   " "
+                    +   SoundBoardVersion.values()[ i ].log
+                    +   "\n"
+                );
             }
             ret.append( "\n" );
+
             return ret.toString();
         }
     }

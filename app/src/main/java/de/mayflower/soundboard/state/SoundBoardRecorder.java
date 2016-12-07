@@ -25,7 +25,7 @@
         public      static  final   int             REQUEST_CODE_RECORD_AUDIO       = 1;
 
         /*******************************************************************************************
-        *   Creates a new Activity.
+        *   Creates a new Activity specifying the backKey event.
         *******************************************************************************************/
         public SoundBoardRecorder()
         {

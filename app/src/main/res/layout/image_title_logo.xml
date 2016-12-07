@@ -4,10 +4,11 @@
     android:contentDescription="@string/empty_string"
     android:layout_width="wrap_content"
     android:layout_height="@dimen/title_logo_height"
+    android:layout_gravity="center_horizontal"
     android:layout_weight="0.0"
     android:scaleType="centerInside"
     android:adjustViewBounds="true"
-    android:src="@mipmap/ic_launcher"
+    android:src="@drawable/title_logo"
     android:paddingTop="0.0dp"
     android:paddingBottom="0.0dp"
     />

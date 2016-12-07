@@ -17,7 +17,7 @@
     public class SoundBoardViewPager extends SoundBoardActivity
     {
         /*******************************************************************************************
-        *   Creates a new Activity.
+        *   Creates a new Activity specifying the backKey event.
         *******************************************************************************************/
         public SoundBoardViewPager()
         {

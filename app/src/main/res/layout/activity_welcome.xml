@@ -30,6 +30,11 @@
         tools:context="de.mayflower.soundboard.state.SoundBoardWelcome"
         >
 
+        <include
+            android:id="@+id/image_title_logo"
+            layout="@layout/image_title_logo"
+            />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -47,6 +52,8 @@
             android:id="@+id/button_show_main_screen"
             layout="@layout/button_special"
             />
+
+
 
         <include
             android:id="@+id/button_show_main_screen2"

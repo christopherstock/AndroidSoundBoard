@@ -10,9 +10,9 @@
     /*******************************************************************************************
     *   The main activity of the SoundBoardWelcome application.
     *
-    *   TODO ASAP   Show menu button in header?
-    *   TODO HIGH   Pimp the ViewPager! Icon items and new style!
     *   TODO INIT   Create tabbed view pager.
+    *   TODO HIGH   Pimp the ViewPager! Icon items and new style!
+    *   TODO LOW    New activity 'settings'.
     *   TODO WEAK   Welcome ViewPager (with circle view-pager-indicator) like in PicFood?
     *
     *   @author     Christopher Stock
@@ -25,7 +25,7 @@
         *******************************************************************************************/
         public SoundBoardWelcome()
         {
-            super( SoundBoardAction.Event.SHOW_HOMESCREEN, false );
+            super( SoundBoardAction.Event.SHOW_HOMESCREEN, false, true );
         }
 
         /*******************************************************************************************

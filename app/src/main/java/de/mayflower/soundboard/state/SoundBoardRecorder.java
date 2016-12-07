@@ -29,7 +29,7 @@
         *******************************************************************************************/
         public SoundBoardRecorder()
         {
-            super( SoundBoardAction.Event.RETURN_TO_ACTIVITY_WELCOME, true );
+            super( SoundBoardAction.Event.RETURN_TO_ACTIVITY_WELCOME, true, true );
         }
 
         /*******************************************************************************************

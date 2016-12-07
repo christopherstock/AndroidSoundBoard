@@ -4,8 +4,8 @@
     import  android.os.Bundle;
     import  android.support.v7.app.ActionBar;
     import  android.support.v7.app.AppCompatActivity;
-    import  android.view.KeyEvent;
-    import  android.view.MenuItem;
+    import  android.view.*;
+    import  de.mayflower.soundboard.R;
     import  de.mayflower.soundboard.SoundBoardAction;
 
     /***********************************************************************************************
@@ -16,15 +16,14 @@
      **********************************************************************************************/
     public abstract class SoundBoardActivity extends AppCompatActivity
     {
-        /*******************************************************************************************
-        *   The event to launch when the backKey is pressed.
-        *******************************************************************************************/
+        /** The event to launch when the backKey is pressed. */
         private             SoundBoardAction.Event      backKeyEvent                    = null;
 
-        /*******************************************************************************************
-        *   Specifies if the back button should be shown in the action bar.
-        *******************************************************************************************/
+        /** Specifies if the back button should be shown in the title bar. */
         private             boolean                     showBackButtonInActionBar       = false;
+
+        /** Specifies if the menu button should be shown in the title bar. */
+        private             boolean                     showMenuButtonInActionBar       = false;
 
         /*******************************************************************************************
         *   Creates a new Activity with an assignable backKey.
@@ -32,25 +31,13 @@
         protected SoundBoardActivity
         (
             SoundBoardAction.Event backKeyEvent,
-            boolean                showBackButtonInActionBar
+            boolean                showBackButtonInActionBar,
+            boolean                showMenuButtonInActionBar
         )
         {
             this.backKeyEvent              = backKeyEvent;
             this.showBackButtonInActionBar = showBackButtonInActionBar;
-        }
-
-        /*******************************************************************************************
-        *   Initializes the buttons for the action bar.
-        *******************************************************************************************/
-        private void initActionBar()
-        {
-            ActionBar ab = this.getSupportActionBar();
-
-            if ( this.showBackButtonInActionBar && ( ab != null ) )
-            {
-                ab.setDisplayShowHomeEnabled( true );
-                ab.setDisplayHomeAsUpEnabled( true );
-            }
+            this.showMenuButtonInActionBar = showMenuButtonInActionBar;
         }
 
         /*******************************************************************************************
@@ -64,6 +51,20 @@
             super.onCreate( savedInstanceState );
 
             this.initActionBar();
+        }
+
+        /*******************************************************************************************
+         *   Initializes the buttons for the action bar.
+         *******************************************************************************************/
+        private void initActionBar()
+        {
+            ActionBar ab = this.getSupportActionBar();
+
+            if ( this.showBackButtonInActionBar && ( ab != null ) )
+            {
+                ab.setDisplayShowHomeEnabled( true );
+                ab.setDisplayHomeAsUpEnabled( true );
+            }
         }
 
         @Override
@@ -84,16 +85,41 @@
         }
 
         @Override
+        public boolean onCreateOptionsMenu( Menu menu )
+        {
+            if ( this.showMenuButtonInActionBar )
+            {
+                MenuInflater inflater = getMenuInflater();
+                inflater.inflate( R.menu.default_menu, menu );
+
+                return true;
+            }
+
+            return false;
+        }
+
+        @Override
         public boolean onOptionsItemSelected(MenuItem item)
         {
             int id = item.getItemId();
 
-            if ( id == android.R.id.home )
+            switch ( id )
             {
-                new SoundBoardAction( this.backKeyEvent, this ).run();
+                case android.R.id.home:
+                {
+                    new SoundBoardAction(this.backKeyEvent, this).run();
 
-                //prevent system from handling this event
-                return true;
+                    //prevent system from handling this event
+                    return true;
+                }
+
+                case R.id.menu_settings:
+                {
+                    new SoundBoardAction(SoundBoardAction.Event.ENTER_ACTIVITY_VIEWPAGER, this).run();
+
+                    //prevent system from handling this event
+                    return true;
+                }
             }
 
             return super.onOptionsItemSelected(item);

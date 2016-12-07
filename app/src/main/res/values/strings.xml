@@ -18,4 +18,6 @@
     <string name="button_show_main_screen">Show main screen</string>
     <string name="button_voice_test">Test voice Input</string>
 
+    <string name="menu_settings">Settings</string>
+
 </resources>

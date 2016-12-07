@@ -16,11 +16,11 @@
 
         <android.support.v4.view.PagerTabStrip
             android:id="@+id/viewpager_pager_tab_strip"
+            style="@style/ViewPagerTitleStrip"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
-            android:background="@color/viewpager_bg"
-            android:textColor="@color/viewpager_fg"
+            android:background="@color/viewpager_tab_strip_bg"
             android:paddingTop="5dp"
             android:paddingBottom="5dp" />
 

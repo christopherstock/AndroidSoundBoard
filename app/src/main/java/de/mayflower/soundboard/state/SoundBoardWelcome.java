@@ -10,9 +10,7 @@
     /*******************************************************************************************
     *   The main activity of the SoundBoardWelcome application.
     *
-    *   TODO WEAK   Create tabbed view pager with TabHost?
-    *   TODO WEAK   Pimp ViewPager with icon items and new style?
-    *   TODO WEAK   Create new ViewPager with circle view-pager-indicator?
+    *   TODO WEAK   Create tabbed view pager with TabHost.
     *
     *   @author     Christopher Stock
     *   @version    1.0

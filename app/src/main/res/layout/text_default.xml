@@ -5,4 +5,7 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center_horizontal"
     android:textAlignment="center"
+    android:typeface="normal"
+    android:textSize="@dimen/text_size_default"
+    android:textColor="@color/text_default"
     />

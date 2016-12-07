@@ -17,6 +17,9 @@
     <!-- screen -->
     <color name="screen_bg">#ffffffff</color>
 
+    <!-- text -->
+    <color name="text_default">@color/project_dark_grey</color>
+
     <!-- scrollbar -->
     <color name="scrollbar_start">@color/project_mayflower_orange_default</color>
     <color name="scrollbar_end">@color/project_mayflower_orange_default</color>

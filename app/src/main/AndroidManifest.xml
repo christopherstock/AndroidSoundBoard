@@ -22,6 +22,8 @@
 
         <activity android:name="de.mayflower.soundboard.state.SoundBoardViewPager" android:label="@string/title_viewpager"/>
 
+        <activity android:name="de.mayflower.soundboard.state.SoundBoardSettings" android:label="@string/title_settings"/>
+
     </application>
 
 </manifest>

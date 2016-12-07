@@ -6,9 +6,8 @@
     import  android.speech.RecognizerIntent;
     import  de.mayflower.lib.Lib;
     import  de.mayflower.lib.LibLauncher;
-    import  de.mayflower.soundboard.state.SoundBoardViewPager;
-    import  de.mayflower.soundboard.state.SoundBoardRecorder;
-    import  de.mayflower.soundboard.state.SoundBoardWelcome;
+    import  de.mayflower.soundboard.state.*;
+    import  de.mayflower.soundboard.state.SoundBoardSettings;
 
     /*****************************************************************************
     *   The action system.
@@ -26,30 +25,22 @@
         *****************************************************************************/
         public enum Event
         {
-            /**
-             * Shows the test activity.
-             */
+            /** Shows the test activity. */
             ENTER_ACTIVITY_RECORDER,
 
-
-            /**
-             * Shows the main-screen activity.
-             */
+            /** Shows the main-screen activity. */
             ENTER_ACTIVITY_VIEWPAGER,
 
-            /**
-             * Shows the welcome activity from the test state.
-             */
+            /** Shows the settings activity */
+            ENTER_ACTIVITY_SETTINGS,
+
+            /** Shows the welcome activity from the test state. */
             RETURN_TO_ACTIVITY_WELCOME,
 
-            /**
-             * Eclipses the app and shows the android homescreen.
-             */
+            /** Eclipses the app and shows the android homescreen. */
             SHOW_HOMESCREEN,
 
-            /**
-             * Show the 'voice input' dialog.
-             */
+            /** Show the 'voice input' dialog. */
             SHOW_VOICE_INPUT_DIALOG,
 
             ;
@@ -96,6 +87,18 @@
                     (
                         this.activity,
                         SoundBoardViewPager.class,
+                        R.anim.push_left_in,
+                        R.anim.push_left_out
+                    );
+                    break;
+                }
+
+                case ENTER_ACTIVITY_SETTINGS:
+                {
+                    LibLauncher.launchActivity
+                    (
+                        this.activity,
+                        SoundBoardSettings.class,
                         R.anim.push_left_in,
                         R.anim.push_left_out
                     );

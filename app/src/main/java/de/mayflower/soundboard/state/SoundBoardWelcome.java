@@ -12,7 +12,6 @@
     *
     *   TODO INIT   Create tabbed view pager.
     *   TODO HIGH   Pimp the ViewPager! Icon items and new style!
-    *   TODO LOW    New activity 'settings'.
     *   TODO WEAK   Welcome ViewPager (with circle view-pager-indicator) like in PicFood?
     *
     *   @author     Christopher Stock

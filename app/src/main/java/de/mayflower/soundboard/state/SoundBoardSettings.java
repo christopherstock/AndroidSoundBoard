@@ -2,26 +2,24 @@
     package de.mayflower.soundboard.state;
 
     import  android.os.Bundle;
-    import  de.mayflower.lib.ui.LibUI;
     import  de.mayflower.soundboard.R;
     import  de.mayflower.soundboard.SoundBoardAction;
     import  de.mayflower.soundboard.state.activities.SoundBoardActivity;
-    import  de.mayflower.soundboard.state.activities.SoundBoardViewPagerFragment;
 
     /**********************************************************************************************
-    *   The viewPager activity.
+    *   The settings activity.
     *
     *   @author     Christopher Stock
     *   @version    1.0
     ***********************************************************************************************/
-    public class SoundBoardViewPager extends SoundBoardActivity
+    public class SoundBoardSettings extends SoundBoardActivity
     {
         /*******************************************************************************************
         *   Creates a new Activity specifying the backKey event.
         *******************************************************************************************/
-        public SoundBoardViewPager()
+        public SoundBoardSettings()
         {
-            super( SoundBoardAction.Event.RETURN_TO_ACTIVITY_WELCOME, true, true );
+            super( SoundBoardAction.Event.RETURN_TO_ACTIVITY_WELCOME, true, false );
         }
 
         /*****************************************************************************
@@ -32,19 +30,6 @@
         {
             super.onCreate( savedInstanceState );
 
-            this.setContentView( R.layout.activity_viewpager );
-
-            LibUI.setupViewPagerAdapter
-            (
-                this,
-                R.id.viewpager_pager,
-                new SoundBoardViewPagerFragment[]
-                {
-                    new SoundBoardViewPagerFragment( "Fragment A" ),
-                    new SoundBoardViewPagerFragment( "Fragment B" ),
-                    new SoundBoardViewPagerFragment( "Fragment C" ),
-                    new SoundBoardViewPagerFragment( "Fragment D" ),
-                }
-            );
+            this.setContentView( R.layout.activity_settings );
         }
     }

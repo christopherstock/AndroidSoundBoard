@@ -14,7 +14,7 @@
 
     <!-- scrollbar content -->
     <LinearLayout
-        android:id="@+id/view_pager_scrollview_content"
+        android:id="@+id/viewpager_scrollview_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"

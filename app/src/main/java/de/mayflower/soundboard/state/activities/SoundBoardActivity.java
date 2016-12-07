@@ -115,7 +115,7 @@
 
                 case R.id.menu_settings:
                 {
-                    new SoundBoardAction(SoundBoardAction.Event.ENTER_ACTIVITY_VIEWPAGER, this).run();
+                    new SoundBoardAction(SoundBoardAction.Event.ENTER_ACTIVITY_SETTINGS, this).run();
 
                     //prevent system from handling this event
                     return true;

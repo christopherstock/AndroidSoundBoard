@@ -31,8 +31,10 @@
         protected void onCreate( Bundle savedInstanceState )
         {
             super.onCreate( savedInstanceState );
-            this.setContentView( R.layout.activity_viewpager);
 
+            this.setContentView( R.layout.activity_viewpager );
+
+            // TODO to LibUI
             this.setupPagerAdapter();
         }
 

@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <dimen name="activity_horizontal_padding">16dp</dimen>
-    <dimen name="activity_vertical_padding">16dp</dimen>
+    <!-- global -->
+    <dimen name="default_padding_x">16dp</dimen>
+    <dimen name="default_padding_y">16dp</dimen>
 
-    <dimen name="icon_size">60.0dp</dimen>
+    <!-- screen -->
+    <dimen name="screen_border_x">5.0dp</dimen>
+    <dimen name="screen_border_y">7.5dp</dimen>
 
-    <dimen name="fading_edge_size">20.0dp</dimen>
+    <!-- fading edges -->
+    <dimen name="fading_edge_size">25.0dp</dimen>
 
     <!-- buttons -->
     <dimen name="button_min_width">50.0dp</dimen>
@@ -16,11 +20,6 @@
     <!-- scrollbar -->
     <dimen name="scrollbar_width">4.0dp</dimen>
     <dimen name="scrollbar_corner_radius">4.0dp</dimen>
-
-    <!-- screen -->
-    <dimen name="screen_border_x">5.0dp</dimen>
-    <dimen name="screen_border_y">7.5dp</dimen>
-
 
     <!-- title logo -->
     <dimen name="title_logo_height">175.0dp</dimen>

@@ -41,7 +41,8 @@
         protected void onCreate(Bundle savedInstanceState)
         {
             super.onCreate( savedInstanceState );
-            this.setContentView( R.layout.activity_recorder);
+
+            this.setContentView( R.layout.activity_recorder );
 
             LibUI.setupButton
             (
@@ -57,6 +58,13 @@
                 R.id.button_voice_input,
                 R.string.button_voice_test,
                 new SoundBoardAction( SoundBoardAction.Event.SHOW_VOICE_INPUT_DIALOG, this )
+            );
+
+            LibUI.setupTextView
+            (
+                this,
+                R.id.text_recorder,
+                R.string.text_recorder
             );
         }
 
@@ -78,6 +86,8 @@
 
                     if (resultCode == Activity.RESULT_OK)
                     {
+                        // TODO to service!
+
                         SoundBoardDebug.major.out("Received correct audio.");
 
                         ArrayList<String> matches = data.getStringArrayListExtra( RecognizerIntent.EXTRA_RESULTS );

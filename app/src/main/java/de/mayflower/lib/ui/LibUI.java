@@ -3,7 +3,6 @@
 
     import  android.app.Activity;
     import  android.content.Context;
-    import  android.graphics.Typeface;
     import  android.view.LayoutInflater;
     import  android.view.View;
     import  android.view.ViewGroup;
@@ -65,14 +64,16 @@
         /************************************************************************
         *   Sets up a {@link TextView} with the major attributes.
         *
-        *   @param  textView        The TextView to configure.
-        *   @param  typeface        The typeface to use for the caption.
-        *   @param  text            The caption of this button.
+        *   @param  activity        The current system context.
+        *   @param  textViewId      The ID of the TextView to configure.
+        *   @param  textId          The ID of the text to set for the TextView.
         ************************************************************************/
-        public static final void setupTextView( TextView textView, Typeface typeface, CharSequence text )
+        public static final void setupTextView( Activity activity, int textViewId, int textId )
         {
-            textView.setTypeface(   typeface    );
-            textView.setText(       text        );
+            TextView textView = (TextView)activity.findViewById( textViewId );
+            String   text     = LibResource.getResourceString( activity, textId );
+
+            textView.setText( textId );
         }
 
         /************************************************************************

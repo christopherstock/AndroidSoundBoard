@@ -22,86 +22,41 @@
         android:id="@+id/activity_sound_board_welcome_screen"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="@dimen/activity_horizontal_padding"
-        android:paddingRight="@dimen/activity_horizontal_padding"
-        android:paddingTop="@dimen/activity_vertical_padding"
-        android:paddingBottom="@dimen/activity_vertical_padding"
+        android:paddingLeft="@dimen/default_padding_x"
+        android:paddingRight="@dimen/default_padding_x"
+        android:paddingTop="@dimen/default_padding_y"
+        android:paddingBottom="@dimen/default_padding_y"
         tools:context="de.mayflower.soundboard.state.SoundBoardWelcome"
         >
 
         <include
-            android:id="@+id/image_title_logo"
             layout="@layout/image_title_logo"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:textAlignment="center"
-            android:text="@string/text_welcome_activity"
+            android:id="@+id/image_title_logo"
             />
 
         <include
+            layout="@layout/text_default"
+            android:id="@+id/text_welcome"
+            />
+
+        <include
+            layout="@layout/button_default"
             android:id="@+id/button_welcome"
-            layout="@layout/button_default"
             />
 
         <include
-            android:id="@+id/button_show_main_screen"
             layout="@layout/button_special"
-            />
-
-
-
-        <include
-            android:id="@+id/button_show_main_screen2"
-            layout="@layout/button_default"
+            android:id="@+id/button_show_main_screen"
             />
 
         <include
-            android:id="@+id/button_show_main_screen3"
-            layout="@layout/button_default"
+            layout="@layout/image_title_logo"
+            android:id="@+id/image_title_logo_2"
             />
 
         <include
-            android:id="@+id/button_show_main_screen4"
-            layout="@layout/button_default"
-            />
-
-        <include
-            android:id="@+id/button_show_main_screen5"
-            layout="@layout/button_default"
-            />
-
-        <include
-            android:id="@+id/button_show_main_screen6"
-            layout="@layout/button_default"
-            />
-
-        <include
-            android:id="@+id/button_show_main_screen7"
-            layout="@layout/button_default"
-            />
-
-        <include
-            android:id="@+id/button_show_main_screen8"
-            layout="@layout/button_default"
-            />
-
-        <include
-            android:id="@+id/button_show_main_screen9"
-            layout="@layout/button_default"
-            />
-
-        <include
-            android:id="@+id/button_show_main_screen10"
-            layout="@layout/button_default"
-            />
-
-        <include
-            android:id="@+id/button_show_main_screen11"
-            layout="@layout/button_default"
+            layout="@layout/image_title_logo"
+            android:id="@+id/image_title_logo_3"
             />
 
     </LinearLayout>

@@ -6,7 +6,6 @@
     import  android.support.v7.app.AppCompatActivity;
     import  android.view.KeyEvent;
     import  android.view.MenuItem;
-    import  de.mayflower.soundboard.R;
     import  de.mayflower.soundboard.SoundBoardAction;
 
     /***********************************************************************************************
@@ -89,7 +88,7 @@
         {
             int id = item.getItemId();
 
-            if ( id == R.id.home )
+            if ( id == android.R.id.home )
             {
                 new SoundBoardAction( this.backKeyEvent, this ).run();
 

@@ -40,7 +40,8 @@
         protected void onCreate(Bundle savedInstanceState)
         {
             super.onCreate(savedInstanceState);
-            this.setContentView( R.layout.activity_welcome);
+
+            this.setContentView( R.layout.activity_welcome );
 
             LibUI.setupButton
             (
@@ -56,6 +57,13 @@
                 R.id.button_show_main_screen,
                 R.string.button_show_main_screen,
                 new SoundBoardAction( SoundBoardAction.Event.ENTER_ACTIVITY_VIEWPAGER, this )
+            );
+
+            LibUI.setupTextView
+            (
+                this,
+                R.id.text_welcome,
+                R.string.text_welcome
             );
         }
     }

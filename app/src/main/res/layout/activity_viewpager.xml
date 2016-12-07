@@ -6,7 +6,6 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    android:background="@color/screen_bg"
     tools:context="de.mayflower.soundboard.state.SoundBoardViewPager"
     >
 
@@ -21,8 +20,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
-            android:background="#33b5e5"
-            android:textColor="#fff"
+            android:background="@color/viewpager_bg"
+            android:textColor="@color/viewpager_fg"
             android:paddingTop="5dp"
             android:paddingBottom="5dp" />
 

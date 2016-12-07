@@ -6,6 +6,7 @@
     import  android.support.v7.app.AppCompatActivity;
     import  android.view.KeyEvent;
     import  android.view.MenuItem;
+    import  de.mayflower.soundboard.R;
     import  de.mayflower.soundboard.SoundBoardAction;
 
     /***********************************************************************************************
@@ -44,7 +45,7 @@
         *******************************************************************************************/
         private void initActionBar()
         {
-            ActionBar ab = (ActionBar)this.getSupportActionBar();
+            ActionBar ab = this.getSupportActionBar();
 
             if ( this.showBackButtonInActionBar && ( ab != null ) )
             {
@@ -88,7 +89,7 @@
         {
             int id = item.getItemId();
 
-            if ( id == android.R.id.home )
+            if ( id == R.id.home )
             {
                 new SoundBoardAction( this.backKeyEvent, this ).run();
 

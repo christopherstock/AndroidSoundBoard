@@ -21,6 +21,10 @@
     <color name="scrollbar_start">@color/project_mayflower_orange_default</color>
     <color name="scrollbar_end">@color/project_mayflower_orange_default</color>
 
+    <!-- viewpager -->
+    <color name="viewpager_bg">@color/project_mayflower_orange_default</color>
+    <color name="viewpager_fg">#ffffffff</color>
+
     <!-- button default -->
     <color name="button_default_fg_unselect">#ffffffff</color>
     <color name="button_default_fg_hover">#ffffffff</color>

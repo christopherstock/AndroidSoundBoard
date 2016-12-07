@@ -56,10 +56,10 @@
         }
 
         /** The event for this action to perform. */
-        private         Event           event               = null;
+        private         SoundBoardAction.Event      event               = null;
 
         /** The activity that invoked this action. */
-        private         Activity        activity            = null;
+        private         Activity                    activity            = null;
 
         /*****************************************************************************
         *   Launched a new action.
@@ -67,7 +67,7 @@
         *   @param  event    The ID of the event to launch.
         *   @param  activity The activity that launched this action.
         *****************************************************************************/
-        public SoundBoardAction( Event event, Activity activity )
+        public SoundBoardAction( SoundBoardAction.Event event, Activity activity )
         {
             this.event    = event;
             this.activity = activity;

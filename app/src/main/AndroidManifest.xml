@@ -9,7 +9,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/SoundBoardTheme">
 
         <activity android:name="de.mayflower.soundboard.state.SoundBoardWelcome" android:label="@string/title_welcome">
             <intent-filter>
@@ -18,9 +18,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="de.mayflower.soundboard.state.SoundBoardRecorder" android:label="@string/title_test"/>
+        <activity android:name="de.mayflower.soundboard.state.SoundBoardRecorder" android:label="@string/title_recorder"/>
 
-        <activity android:name="de.mayflower.soundboard.state.SoundBoardViewPager" android:label="@string/title_main"/>
+        <activity android:name="de.mayflower.soundboard.state.SoundBoardViewPager" android:label="@string/title_viewpager"/>
 
     </application>
 

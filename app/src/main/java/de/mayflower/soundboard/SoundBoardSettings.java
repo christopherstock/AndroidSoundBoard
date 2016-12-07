@@ -15,7 +15,7 @@
         public static final class Paramounts
         {
             /** The internal name of this project. This value is used in the exception emails. */
-            public      static      final   String      PROJECT_NAME            = "SoundBoardWelcomeScreen";
+            public      static      final   String      PROJECT_NAME            = "SoundBoardWelcome";
         }
 
         /*****************************************************************************************

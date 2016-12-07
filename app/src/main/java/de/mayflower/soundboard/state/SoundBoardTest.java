@@ -20,7 +20,7 @@
     *   @author     Christopher Stock
     *   @version    1.0
     *******************************************************************************************/
-    public class SoundBoardTestScreen extends AppCompatActivity
+    public class SoundBoardTest extends AppCompatActivity
     {
         /** The request id  */
         public      static  final   int             REQUEST_CODE_RECORD_AUDIO       = 1;
@@ -34,15 +34,14 @@
         protected void onCreate(Bundle savedInstanceState)
         {
             super.onCreate(savedInstanceState);
-
-            this.setContentView(R.layout.activity_sound_board_test_screen);
+            this.setContentView(R.layout.activity_test);
 
             LibUI.setupButton
             (
                 this,
                 R.id.button_test,
                 R.string.button_test,
-                new SoundBoardAction( SoundBoardAction.Event.SHOW_WELCOME_ACTIVITY_FROM_TEST_ACTIVITY, this )
+                new SoundBoardAction( SoundBoardAction.Event.RETURN_TO_WELCOME_ACTIVITY, this )
             );
 
             LibUI.setupButton
@@ -61,7 +60,7 @@
             {
                 case KeyEvent.KEYCODE_BACK:
                 {
-                    new SoundBoardAction( SoundBoardAction.Event.SHOW_WELCOME_ACTIVITY_FROM_TEST_ACTIVITY, this ).run();
+                    new SoundBoardAction( SoundBoardAction.Event.RETURN_TO_WELCOME_ACTIVITY, this ).run();
 
                     //prevent this event from being propagated further
                     return true;
@@ -86,10 +85,12 @@
             {
                 case REQUEST_CODE_RECORD_AUDIO:
                 {
-                    SoundBoardDebug.major.out("Received audio");
+                    SoundBoardDebug.major.out("Response from audio recorder ..");
 
                     if (resultCode == Activity.RESULT_OK)
                     {
+                        SoundBoardDebug.major.out("Received correct audio.");
+
                         ArrayList<String> matches = data.getStringArrayListExtra( RecognizerIntent.EXTRA_RESULTS );
 
                         for ( String match : matches )
@@ -115,6 +116,10 @@
                                 break;
                             }
                         }
+                    }
+                    else
+                    {
+                        SoundBoardDebug.major.out("Received error code from audio activity.");
                     }
                     break;
                 }

@@ -1,146 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
-
-    <!-- color adjustments -->
 
     <!-- project -->
-    <color name="project_fg">#ff0000</color>
+    <color name="project_mayflower_orange">#ffed7304</color>
+    <color name="project_light_grey">#ffededed</color>
+    <color name="project_medium_grey">#ffcccccc</color>
+    <color name="project_dark_grey">#ff8b8b8b</color>
 
-    <color name="project_color_select">#ffa91c3e</color>
-    <color name="project_black">#ff000000</color>
-    <color name="project_grey">#ffaeafaf</color>
-    <color name="project_grey_light">#ffc9c9c9</color>
+    <!-- primal -->
+    <color name="primal_light">@color/project_mayflower_orange</color>
+    <color name="primal_dark">@color/project_dark_grey</color>
+    <color name="primal_accent">@color/project_mayflower_orange</color>
 
     <!-- screen -->
     <color name="screen_bg">#ffffffff</color>
 
-    <color name="screen_bg_gradient_top">#ffd9d9da</color>
-    <color name="screen_bg_gradient_bottom">#ffd9d9da</color>
-    <color name="screen_bg_external">#ff000000</color>
-    <color name="screen_fg_bright">#ffffffff</color>
-    <color name="screen_fg_bright_hover">@color/project_grey_light</color>
-    <color name="screen_fg_ambient">#fff5f5f5</color>
-
-    <color name="console_bg">@color/screen_bg_external</color>
-
-    <!-- drop shadow -->
-    <color name="drop_shadow_start">#55000000</color>
-    <color name="drop_shadow_end">#00000000</color>
-
-    <!-- components -->
-
-    <!-- links -->
-    <color name="text_link_unselect">@color/project_color_select</color>
-    <color name="text_link_hover">#ffd54f6f</color>
-    <color name="text_link_select">@color/project_color_select</color> <!-- #ffcb4767 -->
-
-    <!-- separator lines -->
-    <color name="separator_line">@color/project_grey_light</color>
-
-    <!-- header -->
-    <color name="header_bg">@color/screen_fg_bright</color>
-
     <!-- scrollbar -->
-    <color name="scrollbar_start">@color/project_color_select</color>
-    <color name="scrollbar_end">@color/project_color_select</color>
+    <color name="scrollbar_start">@color/project_mayflower_orange</color>
+    <color name="scrollbar_end">@color/project_mayflower_orange</color>
 
-    <!-- forms -->
-    <!--
-            <color name="form_group_bg">@color/screen_fg_bright</color>
-            <color name="form_inputfield_bg">@color/screen_fg_bright</color>
-    -->
-    <color name="form_inputfield_fg">@color/project_fg</color>
-    <color name="form_inputfield_separator_line">@color/project_fg</color>
+    <!-- button default -->
+    <color name="button_default_fg_unselect">#ffffffff</color>
+    <color name="button_default_fg_hover">@color/project_medium_grey</color>
+    <color name="button_default_fg_select">#ffffffff</color>
+    <color name="button_default_bg_unselect">@color/project_medium_grey</color>
+    <color name="button_default_bg_hover">@color/project_light_grey</color>
+    <color name="button_default_bg_select">@color/project_mayflower_orange</color>
 
-    <!-- progress bar -->
-    <color name="progressbar_top">@color/project_fg</color>
-    <color name="progressbar_bottom">@color/project_fg</color>
-
-    <!-- images -->
-    <color name="image_detailed_bg_unselect">@color/screen_fg_bright</color>
-
-    <!-- profile -->
-    <color name="user_profile_bg_unselect">@color/screen_fg_bright</color>
-
-    <!-- items -->
-    <color name="item_bg">#ffffffff</color>
-    <color name="item_bg_unselect">@color/screen_fg_bright</color>
-    <color name="item_bg_hover">@color/screen_fg_bright_hover</color>
-    <color name="item_bg_select">@color/project_color_select</color>
-    <color name="item_border">@color/project_grey</color>
-
-    <!-- default ViewPagerIndicator -->
-    <color name="default_title_indicator_footer_indicator_color">@color/project_color_select</color>
-
-    <!-- buttons -->
-    <color name="button_black_small_color_start">#ffc1c0be</color>
-    <color name="button_black_small_color_end">#ff101010</color>
-    <item name="button_black_small_color_angle" type="integer">315</item>
-
-    <!-- states -->
-
-    <!-- state 'title splash' -->
-    <color name="state_title_splash_bg_gradient_top">@color/screen_fg_bright</color>
-    <color name="state_title_splash_bg_gradient_middle">@color/screen_fg_bright</color>
-    <color name="state_title_splash_bg_gradient_bottom">@color/screen_fg_bright</color>
-
-    <!-- state 'acclaim' -->
-    <color name="state_acclaim_dialog_bg">@color/screen_fg_bright</color>
-    <color name="state_acclaim_dialog_border">@color/project_fg</color>
-    <color name="state_acclaim_dialog_drop_shadow">@color/drop_shadow_start</color>
-    <color name="state_acclaim_footer_bg">@color/screen_fg_bright</color>
-
-    <!-- state 'google places' -->
-    <color name="google_places_item_title">@color/project_fg</color>
-    <color name="google_places_item_description">@color/project_fg</color>
-
-    <!-- texts -->
-
-    <!-- header -->
-    <color name="text_header">@color/project_grey</color>
-
-    <!-- headline -->
-    <color name="text_headline">@color/project_grey</color>
-
-    <!-- dialog acclaim -->
-    <color name="text_dialog_acclaim">@color/project_fg</color>
-
-    <!-- debug console -->
-    <color name="text_debug_console">@color/screen_fg_bright</color>
-
-
-
-
-    <!-- button text -->
-    <color name="text_button_black_unselect">#ffffffff</color>
-    <color name="text_button_black_hover">#ffcccccc</color>
-    <color name="text_button_black_select">#ffffffff</color>
-
-
-
-    <!-- items -->
-    <color name="text_item">@color/project_black</color>
-
-    <!-- content text -->
-    <color name="text_new_entry">@color/project_fg</color>
-
-    <!-- image text -->
-    <color name="text_image_default">@color/project_fg</color>
-
-    <!-- legal text -->
-    <color name="text_tiny">@color/project_fg</color>
-
-    <!-- view pager indicator -->
-    <color name="text_viewpagerindicator_unselect">@color/project_fg</color>
-
-    <!-- profile -->
-    <color name="text_profile">@color/project_fg</color>
-
-    <!-- grid view items -->
-    <color name="text_gridview_item_title">@color/project_color_select</color>
-    <color name="text_gridview_item_description">@color/project_fg</color>
+    <!-- button special -->
+    <color name="button_special_fg_unselect">@color/button_default_fg_unselect</color>
+    <color name="button_special_fg_hover">@color/button_default_fg_hover</color>
+    <color name="button_special_fg_select">@color/button_default_fg_select</color>
+    <color name="button_special_bg_unselect">@color/project_mayflower_orange</color>
+    <color name="button_special_bg_hover">@color/button_default_bg_hover</color>
+    <color name="button_special_bg_select">@color/button_default_bg_select</color>
 
 </resources>

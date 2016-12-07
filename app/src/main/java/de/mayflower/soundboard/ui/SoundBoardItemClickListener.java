@@ -9,7 +9,7 @@
     /**********************************************************************************************
     *   This class represents the item click listener for an item lists.
     *
-    *   @author     Christian Heldt.
+    *   @author     Christopher Stock.
     *   @version    1.0
     ***********************************************************************************************/
     public class SoundBoardItemClickListener implements View.OnClickListener
@@ -17,6 +17,12 @@
         private                 int                 index                       = 0;
         private                 Activity            context                     = null;
 
+        /**********************************************************************************************
+        *   Creates a new Item Click Listener.
+        *
+        *   @param  index   The index for the item to append this listener on.
+        *   @param  context The current application context.
+        ***********************************************************************************************/
         public SoundBoardItemClickListener(int index, Activity context )
         {
             this.index   = index;
@@ -26,7 +32,7 @@
         @Override
         public void onClick( View v )
         {
-            SoundBoardDebug.major.out("Item [" + this.index + "] in page [" + this.index + "] touched!");
+            SoundBoardDebug.major.out("Item [" + this.index + "] in touched!");
 /*
             SoundBoardHydrator.setCurrent(this.index); // register pattern to show
 

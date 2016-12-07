@@ -99,7 +99,7 @@
         *
         *   @param  t   The Throwable to print the stack-trace for.
         *****************************************************************************/
-        public static final void DEBUG_THROWABLE(Throwable t )
+        public static final void DEBUG_THROWABLE( Throwable t )
         {
             if ( DEBUG_MODE )
             {

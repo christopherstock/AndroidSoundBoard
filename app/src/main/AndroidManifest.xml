@@ -11,16 +11,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name="de.mayflower.soundboard.state.SoundBoardWelcomeScreen">
+        <activity android:name="de.mayflower.soundboard.state.SoundBoardWelcome" android:label="@string/title_welcome">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name="de.mayflower.soundboard.state.SoundBoardTestScreen" />
+        <activity android:name="de.mayflower.soundboard.state.SoundBoardTest" android:label="@string/title_test"/>
 
-        <activity android:name="de.mayflower.soundboard.state.SoundBoardMainScreen" />
+        <activity android:name="de.mayflower.soundboard.state.SoundBoardMain" android:label="@string/title_main"/>
 
     </application>
 

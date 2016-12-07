@@ -1,6 +1,6 @@
 
     /*************************************************************************************************
-    *   The android app project 'SoundBoardWelcomeScreen'.
+    *   The android app project 'SoundBoardWelcome'.
     *
     *   @author     Christopher Stock
     *   @version    1.0

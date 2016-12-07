@@ -6,9 +6,9 @@
     import  android.speech.RecognizerIntent;
     import  de.mayflower.lib.Lib;
     import  de.mayflower.lib.LibLauncher;
-    import  de.mayflower.soundboard.state.SoundBoardMainScreen;
-    import  de.mayflower.soundboard.state.SoundBoardTestScreen;
-    import  de.mayflower.soundboard.state.SoundBoardWelcomeScreen;
+    import de.mayflower.soundboard.state.SoundBoardMain;
+    import de.mayflower.soundboard.state.SoundBoardTest;
+    import de.mayflower.soundboard.state.SoundBoardWelcome;
 
     /*****************************************************************************
     *   The action system.
@@ -29,22 +29,18 @@
             /**
              * Shows the test activity.
              */
-            SHOW_TEST_ACTIVITY,
+            ENTER_TEST_ACTIVITY,
 
-            /**
-             * Shows the welcome activity from the test state.
-             */
-            SHOW_WELCOME_ACTIVITY_FROM_TEST_ACTIVITY,
-
-            /**
-             * Shows the welcome activity from the main state.
-             */
-            SHOW_WELCOME_ACTIVITY_FROM_MAIN_ACTIVITY,
 
             /**
              * Shows the main-screen activity.
              */
-            SHOW_MAIN_SCREEN_ACTIVITY,
+            ENTER_MAIN_SCREEN_ACTIVITY,
+
+            /**
+             * Shows the welcome activity from the test state.
+             */
+            RETURN_TO_WELCOME_ACTIVITY,
 
             /**
              * Eclipses the app and shows the android homescreen.
@@ -54,7 +50,9 @@
             /**
              * Show the 'voice input' dialog.
              */
-            SHOW_VOICE_INPUT_DIALOG,;
+            SHOW_VOICE_INPUT_DIALOG,
+
+            ;
         }
 
         /** The event for this action to perform. */
@@ -66,7 +64,8 @@
         /*****************************************************************************
         *   Launched a new action.
         *
-        *   @param  event
+        *   @param  event    The ID of the event to launch.
+        *   @param  activity The activity that launched this action.
         *****************************************************************************/
         public SoundBoardAction( Event event, Activity activity )
         {
@@ -79,50 +78,38 @@
         {
             switch( this.event  )
             {
-                case SHOW_TEST_ACTIVITY:
+                case ENTER_TEST_ACTIVITY:
                 {
                     LibLauncher.launchActivity
                     (
                         this.activity,
-                        SoundBoardTestScreen.class,
+                        SoundBoardTest.class,
                         R.anim.push_left_in,
                         R.anim.push_left_out
                     );
                     break;
                 }
 
-                case SHOW_WELCOME_ACTIVITY_FROM_TEST_ACTIVITY:
+                case ENTER_MAIN_SCREEN_ACTIVITY:
                 {
                     LibLauncher.launchActivity
                     (
                         this.activity,
-                        SoundBoardWelcomeScreen.class,
-                        R.anim.push_right_in,
-                        R.anim.push_right_out
-                    );
-                    break;
-                }
-
-                case SHOW_WELCOME_ACTIVITY_FROM_MAIN_ACTIVITY:
-                {
-                    LibLauncher.launchActivity
-                    (
-                        this.activity,
-                        SoundBoardWelcomeScreen.class,
-                        R.anim.push_right_in,
-                        R.anim.push_right_out
-                    );
-                    break;
-                }
-
-                case SHOW_MAIN_SCREEN_ACTIVITY:
-                {
-                    LibLauncher.launchActivity
-                    (
-                        this.activity,
-                        SoundBoardMainScreen.class,
+                        SoundBoardMain.class,
                         R.anim.push_left_in,
                         R.anim.push_left_out
+                    );
+                    break;
+                }
+
+                case RETURN_TO_WELCOME_ACTIVITY:
+                {
+                    LibLauncher.launchActivity
+                    (
+                            this.activity,
+                            SoundBoardWelcome.class,
+                            R.anim.push_right_in,
+                            R.anim.push_right_out
                     );
                     break;
                 }
@@ -141,7 +128,7 @@
                     intent.putExtra( RecognizerIntent.EXTRA_LANGUAGE_MODEL, "de-DE" );
                     this.activity.startActivityForResult(
                         intent,
-                        SoundBoardTestScreen.REQUEST_CODE_RECORD_AUDIO
+                        SoundBoardTest.REQUEST_CODE_RECORD_AUDIO
                     );
                     break;
                 }

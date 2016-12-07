@@ -1,12 +1,14 @@
 
     package de.mayflower.soundboard.state;
 
-    import  android.os.*;
-    import  android.support.v4.app.FragmentActivity;
-    import  android.support.v4.view.ViewPager;
-    import  android.view.*;
-    import  de.mayflower.soundboard.*;
-    import  de.mayflower.soundboard.ui.*;
+    import android.os.Bundle;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
+
+import de.mayflower.soundboard.R;
+import de.mayflower.soundboard.SoundBoardAction;
+import de.mayflower.soundboard.ui.SoundBoardMainScreenViewPagerAdapter;
 
     /**********************************************************************************************
     *   The startup activity class.
@@ -14,7 +16,7 @@
     *   @author     Christopher Stock
     *   @version    1.0
     ***********************************************************************************************/
-    public class SoundBoardMainScreen extends FragmentActivity
+    public class SoundBoardMain extends AppCompatActivity
     {
         /*****************************************************************************
         *   Being invoked when this activity is being created.
@@ -23,19 +25,19 @@
         protected void onCreate( Bundle savedInstanceState )
         {
             super.onCreate(savedInstanceState);
+            this.setContentView(R.layout.activity_main);
 
-            this.setContentView(R.layout.activity_main_screen);
             this.setupPagerAdapter();
         }
-
+/*
         @Override
         public boolean onOptionsItemSelected(MenuItem item)
         {
-            SoundBoardDebug.major.out( SoundBoardMainScreen.class + "::onOptionsItemSelected()" );
+            SoundBoardDebug.major.out( SoundBoardMain.class + "::onOptionsItemSelected()" );
 
             return super.onOptionsItemSelected(item);
         }
-
+*/
         /*****************************************************************************
         *   Sets up the pager-adapter for the pager view.
         *****************************************************************************/
@@ -59,7 +61,7 @@
             {
                 case KeyEvent.KEYCODE_BACK:
                 {
-                    new SoundBoardAction( SoundBoardAction.Event.SHOW_WELCOME_ACTIVITY_FROM_MAIN_ACTIVITY, this ).run();
+                    new SoundBoardAction( SoundBoardAction.Event.RETURN_TO_WELCOME_ACTIVITY, this ).run();
 
                     //prevent this event from being propagated further
                     return true;

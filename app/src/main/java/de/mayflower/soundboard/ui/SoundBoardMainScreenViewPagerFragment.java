@@ -35,7 +35,7 @@
 
             SoundBoardDebug.major.out("onCreateView for fragment [" + this.index + "]");
 
-            View      rootView = inflater.inflate( R.layout.activity_main_screen_view_pager_fragment, container, false );
+            View      rootView = inflater.inflate( R.layout.activity_main_view_pager_fragment, container, false );
             ViewGroup sv       = (ViewGroup)rootView.findViewById( R.id.view_pager_scrollview_content );
 /*
             SoundBoardPatternCountService countService = new SoundBoardPatternCountService();

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:scrollbarStyle="insideOverlay"
+    android:scrollbarThumbHorizontal="@drawable/scrollbar"
+    android:scrollbarThumbVertical="@drawable/scrollbar"
+    android:scrollbarSize="@dimen/scrollbar_width"
+    android:fadingEdgeLength="@dimen/fading_edge_size"
+    android:fadeScrollbars="true"
+    android:paddingLeft="@dimen/screen_border_x"
+    android:paddingRight="@dimen/screen_border_x"
+    android:paddingTop="@dimen/screen_border_y"
+    android:paddingBottom="@dimen/screen_border_x"
+    android:requiresFadingEdge="vertical"
+    >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/activity_sound_board_welcome_screen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:background="@color/screen_bg"
+        tools:context="de.mayflower.soundboard.state.SoundBoardTest"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+            android:text="@string/text_test_activity"
+            />
+
+        <include
+            android:id="@+id/button_test"
+            layout="@layout/button_default"
+            />
+
+        <include
+            android:id="@+id/button_voice_input"
+            layout="@layout/button_default"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+            android:text="@string/text_test_activity"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+            android:text="@string/text_test_activity"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+            android:text="@string/text_test_activity"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+            android:text="@string/text_test_activity"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+            android:text="@string/text_test_activity"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+            android:text="@string/text_test_activity"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+            android:text="@string/text_test_activity"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+            android:text="@string/text_test_activity"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+            android:text="@string/text_test_activity"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+            android:text="@string/text_test_activity"
+            />
+
+    </LinearLayout>
+</ScrollView>

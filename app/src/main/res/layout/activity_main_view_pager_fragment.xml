@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<!-- state container -->
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/view_pager_fragment"
@@ -9,6 +7,8 @@
     android:gravity="left|top"
     android:background="@color/screen_bg"
     >
+
+    <!-- TODO try pruning parent LL -->
 
     <ScrollView
         xmlns:android="http://schemas.android.com/apk/res/android"

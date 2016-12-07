@@ -9,20 +9,25 @@
     import  de.mayflower.soundboard.SoundBoardAction;
 
     /*******************************************************************************************
-    *   The main activity of the SoundBoardWelcomeScreen application.
+    *   The main activity of the SoundBoardWelcome application.
     *
+    *   TODO HIGH   New parent class for all activity classes that handle a back key?
+    *   TODO HIGH   Fix DE recognition for speech.
+    *   TODO ASAP   Create tabbed view pager.
+    *   TODO ASAP   Pimp the ViewPager! Icon items and new style!
     *   TODO ASAP   Prune ALL unused drawables, layouts, values and other resources!!
     *   TODO ASAP   Welcome ViewPager like in PicFood?
-    *   TODO WEAK   Remove all old classes and references.
+    *   TODO HIGH   Show back button in header.
+    *   TODO HIGH   Button in main view for returning?
+    *   TODO INIT   Hold and pass all data in instance fields? Eliminate all static fields?
     *   TODO LOW    SoundBoardMainScreenViewPagerAdapter to lib?
-    *   TODO ASAP   Button in detailed view for returning.
-    *   TODO WEAK   Hold and pass all data in instance fields!
     *   TODO WEAK   Remove ALL inspection issues AND/OR warnings and confectionate Inspection profile!
+    *   TODO WEAK   Clarify 9-patch drawable size problem.
     *
     *   @author     Christopher Stock
     *   @version    1.0
     *******************************************************************************************/
-    public class SoundBoardWelcomeScreen extends AppCompatActivity
+    public class SoundBoardWelcome extends AppCompatActivity
     {
         /*******************************************************************************************
         *   Being invoked when the application starts and resumes.
@@ -33,15 +38,14 @@
         protected void onCreate(Bundle savedInstanceState)
         {
             super.onCreate(savedInstanceState);
-
-            this.setContentView( R.layout.activity_sound_board_welcome_screen );
+            this.setContentView( R.layout.activity_welcome);
 
             LibUI.setupButton
             (
                 this,
                 R.id.button_welcome,
                 R.string.button_welcome,
-                new SoundBoardAction( SoundBoardAction.Event.SHOW_TEST_ACTIVITY, this )
+                new SoundBoardAction( SoundBoardAction.Event.ENTER_TEST_ACTIVITY, this )
             );
 
             LibUI.setupButton
@@ -49,7 +53,7 @@
                 this,
                 R.id.button_show_main_screen,
                 R.string.button_show_main_screen,
-                new SoundBoardAction( SoundBoardAction.Event.SHOW_MAIN_SCREEN_ACTIVITY, this )
+                new SoundBoardAction( SoundBoardAction.Event.ENTER_MAIN_SCREEN_ACTIVITY, this )
             );
         }
 

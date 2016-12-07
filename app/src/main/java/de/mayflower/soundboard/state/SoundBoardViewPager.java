@@ -14,14 +14,14 @@
     *   @author     Christopher Stock
     *   @version    1.0
     ***********************************************************************************************/
-    public class SoundBoardMain extends SoundBoardActivity
+    public class SoundBoardViewPager extends SoundBoardActivity
     {
         /*******************************************************************************************
         *   Creates a new Activity.
         *******************************************************************************************/
-        public SoundBoardMain()
+        public SoundBoardViewPager()
         {
-            super(SoundBoardAction.Event.RETURN_TO_WELCOME_ACTIVITY );
+            super(SoundBoardAction.Event.RETURN_TO_ACTIVITY_WELCOME);
         }
 
         /*****************************************************************************
@@ -30,8 +30,8 @@
         @Override
         protected void onCreate( Bundle savedInstanceState )
         {
-            super.onCreate(savedInstanceState);
-            this.setContentView(R.layout.activity_main);
+            super.onCreate( savedInstanceState );
+            this.setContentView( R.layout.activity_viewpager);
 
             this.setupPagerAdapter();
         }
@@ -39,7 +39,7 @@
         @Override
         public boolean onOptionsItemSelected(MenuItem item)
         {
-            SoundBoardDebug.major.out( SoundBoardMain.class + "::onOptionsItemSelected()" );
+            SoundBoardDebug.major.out( SoundBoardViewPager.class + "::onOptionsItemSelected()" );
 
             return super.onOptionsItemSelected(item);
         }

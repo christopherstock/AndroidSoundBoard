@@ -18,9 +18,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="de.mayflower.soundboard.state.SoundBoardTest" android:label="@string/title_test"/>
+        <activity android:name="de.mayflower.soundboard.state.SoundBoardRecorder" android:label="@string/title_test"/>
 
-        <activity android:name="de.mayflower.soundboard.state.SoundBoardMain" android:label="@string/title_main"/>
+        <activity android:name="de.mayflower.soundboard.state.SoundBoardViewPager" android:label="@string/title_main"/>
 
     </application>
 

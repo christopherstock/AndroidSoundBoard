@@ -14,12 +14,12 @@
     import  de.mayflower.soundboard.state.activities.SoundBoardActivity;
 
     /*******************************************************************************************
-    *   The test activity.
+    *   The recorder activity.
     *
     *   @author     Christopher Stock
     *   @version    1.0
     *******************************************************************************************/
-    public class SoundBoardTest extends SoundBoardActivity
+    public class SoundBoardRecorder extends SoundBoardActivity
     {
         /** The request id  */
         public      static  final   int             REQUEST_CODE_RECORD_AUDIO       = 1;
@@ -27,9 +27,9 @@
         /*******************************************************************************************
         *   Creates a new Activity.
         *******************************************************************************************/
-        public SoundBoardTest()
+        public SoundBoardRecorder()
         {
-            super(SoundBoardAction.Event.RETURN_TO_WELCOME_ACTIVITY );
+            super( SoundBoardAction.Event.RETURN_TO_ACTIVITY_WELCOME );
         }
 
         /*******************************************************************************************
@@ -40,15 +40,15 @@
         @Override
         protected void onCreate(Bundle savedInstanceState)
         {
-            super.onCreate(savedInstanceState);
-            this.setContentView(R.layout.activity_test);
+            super.onCreate( savedInstanceState );
+            this.setContentView( R.layout.activity_recorder);
 
             LibUI.setupButton
             (
                 this,
                 R.id.button_test,
                 R.string.button_test,
-                new SoundBoardAction( SoundBoardAction.Event.RETURN_TO_WELCOME_ACTIVITY, this )
+                new SoundBoardAction( SoundBoardAction.Event.RETURN_TO_ACTIVITY_WELCOME, this )
             );
 
             LibUI.setupButton

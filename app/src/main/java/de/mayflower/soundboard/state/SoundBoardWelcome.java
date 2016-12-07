@@ -10,19 +10,18 @@
     /*******************************************************************************************
     *   The main activity of the SoundBoardWelcome application.
     *
-    *   TODO ASAP   Clearer names for all activities.
+    *   TODO WEAK   Clarify 9-patch drawable size problem.
     *   TODO ASAP   Show back button in header?
     *   TODO ASAP   Show menu button in header?
-    *   TODO HIGH   Fix DE recognition for speech.
     *   TODO HIGH   Create tabbed view pager.
     *   TODO HIGH   Pimp the ViewPager! Icon items and new style!
     *   TODO HIGH   Prune ALL unused drawables, layouts, values and other resources!!
     *   TODO INIT   Welcome ViewPager like in PicFood?
     *   TODO INIT   Button in main view for returning?
     *   TODO INIT   Hold and pass all data in instance fields? Eliminate all static fields?
+    *   TODO HIGH   Fix DE recognition for speech.
     *   TODO LOW    SoundBoardMainScreenViewPagerAdapter to lib?
     *   TODO WEAK   Remove ALL inspection issues AND/OR warnings and confectionate Inspection profile!
-    *   TODO WEAK   Clarify 9-patch drawable size problem.
     *
     *   @author     Christopher Stock
     *   @version    1.0
@@ -53,7 +52,7 @@
                 this,
                 R.id.button_welcome,
                 R.string.button_welcome,
-                new SoundBoardAction( SoundBoardAction.Event.ENTER_TEST_ACTIVITY, this )
+                new SoundBoardAction( SoundBoardAction.Event.ENTER_ACTIVITY_RECORDER, this )
             );
 
             LibUI.setupButton
@@ -61,7 +60,7 @@
                 this,
                 R.id.button_show_main_screen,
                 R.string.button_show_main_screen,
-                new SoundBoardAction( SoundBoardAction.Event.ENTER_MAIN_SCREEN_ACTIVITY, this )
+                new SoundBoardAction( SoundBoardAction.Event.ENTER_ACTIVITY_VIEWPAGER, this )
             );
         }
     }

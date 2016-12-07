@@ -3,6 +3,7 @@
 
     import  android.os.Bundle;
     import  de.mayflower.lib.ui.LibUI;
+    import de.mayflower.lib.ui.LibViewPagerFragment;
     import  de.mayflower.soundboard.R;
     import  de.mayflower.soundboard.SoundBoardAction;
     import  de.mayflower.soundboard.state.activities.SoundBoardActivity;
@@ -36,7 +37,14 @@
             LibUI.setupViewPagerAdapter
             (
                 this,
-                R.id.viewpager_pager
+                R.id.viewpager_pager,
+                new LibViewPagerFragment[]
+                {
+                        new LibViewPagerFragment( "Fragment A" ),
+                        new LibViewPagerFragment( "Fragment B" ),
+                        new LibViewPagerFragment( "Fragment C" ),
+                        new LibViewPagerFragment( "Fragment D" ),
+                }
             );
         }
     }

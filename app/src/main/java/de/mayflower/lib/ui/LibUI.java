@@ -62,13 +62,18 @@
         *   @param  fragmentActivity The current system context.
         *   @param  viewPagerId      The ID of the ViewPager to setup.
         ************************************************************************/
-        public static final void setupViewPagerAdapter( FragmentActivity fragmentActivity, int viewPagerId )
+        public static final void setupViewPagerAdapter
+        (
+            FragmentActivity       fragmentActivity,
+            int                    viewPagerId,
+            LibViewPagerFragment[] fragments
+        )
         {
             LibViewPagerAdapter pagerAdapter = new LibViewPagerAdapter
             (
-                fragmentActivity.getSupportFragmentManager()
+                fragmentActivity.getSupportFragmentManager(),
+                fragments
             );
-            pagerAdapter.init();
 
             ViewPager viewPager = (ViewPager)fragmentActivity.findViewById( viewPagerId );
             viewPager.setAdapter( pagerAdapter );

@@ -18,12 +18,10 @@
     ************************************************************************/
     public class LibViewPagerFragment extends Fragment
     {
-        private                             int         index                   = 0;
         private                             String      title                   = null;
 
-        public void init( int index, String title )
+        public LibViewPagerFragment( String title )
         {
-            this.index = index;
             this.title = title;
         }
 
@@ -34,7 +32,7 @@
 
 
 
-            SoundBoardDebug.major.out("onCreateView for fragment [" + this.index + "]");
+            SoundBoardDebug.major.out("onCreateView for fragment with [" + this.title + "]");
 
             View     rootView = inflater.inflate( R.layout.activity_viewpager_fragment, container, false );
             TextView tv       = (TextView)rootView.findViewById( R.id.text_viewpager );

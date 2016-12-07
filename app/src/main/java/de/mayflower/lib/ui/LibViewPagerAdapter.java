@@ -15,20 +15,11 @@
     {
         private         LibViewPagerFragment[]         fragments           = null;
 
-        public LibViewPagerAdapter( FragmentManager fm )
+        public LibViewPagerAdapter( FragmentManager fm, LibViewPagerFragment[] fragments )
         {
             super( fm );
-        }
 
-        public final void init()
-        {
-            this.fragments = new LibViewPagerFragment[5];
-
-            for ( int i = 0; i < this.fragments.length; i++ )
-            {
-                this.fragments[i] = new LibViewPagerFragment();
-                this.fragments[i].init( i, "Fragment # " + i);
-            }
+            this.fragments = fragments;
         }
 
         @Override

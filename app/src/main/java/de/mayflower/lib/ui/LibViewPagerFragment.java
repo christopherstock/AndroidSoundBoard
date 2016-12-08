@@ -13,7 +13,7 @@
     {
         protected               String                  title                   = null;
 
-        public LibViewPagerFragment( String title )
+        public void setTitle( String title )
         {
             this.title = title;
         }

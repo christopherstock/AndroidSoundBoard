@@ -18,9 +18,13 @@
     **********************************************************************************************/
     public class SoundBoardFragment extends LibViewPagerFragment
     {
+        public SoundBoardFragment()
+        {
+        }
+
         public SoundBoardFragment(String title )
         {
-            super( title );
+            this.setTitle( title );
         }
 
         @Override

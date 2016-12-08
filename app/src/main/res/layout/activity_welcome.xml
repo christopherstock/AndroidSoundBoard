@@ -47,10 +47,15 @@
 
             <include
                 layout="@layout/button_special"
-                android:id="@+id/button_show_main_screen"
+                android:id="@+id/button_show_viewpager"
                 />
 
         </LinearLayout>
+
+        <include
+            layout="@layout/button_default"
+            android:id="@+id/button_show_tabbedpane"
+            />
 
         <include
             layout="@layout/text_default"

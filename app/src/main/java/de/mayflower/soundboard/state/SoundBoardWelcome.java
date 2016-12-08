@@ -48,9 +48,17 @@
             LibUI.setupButton
             (
                 this,
-                R.id.button_show_main_screen,
+                R.id.button_show_viewpager,
                 R.string.button_show_viewpager,
                 new SoundBoardAction( SoundBoardAction.Event.ENTER_ACTIVITY_VIEWPAGER, this )
+            );
+
+            LibUI.setupButton
+            (
+                this,
+                R.id.button_show_tabbedpane,
+                R.string.button_show_tabbedpane,
+                new SoundBoardAction( SoundBoardAction.Event.ENTER_ACTIVITY_TABBEDPANE, this )
             );
 
             LibUI.setupTextView

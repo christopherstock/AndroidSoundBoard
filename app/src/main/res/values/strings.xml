@@ -17,6 +17,7 @@
     <string name="button_back">Back</string>
     <string name="button_show_recorder">Recorder</string>
     <string name="button_show_viewpager">Library</string>
+    <string name="button_show_tabbedpane">TabbedPane</string>
     <string name="button_show_voice_input">Test Voice Input</string>
 
     <string name="menu_settings">Settings</string>

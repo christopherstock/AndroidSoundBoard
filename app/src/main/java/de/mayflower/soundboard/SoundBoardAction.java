@@ -36,6 +36,9 @@
             /** Shows the 'viewpager' activity. */
             ENTER_ACTIVITY_VIEWPAGER,
 
+            /** Shows the 'tabbedpane' activity. */
+            ENTER_ACTIVITY_TABBEDPANE,
+
             /** Shows the 'settings' activity. */
             ENTER_ACTIVITY_SETTINGS,
 
@@ -104,6 +107,12 @@
                         R.anim.push_left_in,
                         R.anim.push_left_out
                     );
+                    break;
+                }
+
+                case ENTER_ACTIVITY_TABBEDPANE:
+                {
+
                     break;
                 }
 

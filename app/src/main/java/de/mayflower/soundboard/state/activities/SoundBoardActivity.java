@@ -90,7 +90,7 @@
             if ( this.showMenuButtonInActionBar )
             {
                 MenuInflater inflater = getMenuInflater();
-                inflater.inflate( R.menu.default_menu, menu );
+                inflater.inflate( R.menu.menu_default, menu );
 
                 return true;
             }

@@ -37,7 +37,6 @@
             intent.setAction(   Intent.ACTION_MAIN      );
             intent.addCategory( Intent.CATEGORY_HOME    );
 
-            //start this activity
             context.startActivity( intent );
         }
     }

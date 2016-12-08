@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="SoundBoardTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="app_theme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/primal_light</item>
         <item name="colorPrimaryDark">@color/primal_dark</item>
         <item name="colorAccent">@color/primal_accent</item>
         <item name="android:windowBackground">@color/screen_bg</item>
     </style>
 
-    <style name="ViewPagerTitleStrip" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="viewpager_title_strip" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="android:textColor">@color/viewpager_tab_strip_fg</item>
         <item name="android:textSize">@dimen/text_size_view_tab_strip</item>
     </style>

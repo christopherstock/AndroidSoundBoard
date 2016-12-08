@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <!-- bg -->
     <gradient android:angle="0" android:startColor="@color/scrollbar" android:endColor="@color/scrollbar" />
     <corners android:radius="@dimen/scrollbar_corner_radius" />
 

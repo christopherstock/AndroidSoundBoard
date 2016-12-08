@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- animated logo -->
+    <integer name="duration_logo_animation_frame">100</integer>
+
+</resources>

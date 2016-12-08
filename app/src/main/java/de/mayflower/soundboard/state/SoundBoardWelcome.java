@@ -1,17 +1,15 @@
 
     package de.mayflower.soundboard.state;
 
-    import android.os.Bundle;
-
-import de.mayflower.lib.ui.LibUI;
-import de.mayflower.soundboard.R;
-import de.mayflower.soundboard.SoundBoardAction;
-import de.mayflower.soundboard.state.activities.SoundBoardActivity;
+    import  android.os.Bundle;
+    import  de.mayflower.lib.ui.LibUI;
+    import  de.mayflower.soundboard.R;
+    import  de.mayflower.soundboard.SoundBoardAction;
+    import  de.mayflower.soundboard.state.activities.SoundBoardActivity;
 
     /*******************************************************************************************
     *   The main activity of the SoundBoardWelcome application.
     *
-    *   TODO ASAP   Create 3D rotating MF logo on welcome screen.
     *   TODO WEAK   Create tabbed view pager with TabHost.
     *
     *   @author     Christopher Stock

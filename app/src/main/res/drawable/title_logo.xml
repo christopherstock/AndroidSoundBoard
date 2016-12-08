@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <animation-list android:id="@+id/animation_title_logo" android:oneshot="false"
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@drawable/mf_logo" android:duration="150" />
-    <item android:drawable="@drawable/icon_test" android:duration="150" />
+
+    <item android:drawable="@drawable/mf_logo_01" android:duration="@integer/duration_logo_animation_frame" />
+    <item android:drawable="@drawable/mf_logo_02" android:duration="@integer/duration_logo_animation_frame" />
+    <item android:drawable="@drawable/mf_logo_03" android:duration="@integer/duration_logo_animation_frame" />
+    <item android:drawable="@drawable/mf_logo_04" android:duration="@integer/duration_logo_animation_frame" />
+    <item android:drawable="@drawable/mf_logo_05" android:duration="@integer/duration_logo_animation_frame" />
+    <item android:drawable="@drawable/mf_logo_06" android:duration="@integer/duration_logo_animation_frame" />
+    <item android:drawable="@drawable/mf_logo_07" android:duration="@integer/duration_logo_animation_frame" />
+    <item android:drawable="@drawable/mf_logo_08" android:duration="@integer/duration_logo_animation_frame" />
+    <item android:drawable="@drawable/mf_logo_09" android:duration="@integer/duration_logo_animation_frame" />
+    <item android:drawable="@drawable/mf_logo_10" android:duration="@integer/duration_logo_animation_frame" />
+    <item android:drawable="@drawable/mf_logo_11" android:duration="@integer/duration_logo_animation_frame" />
+    <item android:drawable="@drawable/mf_logo_12" android:duration="@integer/duration_logo_animation_frame" />
+    <item android:drawable="@drawable/mf_logo_13" android:duration="@integer/duration_logo_animation_frame" />
+    <item android:drawable="@drawable/mf_logo_14" android:duration="@integer/duration_logo_animation_frame" />
+    <item android:drawable="@drawable/mf_logo_15" android:duration="@integer/duration_logo_animation_frame" />
+    <item android:drawable="@drawable/mf_logo_16" android:duration="@integer/duration_logo_animation_frame" />
+    <item android:drawable="@drawable/mf_logo_17" android:duration="@integer/duration_logo_animation_frame" />
+    <item android:drawable="@drawable/mf_logo_18" android:duration="@integer/duration_logo_animation_frame" />
+
 </animation-list>

@@ -177,6 +177,8 @@
                             LibResource.getResourceString( this.activity, R.string.app_name )
                         +   ", v."
                         +   SoundBoardVersion.getCurrentVersionId()
+                        +   "\n"
+                        +   LibResource.getResourceString( this.activity, R.string.copyright )
                     );
 
                     LibDialogDefault.showUIThreaded

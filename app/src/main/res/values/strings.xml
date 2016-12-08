@@ -10,14 +10,14 @@
     <string name="title_viewpager">ViewPager</string>
     <string name="title_settings">Settings</string>
 
-    <string name="text_welcome">Welcome to this test activity. Welcome to this test activity. Welcome to this test activity. Welcome to this test activity. Welcome to this test activity.</string>
+    <string name="text_welcome">Welcome to &lt;b&gt;SoundBoard&lt;/b&gt;!&lt;br&gt;&lt;br&gt;This is the prototype of the SoundBoard app. The app recognizes speech and plays according sound effects for predefined speech constructs.&lt;br&gt;&lt;br&gt;Later features include:&lt;br&gt;&lt;br&gt;Custom Sound Lib&lt;br&gt;Extended UI&lt;br&gt;Settings&lt;br&gt;User Profile&lt;br&gt;Server sync</string>
     <string name="text_recorder">This is the test Activity. This is the test Activity. This is the test Activity. This is the test Activity. This is the test Activity. This is the test Activity.</string>
     <string name="text_viewpager">The ViewPager fragment\'s content.</string>
 
     <string name="button_back">Back</string>
-    <string name="button_show_recorder">Show recorder</string>
-    <string name="button_show_viewpager">Show ViewPager</string>
-    <string name="button_show_voice_input">Test voice Input</string>
+    <string name="button_show_recorder">Recorder</string>
+    <string name="button_show_viewpager">Library</string>
+    <string name="button_show_voice_input">Test Voice Input</string>
 
     <string name="menu_settings">Settings</string>
     <string name="menu_about">About</string>

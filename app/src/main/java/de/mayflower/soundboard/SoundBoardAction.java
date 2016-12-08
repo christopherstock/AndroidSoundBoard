@@ -6,7 +6,7 @@
     import  android.speech.RecognizerIntent;
     import  de.mayflower.lib.Lib;
     import  de.mayflower.lib.LibLauncher;
-    import de.mayflower.lib.LibResource;
+    import  de.mayflower.lib.LibResource;
     import  de.mayflower.lib.ui.dialog.LibDialogDefault;
     import  de.mayflower.soundboard.state.*;
     import  de.mayflower.soundboard.state.SoundBoardSettings;
@@ -72,6 +72,7 @@
             this.activity = activity;
         }
 
+        @SuppressWarnings("OverlyLongMethod")
         @Override
         public void run()
         {

@@ -9,6 +9,5 @@
     android:scaleType="centerInside"
     android:adjustViewBounds="true"
     android:src="@drawable/title_logo"
-    android:paddingTop="0.0dp"
-    android:paddingBottom="0.0dp"
+    android:paddingBottom="@dimen/element_padding_y"
     />

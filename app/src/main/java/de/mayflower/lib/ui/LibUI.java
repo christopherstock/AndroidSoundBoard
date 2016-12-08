@@ -5,6 +5,8 @@
     import  android.support.v4.app.FragmentActivity;
     import  android.support.v4.app.FragmentManager;
     import  android.support.v4.view.ViewPager;
+    import android.text.Html;
+    import android.text.Spanned;
     import  android.view.View;
     import  android.widget.Button;
     import  android.widget.TextView;
@@ -48,8 +50,9 @@
         {
             TextView textView = (TextView)activity.findViewById( textViewId );
             String   text     = LibResource.getResourceString( activity, textId );
+            Spanned  spanned  = Html.fromHtml( text );
 
-            textView.setText( textId );
+            textView.setText( spanned );
         }
 
         /************************************************************************

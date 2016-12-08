@@ -8,4 +8,6 @@
     android:typeface="normal"
     android:textSize="@dimen/text_size_default"
     android:textColor="@color/text_default"
+    android:layout_marginLeft="@dimen/element_padding_x"
+    android:layout_marginRight="@dimen/element_padding_x"
     />

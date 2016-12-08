@@ -2,8 +2,8 @@
 <resources>
 
     <!-- global -->
-    <dimen name="default_padding_x">16dp</dimen>
-    <dimen name="default_padding_y">16dp</dimen>
+    <dimen name="element_padding_x">16dp</dimen>
+    <dimen name="element_padding_y">16dp</dimen>
 
     <!-- screen -->
     <dimen name="screen_border_x">5.0dp</dimen>

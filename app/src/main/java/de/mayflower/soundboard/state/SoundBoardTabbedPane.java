@@ -106,10 +106,10 @@
             this.tabHost = (TabHost)this.findViewById( R.id.tabbedpane_tabhost );
             this.tabHost.setup();
 
-            this.addTab( this.tabHost, this.tabHost.newTabSpec( TAB_TAG_WALL    ).setIndicator( LibUI.createImageView( this, R.drawable.tabbed_pane_tab_item, ImageView.ScaleType.CENTER_INSIDE ) ) );
-            this.addTab( this.tabHost, this.tabHost.newTabSpec( TAB_TAG_EXPLORE ).setIndicator( LibUI.createImageView( this, R.drawable.tabbed_pane_tab_item, ImageView.ScaleType.CENTER_INSIDE ) ) );
-            this.addTab( this.tabHost, this.tabHost.newTabSpec( TAB_TAG_UPLOAD  ).setIndicator( LibUI.createImageView( this, R.drawable.tabbed_pane_tab_item, ImageView.ScaleType.CENTER_INSIDE ) ) );
-            this.addTab( this.tabHost, this.tabHost.newTabSpec( TAB_TAG_PROFILE ).setIndicator( LibUI.createImageView( this, R.drawable.tabbed_pane_tab_item, ImageView.ScaleType.CENTER_INSIDE ) ) );
+            this.addTab( this.tabHost, this.tabHost.newTabSpec( TAB_TAG_WALL    ).setIndicator( LibUI.createImageView( this, R.drawable.tabbed_pane_tab_item_fg, ImageView.ScaleType.CENTER_INSIDE ) ) );
+            this.addTab( this.tabHost, this.tabHost.newTabSpec( TAB_TAG_EXPLORE ).setIndicator( LibUI.createImageView( this, R.drawable.tabbed_pane_tab_item_fg, ImageView.ScaleType.CENTER_INSIDE ) ) );
+            this.addTab( this.tabHost, this.tabHost.newTabSpec( TAB_TAG_UPLOAD  ).setIndicator( LibUI.createImageView( this, R.drawable.tabbed_pane_tab_item_fg, ImageView.ScaleType.CENTER_INSIDE ) ) );
+            this.addTab( this.tabHost, this.tabHost.newTabSpec( TAB_TAG_PROFILE ).setIndicator( LibUI.createImageView( this, R.drawable.tabbed_pane_tab_item_fg, ImageView.ScaleType.CENTER_INSIDE ) ) );
 
             this.tabHost.setOnTabChangedListener( this );
         }
@@ -149,8 +149,7 @@
             TabWidget tabWidget = this.tabHost.getTabWidget();
             for ( int i = 0; i < tabWidget.getChildCount(); ++i )
             {
-                //tabWidget.getChildAt( i ).setBackgroundResource( R.drawable. );
-                tabWidget.getChildAt( i ).setBackgroundColor( 0xffffff00 );
+                tabWidget.getChildAt( i ).setBackgroundResource( R.drawable.tabbed_pane_tab_item_bg );
             }
         }
 

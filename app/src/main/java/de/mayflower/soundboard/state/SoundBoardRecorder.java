@@ -57,7 +57,7 @@
                 this,
                 R.id.button_voice_input,
                 R.string.button_show_voice_input,
-                new SoundBoardAction( SoundBoardAction.Event.SHOW_VOICE_INPUT_DIALOG, this )
+                new SoundBoardAction( SoundBoardAction.Event.SHOW_DIALOG_VOICE_INPUT, this )
             );
 
             LibUI.setupTextView
@@ -71,7 +71,7 @@
         @Override
         protected void onActivityResult( int requestCode, int resultCode, Intent data )
         {
-            SoundBoardDebug.major.out(
+            SoundBoardDebug.soundReceiver.out(
                 "onActivityResult in TestScreen Activity .. [" + requestCode + "][" + resultCode + "][" + data + "]"
             );
 
@@ -82,11 +82,11 @@
             {
                 case REQUEST_CODE_RECORD_AUDIO:
                 {
-                    SoundBoardDebug.major.out("Response from audio recorder ..");
+                    SoundBoardDebug.soundReceiver.out("Response from audio recorder ..");
 
                     if (resultCode == Activity.RESULT_OK)
                     {
-                        SoundBoardDebug.major.out("Received correct audio.");
+                        SoundBoardDebug.soundReceiver.out("Received correct audio.");
 
                         ArrayList<String> matches = data.getStringArrayListExtra( RecognizerIntent.EXTRA_RESULTS );
 
@@ -95,7 +95,7 @@
                     }
                     else
                     {
-                        SoundBoardDebug.major.out("Received error code from audio activity.");
+                        SoundBoardDebug.soundReceiver.out("Received error code from audio activity.");
                     }
                     break;
                 }

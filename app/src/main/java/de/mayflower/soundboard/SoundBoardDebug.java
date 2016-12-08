@@ -20,6 +20,11 @@
         /** A paramount debug group with highest priority. */
         error(                      true                        ),
 
+        /** Shows speech results. */
+        speechResults(              true                        ),
+        /** Logs external  */
+        soundReceiver(              true                        ),
+
         ;
 
         /** The stacktrace-String to send via email. */
@@ -42,22 +47,22 @@
         @Override
         public final void out( Object msg )
         {
-            if (this.debug)
+            if ( this.debug )
             {
-                DEBUG_OUT(this.toString(), msg );
+                DEBUG_OUT( this.toString(), msg );
             }
         }
 
         @Override
         public final void err( Object msg )
         {
-            DEBUG_ERR(this.toString(), msg );
+            DEBUG_ERR( this.toString(), msg );
         }
 
         @Override
         public final void trace( Throwable t )
         {
-            if (this.debug)
+            if ( this.debug )
             {
                 DEBUG_THROWABLE( t );
             }

@@ -120,6 +120,14 @@
                     //prevent system from handling this event
                     return true;
                 }
+
+                case R.id.menu_about:
+                {
+                    new SoundBoardAction(SoundBoardAction.Event.SHOW_DIALOG_ABOUT, this).run();
+
+                    //prevent system from handling this event
+                    return true;
+                }
             }
 
             return super.onOptionsItemSelected(item);

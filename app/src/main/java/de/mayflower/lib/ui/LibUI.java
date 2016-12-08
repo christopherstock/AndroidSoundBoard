@@ -2,16 +2,12 @@
     package de.mayflower.lib.ui;
 
     import  android.app.Activity;
-    import  android.content.Context;
     import  android.support.v4.app.FragmentActivity;
+    import  android.support.v4.app.FragmentManager;
     import  android.support.v4.view.ViewPager;
-    import  android.view.LayoutInflater;
     import  android.view.View;
-    import  android.view.ViewGroup;
     import  android.widget.Button;
     import  android.widget.TextView;
-    import  android.widget.Toast;
-    import  java.util.Vector;
     import  de.mayflower.lib.LibResource;
 
     /************************************************************************
@@ -69,13 +65,10 @@
             LibViewPagerFragment[] fragments
         )
         {
-            LibViewPagerAdapter pagerAdapter = new LibViewPagerAdapter
-            (
-                fragmentActivity.getSupportFragmentManager(),
-                fragments
-            );
+            FragmentManager     fm           = fragmentActivity.getSupportFragmentManager();
+            LibViewPagerAdapter pagerAdapter = new LibViewPagerAdapter( fm, fragments );
+            ViewPager           viewPager    = (ViewPager)fragmentActivity.findViewById( viewPagerId );
 
-            ViewPager viewPager = (ViewPager)fragmentActivity.findViewById( viewPagerId );
             viewPager.setAdapter( pagerAdapter );
         }
 
@@ -116,6 +109,7 @@
         *   @param  activity        The according activity context.
         *   @param  viewGroup       The ViewGroup to remove all views from.
         ************************************************************************/
+/*
         public static final void removeAllViewsUIThreaded( Activity activity, final ViewGroup viewGroup )
         {
             activity.runOnUiThread
@@ -130,7 +124,7 @@
                 }
             );
         }
-
+*/
         /*********************************************************************************
         *   Inflates and returns a view by id
         *   even if the View is not set as the current activitie's content-view.
@@ -139,6 +133,7 @@
         *   @param  id          The resource-layout-id of the layout to inflate.
         *   @return             The inflated View.
         *********************************************************************************/
+/*
         public static final View getInflatedLayoutById( Context context, int id )
         {
             LayoutInflater  inflator    = (LayoutInflater)context.getSystemService( Context.LAYOUT_INFLATER_SERVICE );
@@ -146,13 +141,14 @@
 
             return ret;
         }
-
+*/
         /*********************************************************************************
         *   Returns all children of the specified ViewGroup.
         *
         *   @param  vg      The ViewGroup to return all children from.
         *   @return         All children of the given ViewGroup.
         *********************************************************************************/
+/*
         public static final Vector<View> getAllChildren( ViewGroup vg )
         {
             Vector<View> ret = new Vector<View>();
@@ -163,7 +159,7 @@
             }
             return ret;
         }
-
+*/
         /*********************************************************************************
         *   Shows an on-screen notification.
         *
@@ -171,6 +167,7 @@
         *   @param  message     The message to show in the on-screen notification.
         *   @param  showLong    If this toast shall be shown for a long time.
         *********************************************************************************/
+/*
         public static final void showToastUIThreaded( final Activity activity, final String message, final boolean showLong )
         {
             activity.runOnUiThread
@@ -185,7 +182,7 @@
                 }
             );
         }
-
+*/
         /************************************************************************
         *   Adds a view to another view on the UI-Thread.
         *
@@ -193,6 +190,7 @@
         *   @param  base        The base view that shall gather the other view.
         *   @param  toAdd       The view to add to the base view.
         ************************************************************************/
+/*
         public static final void addViewUIThreaded( Activity activity, final ViewGroup base, final View toAdd )
         {
             activity.runOnUiThread
@@ -207,7 +205,7 @@
                 }
             );
         }
-
+*/
         /************************************************************************
         *   Changes the specified view's visibility on the UI-Thread.
         *
@@ -215,6 +213,7 @@
         *   @param  view            The view to alter visibility for.
         *   @param  newVisibility   The new visibility to assign to the view.
         ************************************************************************/
+/*
         public static final void setVisibilityUIThreaded( Activity activity, final View view, final int newVisibility )
         {
             activity.runOnUiThread
@@ -229,7 +228,7 @@
                 }
             );
         }
-
+*/
         /************************************************************************
         *   Returns the child index of the specified view in the specified viewGroup.
         *
@@ -239,6 +238,7 @@
         *                           the viewGroup or -1 if the view
         *                           if NOT contained in the viewGroup.
         ************************************************************************/
+/*
         public static final int getChildIndex( ViewGroup viewGroup, View view )
         {
             for ( int i = 0; i < viewGroup.getChildCount(); ++i )
@@ -251,4 +251,5 @@
 
             return -1;
         }
+*/
     }

@@ -6,6 +6,8 @@
     import  android.speech.RecognizerIntent;
     import  de.mayflower.lib.Lib;
     import  de.mayflower.lib.LibLauncher;
+    import de.mayflower.lib.LibResource;
+    import  de.mayflower.lib.ui.dialog.LibDialogDefault;
     import  de.mayflower.soundboard.state.*;
     import  de.mayflower.soundboard.state.SoundBoardSettings;
 
@@ -25,23 +27,29 @@
         *****************************************************************************/
         public enum Event
         {
-            /** Shows the test activity. */
+            /** A no op event that does nothing for everybody. */
+            NOTHING,
+
+            /** Shows the 'recorder' activity. */
             ENTER_ACTIVITY_RECORDER,
 
-            /** Shows the main-screen activity. */
+            /** Shows the 'viewpager' activity. */
             ENTER_ACTIVITY_VIEWPAGER,
 
-            /** Shows the settings activity */
+            /** Shows the 'settings' activity. */
             ENTER_ACTIVITY_SETTINGS,
 
-            /** Shows the welcome activity from the test state. */
+            /** Changes back to the 'welcome' activity. */
             RETURN_TO_ACTIVITY_WELCOME,
 
             /** Eclipses the app and shows the android homescreen. */
             SHOW_HOMESCREEN,
 
-            /** Show the 'voice input' dialog. */
-            SHOW_VOICE_INPUT_DIALOG,
+            /** Shows the 'voice input' dialog. */
+            SHOW_DIALOG_VOICE_INPUT,
+
+            /** Shows the 'about' dialog. */
+            SHOW_DIALOG_ABOUT,
 
             ;
         }
@@ -69,6 +77,11 @@
         {
             switch( this.event  )
             {
+                case NOTHING:
+                {
+                    break;
+                }
+
                 case ENTER_ACTIVITY_RECORDER:
                 {
                     LibLauncher.launchActivity
@@ -123,7 +136,7 @@
                     break;
                 }
 
-                case SHOW_VOICE_INPUT_DIALOG:
+                case SHOW_DIALOG_VOICE_INPUT:
                 {
                     SoundBoardDebug.major.out( "Show the voice input dialog.." );
 
@@ -135,6 +148,38 @@
                     this.activity.startActivityForResult(
                         intent,
                         SoundBoardRecorder.REQUEST_CODE_RECORD_AUDIO
+                    );
+                    break;
+                }
+
+                case SHOW_DIALOG_ABOUT:
+                {
+                    SoundBoardDebug.major.out( "Show the about dialog.." );
+
+                    Runnable actionOnClose = new SoundBoardAction
+                    (
+                        SoundBoardAction.Event.NOTHING,
+                        this.activity
+                    );
+
+                    String body =
+                    (
+                            LibResource.getResourceString( this.activity, R.string.app_name )
+                        +   ", v."
+                        +   SoundBoardVersion.getCurrentVersionId()
+                    );
+
+                    LibDialogDefault.showUIThreaded
+                    (
+                        this.activity,
+                        R.string.dialog_about_title,
+                        body,
+                        R.string.dialog_about_button_ok,
+                        actionOnClose,
+                        0,
+                        null,
+                        true,
+                        actionOnClose
                     );
                     break;
                 }

@@ -77,6 +77,16 @@
         }
 
         /******************************************************************************************
+         *   Shows the current version number.
+         *
+         *   @return     The version-number of the latest version.
+         ******************************************************************************************/
+        public static final String getCurrentVersionId()
+        {
+            return SoundBoardVersion.values()[ 0 ].clientVersionNumber;
+        }
+
+        /******************************************************************************************
         *   Shows the current version number.
         *
         *   @return     The version-number of the latest version.

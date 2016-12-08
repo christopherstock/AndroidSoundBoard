@@ -3,13 +3,13 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- unselected -->
-    <item android:drawable="@drawable/tabbed_pane_tab_item_bg_unselect" android:state_selected="false" android:state_pressed="false" />
+    <item android:drawable="@color/project_medium_grey" android:state_selected="false" android:state_pressed="false" />
 
     <!-- focused and pressed -->
-    <item android:drawable="@drawable/tabbed_pane_tab_item_bg_hover" android:state_selected="false" android:state_focused="true" />
-    <item android:drawable="@drawable/tabbed_pane_tab_item_bg_hover" android:state_selected="false" android:state_pressed="true" />
+    <item android:drawable="@color/project_dark_grey" android:state_selected="false" android:state_focused="true" />
+    <item android:drawable="@color/project_dark_grey" android:state_selected="false" android:state_pressed="true" />
 
     <!-- selected -->
-    <item android:drawable="@drawable/tabbed_pane_tab_item_bg_select" android:state_selected="true" />
+    <item android:drawable="@color/project_mayflower_orange_default" android:state_selected="true" />
 
 </selector>

@@ -11,7 +11,7 @@
     import  de.mayflower.soundboard.SoundBoardAction;
     import  de.mayflower.soundboard.SoundBoardDebug;
     import  de.mayflower.soundboard.service.SoundBoardPlaybackService;
-    import  de.mayflower.soundboard.state.activities.SoundBoardActivity;
+    import de.mayflower.soundboard.state.activity.SoundBoardActivity;
 
     /*******************************************************************************************
     *   The recorder activity.

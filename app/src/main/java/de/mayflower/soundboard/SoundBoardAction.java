@@ -112,7 +112,13 @@
 
                 case ENTER_ACTIVITY_TABBEDPANE:
                 {
-
+                    LibLauncher.launchActivity
+                    (
+                        this.activity,
+                        SoundBoardTabbedPane.class,
+                        R.anim.push_left_in,
+                        R.anim.push_left_out
+                    );
                     break;
                 }
 

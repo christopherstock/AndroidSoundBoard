@@ -1,7 +1,10 @@
 
     package de.mayflower.lib.ui;
 
-    import  android.support.v4.app.*;
+    import  android.support.v4.app.Fragment;
+    import  android.support.v4.app.FragmentManager;
+    import  android.support.v4.app.FragmentPagerAdapter;
+    import  java.util.List;
 
     /************************************************************************
     *   The adapter for a ViewPager.
@@ -11,9 +14,9 @@
     ************************************************************************/
     public class LibViewPagerAdapter extends FragmentPagerAdapter
     {
-        private         LibViewPagerFragment[]         fragments           = null;
+        private             List<LibViewPagerFragment>      fragments           = null;
 
-        public LibViewPagerAdapter( FragmentManager fm, LibViewPagerFragment[] fragments )
+        public LibViewPagerAdapter(FragmentManager fm, List<LibViewPagerFragment> fragments )
         {
             super( fm );
 
@@ -23,18 +26,18 @@
         @Override
         public Fragment getItem( int position )
         {
-            return this.fragments[ position ];
+            return this.fragments.get( position );
         }
 
         @Override
         public int getCount()
         {
-            return this.fragments.length;
+            return this.fragments.size();
         }
 
         @Override
         public CharSequence getPageTitle( int position )
         {
-            return this.fragments[ position ].getTitle();
+            return this.fragments.get( position ).getTitle();
         }
     }

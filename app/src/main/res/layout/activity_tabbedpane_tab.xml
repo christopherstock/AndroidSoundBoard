@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:scrollbarStyle="outsideOverlay"
+    android:scrollbarThumbHorizontal="@drawable/scrollbar"
+    android:scrollbarThumbVertical="@drawable/scrollbar"
+    android:scrollbarSize="@dimen/scrollbar_size"
+    android:fadingEdgeLength="@dimen/fading_edge_size"
+    android:requiresFadingEdge="vertical"
+    android:fadeScrollbars="true"
+    >
+
+    <!-- scrollbar content -->
+    <LinearLayout
+        android:id="@+id/tabbedpane_scrollview_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal|top"
+        android:paddingLeft="@dimen/element_padding_x"
+        android:paddingRight="@dimen/element_padding_x"
+        android:paddingTop="@dimen/element_padding_y"
+        android:paddingBottom="@dimen/element_padding_y"
+        >
+
+        <include
+            layout="@layout/text_default"
+            android:id="@+id/text_tabbedpane"
+            />
+
+    </LinearLayout>
+
+</ScrollView>

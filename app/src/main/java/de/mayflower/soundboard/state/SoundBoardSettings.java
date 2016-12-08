@@ -4,7 +4,7 @@
     import  android.os.Bundle;
     import  de.mayflower.soundboard.R;
     import  de.mayflower.soundboard.SoundBoardAction;
-    import  de.mayflower.soundboard.state.activities.SoundBoardActivity;
+    import de.mayflower.soundboard.state.activity.SoundBoardActivity;
 
     /**********************************************************************************************
     *   The settings activity.

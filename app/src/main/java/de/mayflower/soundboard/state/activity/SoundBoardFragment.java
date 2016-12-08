@@ -1,5 +1,5 @@
 
-    package de.mayflower.soundboard.state.activities;
+    package de.mayflower.soundboard.state.activity;
 
     import  android.os.Bundle;
     import  android.view.LayoutInflater;
@@ -11,14 +11,14 @@
     import  de.mayflower.soundboard.SoundBoardDebug;
 
     /***********************************************************************************************
-    *   The concrete class for a viewpager fragment.
+    *   The concrete class for a fragment.
     *
     *   @author     Christopher Stock
     *   @version    1.0
     **********************************************************************************************/
-    public class SoundBoardViewPagerFragment extends LibViewPagerFragment
+    public class SoundBoardFragment extends LibViewPagerFragment
     {
-        public SoundBoardViewPagerFragment( String title )
+        public SoundBoardFragment(String title )
         {
             super( title );
         }
@@ -34,7 +34,7 @@
 
             View     rootView = inflater.inflate( R.layout.activity_viewpager_fragment, container, false );
             TextView tv       = (TextView)rootView.findViewById( R.id.text_viewpager );
-            tv.setText( R.string.text_viewpager );
+            tv.setText( R.string.text_fragment);
 
             //ViewGroup sv       = (ViewGroup)rootView.findViewById( R.id.view_pager_scrollview_content );
 /*

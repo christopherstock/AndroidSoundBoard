@@ -29,4 +29,8 @@
     <dimen name="text_size_default">20.0dp</dimen>
     <dimen name="text_size_view_tab_strip">20.0dp</dimen>
 
+    <!-- viewpager and tabbedpane -->
+    <dimen name="viewpager_pagertitlestrip_height">50.0dp</dimen>
+    <dimen name="tabbedpane_tabwidget_height">50.0dp</dimen>
+
 </resources>

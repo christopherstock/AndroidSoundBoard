@@ -2,6 +2,7 @@
     package de.mayflower.lib.ui;
 
     import  android.app.Activity;
+    import  android.content.Context;
     import  android.graphics.drawable.AnimationDrawable;
     import  android.support.v4.app.FragmentActivity;
     import  android.support.v4.app.FragmentManager;
@@ -12,6 +13,7 @@
     import  android.widget.Button;
     import  android.widget.ImageView;
     import  android.widget.TextView;
+    import  java.util.List;
     import  de.mayflower.lib.LibResource;
 
     /************************************************************************
@@ -74,6 +76,23 @@
         }
 
         /************************************************************************
+        *   Creates a {@link ImageView} that holds the specified image.
+        *
+        *   @param  context     The current context.
+        *   @param  imageID     The resource-ID of the image to set into the ImageView.
+        *   @param  scaleType   The ScaleType to set for this ImageView.
+        *   @return             The created ImageView holding the given image.
+        ************************************************************************/
+        public static final ImageView createImageView(Context context, int imageID, ImageView.ScaleType scaleType )
+        {
+            ImageView ret = new ImageView( context );
+            ret.setImageResource( imageID   );
+            ret.setScaleType(     scaleType );
+
+            return ret;
+        }
+
+        /************************************************************************
         *   Sets up a {@link TextView} with the major attributes.
         *
         *   @param  fragmentActivity The current system context.
@@ -81,9 +100,9 @@
         ************************************************************************/
         public static final void setupViewPagerAdapter
         (
-            FragmentActivity       fragmentActivity,
-            int                    viewPagerId,
-            LibViewPagerFragment[] fragments
+            FragmentActivity           fragmentActivity,
+            int                        viewPagerId,
+            List<LibViewPagerFragment> fragments
         )
         {
             FragmentManager     fm           = fragmentActivity.getSupportFragmentManager();

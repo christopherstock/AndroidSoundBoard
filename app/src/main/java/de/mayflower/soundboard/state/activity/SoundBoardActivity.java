@@ -1,5 +1,5 @@
 
-    package de.mayflower.soundboard.state.activities;
+    package de.mayflower.soundboard.state.activity;
 
     import  android.os.Bundle;
     import  android.support.v7.app.ActionBar;
@@ -89,7 +89,7 @@
         {
             if ( this.showMenuButtonInActionBar )
             {
-                MenuInflater inflater = getMenuInflater();
+                MenuInflater inflater = this.getMenuInflater();
                 inflater.inflate( R.menu.menu_default, menu );
 
                 return true;

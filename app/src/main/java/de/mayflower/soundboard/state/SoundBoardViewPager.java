@@ -2,11 +2,13 @@
     package de.mayflower.soundboard.state;
 
     import  android.os.Bundle;
+    import  java.util.Arrays;
     import  de.mayflower.lib.ui.LibUI;
+    import  de.mayflower.lib.ui.LibViewPagerFragment;
     import  de.mayflower.soundboard.R;
     import  de.mayflower.soundboard.SoundBoardAction;
-    import  de.mayflower.soundboard.state.activities.SoundBoardActivity;
-    import  de.mayflower.soundboard.state.activities.SoundBoardViewPagerFragment;
+    import  de.mayflower.soundboard.state.activity.SoundBoardActivity;
+    import de.mayflower.soundboard.state.activity.SoundBoardFragment;
 
     /**********************************************************************************************
     *   The viewPager activity.
@@ -38,13 +40,16 @@
             (
                 this,
                 R.id.viewpager_pager,
-                new SoundBoardViewPagerFragment[]
-                {
-                    new SoundBoardViewPagerFragment( "Fragment A" ),
-                    new SoundBoardViewPagerFragment( "Fragment B" ),
-                    new SoundBoardViewPagerFragment( "Fragment C" ),
-                    new SoundBoardViewPagerFragment( "Fragment D" ),
-                }
+                Arrays.asList
+                (
+                    new LibViewPagerFragment[]
+                    {
+                        new SoundBoardFragment( "Fragment A" ),
+                        new SoundBoardFragment( "Fragment B" ),
+                        new SoundBoardFragment( "Fragment C" ),
+                        new SoundBoardFragment( "Fragment D" ),
+                    }
+                )
             );
         }
     }

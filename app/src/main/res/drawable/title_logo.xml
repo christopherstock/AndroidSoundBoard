@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list android:id="@+id/animation_title_logo" android:oneshot="false"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/mf_logo" android:duration="150" />
+    <item android:drawable="@drawable/icon_test" android:duration="150" />
+</animation-list>

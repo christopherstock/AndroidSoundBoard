@@ -39,17 +39,17 @@
             />
 
         <include
-            layout="@layout/image_title_logo"
+            layout="@layout/image_title_splash"
             android:id="@+id/image_title_logo_4"
             />
 
         <include
-            layout="@layout/image_title_logo"
+            layout="@layout/image_title_splash"
             android:id="@+id/image_title_logo_5"
             />
 
         <include
-            layout="@layout/image_title_logo"
+            layout="@layout/image_title_splash"
             android:id="@+id/image_title_logo_6"
             />
 

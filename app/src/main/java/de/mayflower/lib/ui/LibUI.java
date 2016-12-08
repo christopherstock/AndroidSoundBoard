@@ -2,13 +2,15 @@
     package de.mayflower.lib.ui;
 
     import  android.app.Activity;
+    import  android.graphics.drawable.AnimationDrawable;
     import  android.support.v4.app.FragmentActivity;
     import  android.support.v4.app.FragmentManager;
     import  android.support.v4.view.ViewPager;
-    import android.text.Html;
-    import android.text.Spanned;
+    import  android.text.Html;
+    import  android.text.Spanned;
     import  android.view.View;
     import  android.widget.Button;
+    import  android.widget.ImageView;
     import  android.widget.TextView;
     import  de.mayflower.lib.LibResource;
 
@@ -53,6 +55,22 @@
             Spanned  spanned  = Html.fromHtml( text );
 
             textView.setText( spanned );
+        }
+
+        /************************************************************************
+        *   Sets up an animated {@link ImageView} with the major attributes.
+        *
+        *   @param  activity        The current system context.
+        *   @param  imageViewId     The ID of the ImageView to configure.
+        *   @param  animationId     The ID of the animation drawable to apply.
+        ************************************************************************/
+        public static final void setupAnimatedImageView( Activity activity, int imageViewId, int animationId )
+        {
+            ImageView img = (ImageView)activity.findViewById( imageViewId );
+            img.setBackgroundResource( animationId );
+
+            AnimationDrawable frameAnimation = (AnimationDrawable)img.getBackground();
+            frameAnimation.start();
         }
 
         /************************************************************************
@@ -104,155 +122,4 @@
                 );
             }
         }
-
-        /************************************************************************
-        *   Removes all views of the specified ViewGroup.
-        *   This method is performed on the UI-Thread.
-        *
-        *   @param  activity        The according activity context.
-        *   @param  viewGroup       The ViewGroup to remove all views from.
-        ************************************************************************/
-/*
-        public static final void removeAllViewsUIThreaded( Activity activity, final ViewGroup viewGroup )
-        {
-            activity.runOnUiThread
-            (
-                new Runnable()
-                {
-                    @Override
-                    public void run()
-                    {
-                        viewGroup.removeAllViews();
-                    }
-                }
-            );
-        }
-*/
-        /*********************************************************************************
-        *   Inflates and returns a view by id
-        *   even if the View is not set as the current activitie's content-view.
-        *
-        *   @param  context     The current system context.
-        *   @param  id          The resource-layout-id of the layout to inflate.
-        *   @return             The inflated View.
-        *********************************************************************************/
-/*
-        public static final View getInflatedLayoutById( Context context, int id )
-        {
-            LayoutInflater  inflator    = (LayoutInflater)context.getSystemService( Context.LAYOUT_INFLATER_SERVICE );
-            View            ret         = inflator.inflate( id, null );
-
-            return ret;
-        }
-*/
-        /*********************************************************************************
-        *   Returns all children of the specified ViewGroup.
-        *
-        *   @param  vg      The ViewGroup to return all children from.
-        *   @return         All children of the given ViewGroup.
-        *********************************************************************************/
-/*
-        public static final Vector<View> getAllChildren( ViewGroup vg )
-        {
-            Vector<View> ret = new Vector<View>();
-            for ( int i = 0; i < vg.getChildCount(); ++i )
-            {
-                View child = vg.getChildAt( i );
-                ret.addElement( child );
-            }
-            return ret;
-        }
-*/
-        /*********************************************************************************
-        *   Shows an on-screen notification.
-        *
-        *   @param  activity    The according activity context.
-        *   @param  message     The message to show in the on-screen notification.
-        *   @param  showLong    If this toast shall be shown for a long time.
-        *********************************************************************************/
-/*
-        public static final void showToastUIThreaded( final Activity activity, final String message, final boolean showLong )
-        {
-            activity.runOnUiThread
-            (
-                new Runnable()
-                {
-                    @Override
-                    public void run()
-                    {
-                        Toast.makeText( activity, message, ( showLong ? Toast.LENGTH_LONG : Toast.LENGTH_SHORT ) ).show();
-                    }
-                }
-            );
-        }
-*/
-        /************************************************************************
-        *   Adds a view to another view on the UI-Thread.
-        *
-        *   @param  activity    The according activity context.
-        *   @param  base        The base view that shall gather the other view.
-        *   @param  toAdd       The view to add to the base view.
-        ************************************************************************/
-/*
-        public static final void addViewUIThreaded( Activity activity, final ViewGroup base, final View toAdd )
-        {
-            activity.runOnUiThread
-            (
-                new Runnable()
-                {
-                    @Override
-                    public void run()
-                    {
-                        base.addView( toAdd );
-                    }
-                }
-            );
-        }
-*/
-        /************************************************************************
-        *   Changes the specified view's visibility on the UI-Thread.
-        *
-        *   @param  activity        The according activity context.
-        *   @param  view            The view to alter visibility for.
-        *   @param  newVisibility   The new visibility to assign to the view.
-        ************************************************************************/
-/*
-        public static final void setVisibilityUIThreaded( Activity activity, final View view, final int newVisibility )
-        {
-            activity.runOnUiThread
-            (
-                new Runnable()
-                {
-                    @Override
-                    public void run()
-                    {
-                        view.setVisibility( newVisibility );
-                    }
-                }
-            );
-        }
-*/
-        /************************************************************************
-        *   Returns the child index of the specified view in the specified viewGroup.
-        *
-        *   @param  viewGroup       The group to search the other view in.
-        *   @param  view            The view to find in the viewGroup.
-        *   @return                 The 0-based child-index of the view inside of
-        *                           the viewGroup or -1 if the view
-        *                           if NOT contained in the viewGroup.
-        ************************************************************************/
-/*
-        public static final int getChildIndex( ViewGroup viewGroup, View view )
-        {
-            for ( int i = 0; i < viewGroup.getChildCount(); ++i )
-            {
-                if ( viewGroup.getChildAt( i ).equals( view ) )
-                {
-                    return i;
-                }
-            }
-
-            return -1;
-        }
-*/
     }

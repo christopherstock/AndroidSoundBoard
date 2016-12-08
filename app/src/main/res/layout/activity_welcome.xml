@@ -29,8 +29,8 @@
         >
 
         <include
-            layout="@layout/image_title_logo"
-            android:id="@+id/image_title_logo"
+            layout="@layout/image_title_splash"
+            android:id="@+id/image_title_splash"
             />
 
         <LinearLayout
@@ -60,6 +60,20 @@
         <include
             layout="@layout/text_default"
             android:id="@+id/text_welcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/element_padding_y"
+            android:layout_marginBottom="@dimen/element_padding_y"
+            />
+
+        <include
+            layout="@layout/image_title_logo"
+            android:id="@+id/image_title_logo"
+            />
+
+        <include
+            layout="@layout/text_default"
+            android:id="@+id/text_credits"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/element_padding_y"

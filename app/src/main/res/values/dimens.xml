@@ -21,8 +21,9 @@
     <dimen name="scrollbar_size">4.0dp</dimen>
     <dimen name="scrollbar_corner_radius">4.0dp</dimen>
 
-    <!-- title logo -->
-    <dimen name="title_logo_height">175.0dp</dimen>
+    <!-- welcome screen -->
+    <dimen name="title_splash_height">175.0dp</dimen>
+    <dimen name="title_logo_height">100.0dp</dimen>
 
     <!-- texts -->
     <dimen name="text_size_default">20.0dp</dimen>

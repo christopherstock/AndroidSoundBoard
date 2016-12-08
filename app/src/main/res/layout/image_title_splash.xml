@@ -3,10 +3,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:contentDescription="@string/empty"
     android:layout_width="wrap_content"
-    android:layout_height="@dimen/title_logo_height"
+    android:layout_height="@dimen/title_splash_height"
     android:layout_gravity="center_horizontal"
     android:layout_weight="0.0"
     android:scaleType="centerInside"
     android:adjustViewBounds="true"
-    android:paddingTop="@dimen/element_padding_y"
+    android:src="@drawable/title_splash"
+    android:paddingBottom="@dimen/element_padding_y"
     />

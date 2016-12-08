@@ -5,13 +5,12 @@
     import  de.mayflower.lib.ui.LibUI;
     import  de.mayflower.soundboard.R;
     import  de.mayflower.soundboard.SoundBoardAction;
-    import de.mayflower.soundboard.state.activity.SoundBoardActivity;
+    import  de.mayflower.soundboard.state.activity.SoundBoardActivity;
 
     /*******************************************************************************************
     *   The main activity of the SoundBoardWelcome application.
     *
     *   TODO ASAP   Add custom dialog (for about, with logo etc.).
-    *   TODO WEAK   Create tabbed view pager with TabHost.
     *
     *   @author     Christopher Stock
     *   @version    1.0

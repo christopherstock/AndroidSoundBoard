@@ -13,47 +13,6 @@
         android:layout_height="match_parent"
         >
 
-        <!-- this FrameLayout is MANDATORY! -->
-        <FrameLayout
-            android:id="@android:id/tabcontent"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="0"/>
-
-            <!-- ? -->
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1.0"
-                >
-
-                <!-- ViewPager -->
-                <android.support.v4.view.ViewPager
-                    android:id="@+id/viewpager"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    />
-
-                <!-- bottom drop shadow container -->
-<!--
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="bottom"
-                    >
--->
-                    <!-- bottom drop shadow -->
-<!--
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/drop_shadow_height"
-                        android:background="@drawable/net_picfood_drop_shadow_vert_footer"
-                        />
-
-                </RelativeLayout>
--->
-            </FrameLayout>
-
         <!-- Tabs -->
         <TabWidget
             android:id="@android:id/tabs"
@@ -63,6 +22,47 @@
             android:layout_weight="0.0"
             android:tabStripEnabled="false"
             />
+
+        <!-- this FrameLayout is MANDATORY! -->
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="0"/>
+
+        <!-- ? -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            >
+
+            <!-- ViewPager -->
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+
+            <!-- bottom drop shadow container -->
+<!--
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom"
+                >
+-->
+                <!-- bottom drop shadow -->
+<!--
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/drop_shadow_height"
+                    android:background="@drawable/net_picfood_drop_shadow_vert_footer"
+                    />
+
+            </RelativeLayout>
+-->
+        </FrameLayout>
 
     </LinearLayout>
 

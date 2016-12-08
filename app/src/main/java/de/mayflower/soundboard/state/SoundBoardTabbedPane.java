@@ -76,16 +76,10 @@
         }
 
         @Override
-        public void onTabChanged( String tag )
+        public void onTabChanged( String tabId )
         {
-/*
-            //TabInfo newTab = mapTabInfo.get(tag);
-            int pos = tabHost.getCurrentTab();
+            int pos = this.tabHost.getCurrentTab();
             this.viewPager.setCurrentItem( pos );
-
-            //remember this tab as the last selected one
-            this.setLastSelectedTab( tag );
-*/
         }
 
         @Override
@@ -112,10 +106,10 @@
             this.tabHost = (TabHost)this.findViewById( R.id.tabbedpane_tabhost );
             this.tabHost.setup();
 
-            this.addTab( this.tabHost, this.tabHost.newTabSpec( TAB_TAG_WALL    ).setIndicator( LibUI.createImageView( this, R.drawable.icon_test, ImageView.ScaleType.CENTER_INSIDE ) ) );
-            this.addTab( this.tabHost, this.tabHost.newTabSpec( TAB_TAG_EXPLORE ).setIndicator( LibUI.createImageView( this, R.drawable.icon_test, ImageView.ScaleType.CENTER_INSIDE ) ) );
-            this.addTab( this.tabHost, this.tabHost.newTabSpec( TAB_TAG_UPLOAD  ).setIndicator( LibUI.createImageView( this, R.drawable.icon_test, ImageView.ScaleType.CENTER_INSIDE ) ) );
-            this.addTab( this.tabHost, this.tabHost.newTabSpec( TAB_TAG_PROFILE ).setIndicator( LibUI.createImageView( this, R.drawable.icon_test, ImageView.ScaleType.CENTER_INSIDE ) ) );
+            this.addTab( this.tabHost, this.tabHost.newTabSpec( TAB_TAG_WALL    ).setIndicator( LibUI.createImageView( this, R.drawable.tabbed_pane_tab_item, ImageView.ScaleType.CENTER_INSIDE ) ) );
+            this.addTab( this.tabHost, this.tabHost.newTabSpec( TAB_TAG_EXPLORE ).setIndicator( LibUI.createImageView( this, R.drawable.tabbed_pane_tab_item, ImageView.ScaleType.CENTER_INSIDE ) ) );
+            this.addTab( this.tabHost, this.tabHost.newTabSpec( TAB_TAG_UPLOAD  ).setIndicator( LibUI.createImageView( this, R.drawable.tabbed_pane_tab_item, ImageView.ScaleType.CENTER_INSIDE ) ) );
+            this.addTab( this.tabHost, this.tabHost.newTabSpec( TAB_TAG_PROFILE ).setIndicator( LibUI.createImageView( this, R.drawable.tabbed_pane_tab_item, ImageView.ScaleType.CENTER_INSIDE ) ) );
 
             this.tabHost.setOnTabChangedListener( this );
         }
@@ -155,7 +149,8 @@
             TabWidget tabWidget = this.tabHost.getTabWidget();
             for ( int i = 0; i < tabWidget.getChildCount(); ++i )
             {
-                tabWidget.getChildAt( i ).setBackgroundResource( R.drawable.icon_test );
+                //tabWidget.getChildAt( i ).setBackgroundResource( R.drawable. );
+                tabWidget.getChildAt( i ).setBackgroundColor( 0xffffff00 );
             }
         }
 
@@ -187,67 +182,4 @@
             //add tabSpec to host
             tabHost.addTab( tabSpec );
         }
-
-        /**********************************************************************************************
-        *   Switches to a specified tab.
-        *
-        *   @param  activity    The according activity context.
-        *   @param  tag         The tag of the tab to switch to.
-        **********************************************************************************************/
-/*
-        public static final void changeToTabUIThreaded( Activity activity, String tag )
-        {
-            lastSelectedTab = tag;
-
-            //switch to this tab
-            activity.runOnUiThread
-            (
-                new Runnable()
-                {
-                    @Override
-                    public void run()
-                    {
-                        singleton.iTabHost.setCurrentTabByTag( lastSelectedTab );
-                    }
-                }
-            );
-        }
-*/
-        /**********************************************************************************************
-        *   Unselects all buttons in the header.
-        *   This method is performed on the UI-Thread.
-        **********************************************************************************************/
-/*
-        public static final void unselectHeaderButtonsUIThreaded()
-        {
-            //switch to this tab
-            singleton.runOnUiThread
-            (
-                new Runnable()
-                {
-                    @Override
-                    public void run()
-                    {
-                        //unselect header buttons
-                        //singleton.findViewById( R.id.settings_icon ).setSelected( false );
-                        //singleton.findViewById( R.id.search_icon   ).setSelected( false );
-                    }
-                }
-            );
-        }
-*/
-        /**********************************************************************************************
-        *   Checks, if the specified tab is currently selected in the pivotal menu.
-        *   This method is performed on the UI-Thread.
-        *
-        *   @param  tagToCheck  The tag of the tab that shall be checked for selection.
-        *   @return             <code>true</code> if the specified tag is currently selected.
-        *                       Otherwise <code>false</code>.
-        **********************************************************************************************/
-/*
-        public static final boolean isTabSelected( String tagToCheck )
-        {
-            return ( lastSelectedTab.equals( tagToCheck ) );
-        }
-*/
     }

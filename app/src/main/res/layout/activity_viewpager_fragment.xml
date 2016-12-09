@@ -26,7 +26,7 @@
         >
 
         <include
-            layout="@layout/text_default"
+            layout="@layout/text_default_centered"
             android:id="@+id/text_viewpager"
             />
 

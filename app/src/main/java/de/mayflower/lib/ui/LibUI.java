@@ -57,8 +57,24 @@
         ************************************************************************/
         public static final void setupTextView( Activity activity, int textViewId, int textId, Typeface typeface )
         {
-            TextView textView = (TextView)activity.findViewById( textViewId );
-            String   text     = LibResource.getResourceString( activity, textId );
+            LibUI.setupTextView
+            (
+                (TextView)activity.findViewById( textViewId ),
+                LibResource.getResourceString( activity, textId ),
+                typeface
+            );
+        }
+
+        /************************************************************************
+         *   Sets up a {@link TextView} with the major attributes.
+         *
+         *   @param  activity       The current system context.
+         *   @param  textViewId     The ID of the TextView to configure.
+         *   @param  text           The text to set.
+         *   @param  typeface       The custom typeface to use for this TextView.
+         ************************************************************************/
+        public static final void setupTextView( TextView textView, String text, Typeface typeface )
+        {
             Spanned  spanned  = Html.fromHtml( text );
 
             textView.setTypeface( typeface );

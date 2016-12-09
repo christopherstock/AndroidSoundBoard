@@ -36,4 +36,8 @@
     <dimen name="viewpager_pagertitlestrip_height">50.0dp</dimen>
     <dimen name="tabbedpane_tabwidget_height">50.0dp</dimen>
 
+    <!-- dialogs -->
+    <dimen name="dialog_about_text_margin_x">35.0dp</dimen>
+    <dimen name="dialog_about_text_margin_y">15.0dp</dimen>
+
 </resources>

@@ -1,19 +1,18 @@
 
     package de.mayflower.soundboard;
 
-    import android.app.Activity;
-import android.content.Intent;
-import android.speech.RecognizerIntent;
-
-import de.mayflower.lib.Lib;
-import de.mayflower.lib.LibLauncher;
-import de.mayflower.lib.LibResource;
-    import de.mayflower.lib.ui.dialog.LibDialogAbout;
-    import de.mayflower.soundboard.state.SoundBoardRecorder;
-import de.mayflower.soundboard.state.SoundBoardSettings;
-import de.mayflower.soundboard.state.SoundBoardTabbedPane;
-import de.mayflower.soundboard.state.SoundBoardViewPager;
-import de.mayflower.soundboard.state.SoundBoardWelcome;
+    import  android.app.Activity;
+    import  android.content.Intent;
+    import  android.speech.RecognizerIntent;
+    import  de.mayflower.lib.Lib;
+    import  de.mayflower.lib.LibLauncher;
+    import  de.mayflower.lib.LibResource;
+    import de.mayflower.soundboard.ui.SoundBoardDialogAbout;
+    import  de.mayflower.soundboard.state.SoundBoardRecorder;
+    import  de.mayflower.soundboard.state.SoundBoardSettings;
+    import  de.mayflower.soundboard.state.SoundBoardTabbedPane;
+    import  de.mayflower.soundboard.state.SoundBoardViewPager;
+    import  de.mayflower.soundboard.state.SoundBoardWelcome;
 
     /*****************************************************************************
     *   The action system.
@@ -187,7 +186,7 @@ import de.mayflower.soundboard.state.SoundBoardWelcome;
                             LibResource.getResourceString( this.activity, R.string.app_name )
                         +   ", v."
                         +   SoundBoardVersion.getCurrentVersionId()
-                        +   "\n"
+                        +   "<br>"
                         +   LibResource.getResourceString( this.activity, R.string.copyright )
                     );
 /*
@@ -204,27 +203,17 @@ import de.mayflower.soundboard.state.SoundBoardWelcome;
                         actionOnClose
                     );
 */
-                    LibDialogAbout.show
+                    SoundBoardDialogAbout.show
                     (
                         this.activity,
                         R.layout.dialog_about,
-                        R.id.dialog_custom_container,
-                        new int[] {},
-                        new int[] {},
-                        new int[] {},
-                        new int[] {},
                         R.string.dialog_about_title,
-                        0,
-                        new String[] { "Fucker!", },
+                        body,
                         R.string.dialog_about_button_ok,
                         actionOnClose,
-                        0,
-                        null,
                         true,
-                        actionOnClose,
-                        null
+                        actionOnClose
                     );
-
                     break;
                 }
             }

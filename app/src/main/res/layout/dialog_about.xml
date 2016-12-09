@@ -14,19 +14,9 @@
         android:gravity="center_horizontal|center_vertical"
         >
 
-        <RelativeLayout
-            android:id="@+id/text_container"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal|center_vertical"
-            />
-
-        <LinearLayout
-            android:id="@+id/button_container"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_horizontal|center_vertical"
+        <include
+            layout="@layout/text_dialog_about"
+            android:id="@+id/text_dialog_about"
             />
 
     </LinearLayout>

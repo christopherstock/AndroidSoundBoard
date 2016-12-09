@@ -3,44 +3,56 @@
 
     <!-- project -->
     <color name="project_mayflower_orange_default">#ffed7304</color>
-    <color name="project_mayflower_orange_light">#ffffac61</color>
+    <color name="project_mayflower_orange_light">#ffffb36f</color>
 
-    <color name="project_light_grey">#ffededed</color>
-    <color name="project_medium_grey">#ffcccccc</color>
-    <color name="project_dark_grey">#ff969696</color>
+    <color name="project_grey_light">#ffdddddd</color>
+    <color name="project_grey_medium">#ffbbbbbb</color>
+    <color name="project_grey_dark">#ff868686</color>
 
     <!-- primal -->
     <color name="primal_light">@color/project_mayflower_orange_default</color>
-    <color name="primal_dark">@color/project_dark_grey</color>
+    <color name="primal_dark">@color/project_grey_dark</color>
     <color name="primal_accent">@color/project_mayflower_orange_default</color>
 
     <!-- screen -->
     <color name="screen_bg">#ffffffff</color>
 
     <!-- text -->
-    <color name="text_default">@color/project_dark_grey</color>
+    <color name="text_default">@color/project_grey_dark</color>
 
     <!-- scrollbar -->
     <color name="scrollbar">@color/project_mayflower_orange_default</color>
 
     <!-- viewpager -->
-    <color name="viewpager_tab_strip_bg">@color/project_dark_grey</color>
+    <color name="viewpager_tab_strip_bg">@color/project_grey_dark</color>
     <color name="viewpager_tab_strip_fg">#ffffffff</color>
 
     <!-- button default -->
     <color name="button_default_fg_unselect">#ffffffff</color>
     <color name="button_default_fg_hover">#ffffffff</color>
     <color name="button_default_fg_select">#ffffffff</color>
-    <color name="button_default_bg_unselect">@color/project_medium_grey</color>
-    <color name="button_default_bg_hover">@color/project_dark_grey</color>
-    <color name="button_default_bg_select">@color/project_mayflower_orange_default</color>
+    <color name="button_default_bg_unselect_gradient_start">@color/project_grey_light</color>
+    <color name="button_default_bg_unselect_gradient_end">@color/project_grey_medium</color>
+    <color name="button_default_bg_hover_gradient_start">@color/project_grey_light</color>
+    <color name="button_default_bg_hover_gradient_end">@color/project_grey_dark</color>
+    <color name="button_default_bg_select_gradient_start">@color/project_mayflower_orange_light</color>
+    <color name="button_default_bg_select_gradient_end">@color/project_mayflower_orange_default</color>
+    <color name="button_default_stroke_unselect">@color/project_grey_medium</color>
+    <color name="button_default_stroke_hover">@color/project_grey_medium</color>
+    <color name="button_default_stroke_select">@color/project_mayflower_orange_default</color>
 
     <!-- button special -->
     <color name="button_special_fg_unselect">@color/button_default_fg_unselect</color>
     <color name="button_special_fg_hover">@color/button_default_fg_hover</color>
     <color name="button_special_fg_select">@color/button_default_fg_select</color>
-    <color name="button_special_bg_unselect">@color/project_mayflower_orange_light</color>
-    <color name="button_special_bg_hover">@color/button_default_bg_hover</color>
-    <color name="button_special_bg_select">@color/button_default_bg_select</color>
+    <color name="button_special_bg_unselect_gradient_start">@color/project_mayflower_orange_light</color>
+    <color name="button_special_bg_unselect_gradient_end">@color/project_mayflower_orange_light</color>
+    <color name="button_special_bg_hover_gradient_start">@color/button_default_bg_hover_gradient_start</color>
+    <color name="button_special_bg_hover_gradient_end">@color/button_default_bg_hover_gradient_end</color>
+    <color name="button_special_bg_select_gradient_start">@color/button_default_bg_select_gradient_start</color>
+    <color name="button_special_bg_select_gradient_end">@color/button_default_bg_select_gradient_end</color>
+    <color name="button_special_stroke_unselect">@color/project_mayflower_orange_light</color>
+    <color name="button_special_stroke_hover">@color/button_default_stroke_hover</color>
+    <color name="button_special_stroke_select">@color/button_default_stroke_select</color>
 
 </resources>

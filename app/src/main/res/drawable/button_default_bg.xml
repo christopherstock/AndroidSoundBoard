@@ -2,13 +2,37 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- unselected -->
-    <item android:drawable="@color/button_default_bg_unselect" android:state_selected="false" android:state_pressed="false" />
+    <item android:state_selected="false" android:state_pressed="false">
+        <shape android:shape="rectangle">
+            <corners android:radius="@dimen/button_corner_radius" />
+            <stroke android:width="@dimen/button_stroke_size" android:color="@color/button_default_stroke_unselect" />
+            <gradient android:angle="-90" android:startColor="@color/button_default_bg_unselect_gradient_start" android:endColor="@color/button_default_bg_unselect_gradient_end" />
+        </shape>
+    </item>
 
     <!-- focused and pressed -->
-    <item android:drawable="@color/button_default_bg_hover" android:state_selected="false" android:state_focused="true" />
-    <item android:drawable="@color/button_default_bg_hover" android:state_selected="false" android:state_pressed="true" />
+    <item android:state_selected="false" android:state_focused="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="@dimen/button_corner_radius" />
+            <stroke android:width="@dimen/button_stroke_size" android:color="@color/button_default_stroke_hover" />
+            <gradient android:angle="-90" android:startColor="@color/button_default_bg_hover_gradient_start" android:endColor="@color/button_default_bg_hover_gradient_end" />
+        </shape>
+    </item>
+    <item android:state_selected="false" android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="@dimen/button_corner_radius" />
+            <stroke android:width="@dimen/button_stroke_size" android:color="@color/button_default_stroke_hover" />
+            <gradient android:angle="-90" android:startColor="@color/button_default_bg_hover_gradient_start" android:endColor="@color/button_default_bg_hover_gradient_end" />
+        </shape>
+    </item>
 
     <!-- selected -->
-    <item android:drawable="@color/button_default_bg_select" android:state_selected="true" />
+    <item android:state_selected="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="@dimen/button_corner_radius" />
+            <stroke android:width="@dimen/button_stroke_size" android:color="@color/button_default_stroke_select" />
+            <gradient android:angle="-90" android:startColor="@color/button_default_bg_select_gradient_start" android:endColor="@color/button_default_bg_select_gradient_end" />
+        </shape>
+    </item>
 
 </selector>

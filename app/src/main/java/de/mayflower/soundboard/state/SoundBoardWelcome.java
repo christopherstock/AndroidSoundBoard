@@ -10,6 +10,7 @@
     /*******************************************************************************************
     *   The main activity of the SoundBoardWelcome application.
     *
+    *   TODO ASAP   Custom fonts / typefaces. (check symbol font implementation?)
     *   TODO ASAP   Add custom dialog (for about, with logo etc.).
     *
     *   @author     Christopher Stock
@@ -80,6 +81,16 @@
                 this,
                 R.id.image_title_logo,
                 R.drawable.title_logo
+            );
+
+
+
+            LibUI.setupButton
+            (
+                this,
+                R.id.button_unlinked_1,
+                R.string.button_back,
+                new SoundBoardAction( SoundBoardAction.Event.NOTHING, this )
             );
         }
     }

@@ -5,6 +5,7 @@
     import  android.app.AlertDialog;
     import  android.content.DialogInterface;
     import  android.view.ViewGroup;
+    import  android.widget.ImageView;
     import  android.widget.TextView;
     import  de.mayflower.lib.ui.LibUI;
     import  de.mayflower.soundboard.R;
@@ -50,6 +51,12 @@
                 (TextView)layout.findViewById( R.id.text_dialog_about ),
                 body,
                 SoundBoardFont.TYPEFACE_MYRIAD_PRO_REGULAR.getTypeface( activity )
+            );
+
+            LibUI.setupAnimatedImageView
+            (
+                (ImageView)layout.findViewById( R.id.image_title_logo ),
+                R.drawable.title_logo
             );
 
             //create dialog builder

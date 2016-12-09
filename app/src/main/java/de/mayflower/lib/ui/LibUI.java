@@ -90,10 +90,22 @@
         ************************************************************************/
         public static final void setupAnimatedImageView( Activity activity, int imageViewId, int animationId )
         {
-            ImageView img = (ImageView)activity.findViewById( imageViewId );
-            img.setBackgroundResource( animationId );
+            ImageView imageView = (ImageView)activity.findViewById( imageViewId );
 
-            AnimationDrawable frameAnimation = (AnimationDrawable)img.getBackground();
+            LibUI.setupAnimatedImageView( imageView, animationId );
+        }
+
+        /************************************************************************
+        *   Sets up an animated {@link ImageView} with the major attributes.
+        *
+        *   @param  imageView       The ImageView to configure.
+        *   @param  animationId     The ID of the animation drawable to apply.
+        ************************************************************************/
+        public static final void setupAnimatedImageView( ImageView imageView, int animationId )
+        {
+            imageView.setBackgroundResource( animationId );
+
+            AnimationDrawable frameAnimation = (AnimationDrawable)imageView.getBackground();
             frameAnimation.start();
         }
 

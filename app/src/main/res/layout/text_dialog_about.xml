@@ -12,5 +12,4 @@
     android:layout_marginLeft="@dimen/dialog_about_text_margin_x"
     android:layout_marginRight="@dimen/dialog_about_text_margin_x"
     android:layout_marginTop="@dimen/dialog_about_text_margin_y"
-    android:layout_marginBottom="@dimen/dialog_about_text_margin_y"
     />

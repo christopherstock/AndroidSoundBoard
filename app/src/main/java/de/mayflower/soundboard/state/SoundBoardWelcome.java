@@ -11,8 +11,7 @@
     /*******************************************************************************************
     *   The main activity of the SoundBoardWelcome application.
     *
-    *   TODO ASAP   Add custom dialog (for about, with logo etc.).
-    *   TODO ASAP   Check remaining features in the template project.
+    *   TODO ASAP   Check remaining goodies in the template project.
     *
     *   @author     Christopher Stock
     *   @version    1.0
@@ -81,15 +80,6 @@
                 R.string.text_credits,
                 SoundBoardFont.TYPEFACE_MYRIAD_PRO_REGULAR.getTypeface( this )
             );
-
-            LibUI.setupAnimatedImageView
-            (
-                this,
-                R.id.image_title_logo,
-                R.drawable.title_logo
-            );
-
-
 
             LibUI.setupButton
             (

@@ -1,15 +1,19 @@
 
     package de.mayflower.soundboard;
 
-    import  android.app.Activity;
-    import  android.content.Intent;
-    import  android.speech.RecognizerIntent;
-    import  de.mayflower.lib.Lib;
-    import  de.mayflower.lib.LibLauncher;
-    import  de.mayflower.lib.LibResource;
-    import  de.mayflower.lib.ui.dialog.LibDialogDefault;
-    import  de.mayflower.soundboard.state.*;
-    import  de.mayflower.soundboard.state.SoundBoardSettings;
+    import android.app.Activity;
+import android.content.Intent;
+import android.speech.RecognizerIntent;
+
+import de.mayflower.lib.Lib;
+import de.mayflower.lib.LibLauncher;
+import de.mayflower.lib.LibResource;
+    import de.mayflower.lib.ui.dialog.LibDialogAbout;
+    import de.mayflower.soundboard.state.SoundBoardRecorder;
+import de.mayflower.soundboard.state.SoundBoardSettings;
+import de.mayflower.soundboard.state.SoundBoardTabbedPane;
+import de.mayflower.soundboard.state.SoundBoardViewPager;
+import de.mayflower.soundboard.state.SoundBoardWelcome;
 
     /*****************************************************************************
     *   The action system.
@@ -186,8 +190,8 @@
                         +   "\n"
                         +   LibResource.getResourceString( this.activity, R.string.copyright )
                     );
-
-                    LibDialogDefault.showUIThreaded
+/*
+                    LibDialogDefault.show
                     (
                         this.activity,
                         R.string.dialog_about_title,
@@ -199,6 +203,28 @@
                         true,
                         actionOnClose
                     );
+*/
+                    LibDialogAbout.show
+                    (
+                        this.activity,
+                        R.layout.dialog_about,
+                        R.id.dialog_custom_container,
+                        new int[] {},
+                        new int[] {},
+                        new int[] {},
+                        new int[] {},
+                        R.string.dialog_about_title,
+                        0,
+                        new String[] { "Fucker!", },
+                        R.string.dialog_about_button_ok,
+                        actionOnClose,
+                        0,
+                        null,
+                        true,
+                        actionOnClose,
+                        null
+                    );
+
                     break;
                 }
             }

@@ -11,8 +11,8 @@
     /*******************************************************************************************
     *   The main activity of the SoundBoardWelcome application.
     *
-    *   TODO ASAP   Custom fonts / typefaces. (check symbol font implementation?)
     *   TODO ASAP   Add custom dialog (for about, with logo etc.).
+    *   TODO ASAP   Check remaining features in the template project.
     *
     *   @author     Christopher Stock
     *   @version    1.0

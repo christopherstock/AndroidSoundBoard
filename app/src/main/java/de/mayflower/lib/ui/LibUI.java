@@ -10,6 +10,7 @@
     import  android.support.v4.view.ViewPager;
     import  android.text.Html;
     import  android.text.Spanned;
+    import android.view.LayoutInflater;
     import  android.view.View;
     import  android.widget.Button;
     import  android.widget.ImageView;
@@ -145,5 +146,21 @@
                     }
                 );
             }
+        }
+
+        /*********************************************************************************
+        *   Inflates and returns a view by id
+        *   even if the View is not set as the current activitie's content-view.
+        *
+        *   @param  context     The current system context.
+        *   @param  id          The resource-layout-id of the layout to inflate.
+        *   @return             The inflated View.
+        *********************************************************************************/
+        public static final View getInflatedLayoutById( Context context, int id )
+        {
+            LayoutInflater inflator    = (LayoutInflater)context.getSystemService( Context.LAYOUT_INFLATER_SERVICE );
+            View            ret         = inflator.inflate( id, null );
+
+            return ret;
         }
     }

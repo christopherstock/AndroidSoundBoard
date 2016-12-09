@@ -11,6 +11,7 @@
     /*******************************************************************************************
     *   The main activity of the SoundBoardWelcome application.
     *
+    *   TODO ASAP   Create 'help' activity.
     *   TODO ASAP   Check remaining goodies in the template project.
     *
     *   @author     Christopher Stock
@@ -64,7 +65,7 @@
                 new SoundBoardAction( SoundBoardAction.Event.ENTER_ACTIVITY_TABBEDPANE, this ),
                 SoundBoardFont.TYPEFACE_MYRIAD_PRO_REGULAR.getTypeface( this )
             );
-
+/*
             LibUI.setupTextView
             (
                 this,
@@ -80,7 +81,7 @@
                 R.string.text_credits,
                 SoundBoardFont.TYPEFACE_MYRIAD_PRO_REGULAR.getTypeface( this )
             );
-
+*/
             LibUI.setupButton
             (
                 this,

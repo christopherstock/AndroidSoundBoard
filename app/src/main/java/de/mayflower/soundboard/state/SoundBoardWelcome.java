@@ -6,6 +6,7 @@
     import  de.mayflower.soundboard.R;
     import  de.mayflower.soundboard.SoundBoardAction;
     import  de.mayflower.soundboard.state.activity.SoundBoardActivity;
+    import  de.mayflower.soundboard.ui.SoundBoardFont;
 
     /*******************************************************************************************
     *   The main activity of the SoundBoardWelcome application.
@@ -43,7 +44,8 @@
                 this,
                 R.id.button_welcome,
                 R.string.button_show_recorder,
-                new SoundBoardAction( SoundBoardAction.Event.ENTER_ACTIVITY_RECORDER, this )
+                new SoundBoardAction( SoundBoardAction.Event.ENTER_ACTIVITY_RECORDER, this ),
+                SoundBoardFont.TYPEFACE_MYRIAD_PRO_REGULAR.getTypeface( this )
             );
 
             LibUI.setupButton
@@ -51,7 +53,8 @@
                 this,
                 R.id.button_show_viewpager,
                 R.string.button_show_viewpager,
-                new SoundBoardAction( SoundBoardAction.Event.ENTER_ACTIVITY_VIEWPAGER, this )
+                new SoundBoardAction( SoundBoardAction.Event.ENTER_ACTIVITY_VIEWPAGER, this ),
+                SoundBoardFont.TYPEFACE_MYRIAD_PRO_REGULAR.getTypeface( this )
             );
 
             LibUI.setupButton
@@ -59,21 +62,24 @@
                 this,
                 R.id.button_show_tabbedpane,
                 R.string.button_show_tabbedpane,
-                new SoundBoardAction( SoundBoardAction.Event.ENTER_ACTIVITY_TABBEDPANE, this )
+                new SoundBoardAction( SoundBoardAction.Event.ENTER_ACTIVITY_TABBEDPANE, this ),
+                SoundBoardFont.TYPEFACE_MYRIAD_PRO_REGULAR.getTypeface( this )
             );
 
             LibUI.setupTextView
             (
                 this,
                 R.id.text_welcome,
-                R.string.text_welcome
+                R.string.text_welcome,
+                SoundBoardFont.TYPEFACE_MYRIAD_PRO_REGULAR.getTypeface( this )
             );
 
             LibUI.setupTextView
             (
                 this,
                 R.id.text_credits,
-                R.string.text_credits
+                R.string.text_credits,
+                SoundBoardFont.TYPEFACE_MYRIAD_PRO_REGULAR.getTypeface( this )
             );
 
             LibUI.setupAnimatedImageView
@@ -90,7 +96,8 @@
                 this,
                 R.id.button_unlinked_1,
                 R.string.button_back,
-                new SoundBoardAction( SoundBoardAction.Event.NOTHING, this )
+                new SoundBoardAction( SoundBoardAction.Event.NOTHING, this ),
+                SoundBoardFont.TYPEFACE_MYRIAD_PRO_REGULAR.getTypeface( this )
             );
         }
     }

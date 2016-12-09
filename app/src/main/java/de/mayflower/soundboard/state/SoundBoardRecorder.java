@@ -11,7 +11,8 @@
     import  de.mayflower.soundboard.SoundBoardAction;
     import  de.mayflower.soundboard.SoundBoardDebug;
     import  de.mayflower.soundboard.service.SoundBoardPlaybackService;
-    import de.mayflower.soundboard.state.activity.SoundBoardActivity;
+    import  de.mayflower.soundboard.state.activity.SoundBoardActivity;
+    import  de.mayflower.soundboard.ui.SoundBoardFont;
 
     /*******************************************************************************************
     *   The recorder activity.
@@ -49,7 +50,8 @@
                 this,
                 R.id.button_test,
                 R.string.button_back,
-                new SoundBoardAction( SoundBoardAction.Event.RETURN_TO_ACTIVITY_WELCOME, this )
+                new SoundBoardAction( SoundBoardAction.Event.RETURN_TO_ACTIVITY_WELCOME, this ),
+                SoundBoardFont.TYPEFACE_MYRIAD_PRO_REGULAR.getTypeface( this )
             );
 
             LibUI.setupButton
@@ -57,14 +59,16 @@
                 this,
                 R.id.button_voice_input,
                 R.string.button_show_voice_input,
-                new SoundBoardAction( SoundBoardAction.Event.SHOW_DIALOG_VOICE_INPUT, this )
+                new SoundBoardAction( SoundBoardAction.Event.SHOW_DIALOG_VOICE_INPUT, this ),
+                SoundBoardFont.TYPEFACE_MYRIAD_PRO_REGULAR.getTypeface( this )
             );
 
             LibUI.setupTextView
             (
                 this,
                 R.id.text_recorder,
-                R.string.text_recorder
+                R.string.text_recorder,
+                SoundBoardFont.TYPEFACE_MYRIAD_PRO_REGULAR.getTypeface( this )
             );
         }
 

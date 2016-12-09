@@ -3,7 +3,6 @@
 
     import  android.app.Activity;
     import  android.view.View;
-
     import  de.mayflower.soundboard.SoundBoardDebug;
 
     /**********************************************************************************************

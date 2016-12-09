@@ -3,6 +3,7 @@
 
     import  android.app.Activity;
     import  android.content.Context;
+    import  android.graphics.Typeface;
     import  android.graphics.drawable.AnimationDrawable;
     import  android.support.v4.app.FragmentActivity;
     import  android.support.v4.app.FragmentManager;
@@ -32,13 +33,15 @@
         *   @param  buttonId        The id of the button to configure.
         *   @param  textId          The resource-ID for the caption of this button.
         *   @param  action          The OnClick-action.
+        *   @param  typeface        The custom typeface to use for this button.
         ************************************************************************/
-        public static final void setupButton( Activity activity, int buttonId, int textId, Runnable action )
+        public static final void setupButton( Activity activity, int buttonId, int textId, Runnable action, Typeface typeface )
         {
             Button button = (Button)activity.findViewById( buttonId );
             String text   = LibResource.getResourceString( activity, textId );
 
             button.setText( text, TextView.BufferType.SPANNABLE );
+            button.setTypeface( typeface );
 
             setOnClickAction( button, action );
         }
@@ -49,13 +52,15 @@
         *   @param  activity        The current system context.
         *   @param  textViewId      The ID of the TextView to configure.
         *   @param  textId          The ID of the text to set for the TextView.
+        *   @param  typeface        The custom typeface to use for this TextView.
         ************************************************************************/
-        public static final void setupTextView( Activity activity, int textViewId, int textId )
+        public static final void setupTextView( Activity activity, int textViewId, int textId, Typeface typeface )
         {
             TextView textView = (TextView)activity.findViewById( textViewId );
             String   text     = LibResource.getResourceString( activity, textId );
             Spanned  spanned  = Html.fromHtml( text );
 
+            textView.setTypeface( typeface );
             textView.setText( spanned );
         }
 

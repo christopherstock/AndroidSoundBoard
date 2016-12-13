@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_separator_line_size"
+        android:paddingLeft="@dimen/element_padding_x"
+        android:paddingRight="@dimen/element_padding_x"
+        android:paddingStart="@dimen/element_padding_x"
+        android:paddingEnd="@dimen/element_padding_x"
+        android:background="@color/item_separator"
+        />
+
+</LinearLayout>

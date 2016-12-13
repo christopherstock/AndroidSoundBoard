@@ -41,7 +41,7 @@
     <color name="button_default_stroke_hover">@color/project_grey_medium</color>
     <color name="button_default_stroke_select">@color/project_mayflower_orange_default</color>
 
-    <!-- button special -->
+    <!-- button special - TODO delete? -->
     <color name="button_special_fg_unselect">@color/button_default_fg_unselect</color>
     <color name="button_special_fg_hover">@color/button_default_fg_hover</color>
     <color name="button_special_fg_select">@color/button_default_fg_select</color>
@@ -54,5 +54,16 @@
     <color name="button_special_stroke_unselect">@color/project_mayflower_orange_light</color>
     <color name="button_special_stroke_hover">@color/button_default_stroke_hover</color>
     <color name="button_special_stroke_select">@color/button_default_stroke_select</color>
+
+    <!-- item default -->
+    <color name="item_default_fg_unselect">@color/text_default</color>
+    <color name="item_default_fg_hover">@color/project_grey_medium</color>
+    <color name="item_default_fg_select">@color/text_default</color>
+    <color name="item_default_bg_unselect">#ffffffff</color>
+    <color name="item_default_bg_hover">@color/project_grey_light</color>
+    <color name="item_default_bg_select">#ffffffff</color>
+
+    <!-- item separator -->
+    <color name="item_separator">@color/project_grey_medium</color>
 
 </resources>

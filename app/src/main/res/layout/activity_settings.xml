@@ -2,6 +2,7 @@
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context="de.mayflower.soundboard.state.SoundBoardSettings"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:scrollbarStyle="insideOverlay"
@@ -18,40 +19,11 @@
     >
 
     <LinearLayout
+        android:id="@+id/settings_container"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="@dimen/element_padding_y"
-        android:paddingLeft="@dimen/element_padding_x"
-        android:paddingRight="@dimen/element_padding_x"
-        android:paddingTop="@dimen/element_padding_y"
-        tools:context="de.mayflower.soundboard.state.SoundBoardRecorder"
         >
-
-        <include
-            layout="@layout/button_default"
-            android:id="@+id/button_test"
-            />
-
-        <include
-            layout="@layout/button_default"
-            android:id="@+id/button_voice_input"
-            />
-
-        <include
-            layout="@layout/image_title_splash"
-            android:id="@+id/image_title_logo_4"
-            />
-
-        <include
-            layout="@layout/image_title_splash"
-            android:id="@+id/image_title_logo_5"
-            />
-
-        <include
-            layout="@layout/image_title_splash"
-            android:id="@+id/image_title_logo_6"
-            />
 
     </LinearLayout>
 </ScrollView>

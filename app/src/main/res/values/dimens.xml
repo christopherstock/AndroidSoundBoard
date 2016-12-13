@@ -40,4 +40,8 @@
     <dimen name="dialog_about_text_margin_x">35.0dp</dimen>
     <dimen name="dialog_about_text_margin_y">15.0dp</dimen>
 
+    <!-- settings items -->
+    <dimen name="item_height">50.0dp</dimen>
+    <dimen name="item_separator_line_size">1.0dp</dimen>
+
 </resources>

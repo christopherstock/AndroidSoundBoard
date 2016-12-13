@@ -189,8 +189,6 @@
 
                 case SHOW_DIALOG_ABOUT:
                 {
-                    SoundBoardDebug.major.out( "Show the about dialog.." );
-
                     Runnable actionOnClose = new SoundBoardAction
                     (
                         SoundBoardAction.Event.NOTHING,
@@ -205,20 +203,7 @@
                         +   "<br>"
                         +   LibResource.getResourceString( this.activity, R.string.copyright )
                     );
-/*
-                    LibDialogDefault.show
-                    (
-                        this.activity,
-                        R.string.dialog_about_title,
-                        body,
-                        R.string.dialog_about_button_ok,
-                        actionOnClose,
-                        0,
-                        null,
-                        true,
-                        actionOnClose
-                    );
-*/
+
                     SoundBoardDialogAbout.show
                     (
                         this.activity,

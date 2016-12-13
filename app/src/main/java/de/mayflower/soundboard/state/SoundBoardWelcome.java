@@ -11,6 +11,8 @@
     /*******************************************************************************************
     *   The main activity of the SoundBoardWelcome application.
     *
+    *   TODO WEAK Generate Javadoc.
+    *
     *   @author     Christopher Stock
     *   @version    1.0
     *******************************************************************************************/
@@ -67,23 +69,7 @@
                 new SoundBoardAction( SoundBoardAction.Event.ENTER_ACTIVITY_TABBEDPANE, this ),
                 SoundBoardFont.TYPEFACE_MYRIAD_PRO_REGULAR.getTypeface( this )
             );
-/*
-            LibUI.setupTextView
-            (
-                this,
-                R.id.text_welcome,
-                R.string.text_welcome,
-                SoundBoardFont.TYPEFACE_MYRIAD_PRO_REGULAR.getTypeface( this )
-            );
 
-            LibUI.setupTextView
-            (
-                this,
-                R.id.text_credits,
-                R.string.text_credits,
-                SoundBoardFont.TYPEFACE_MYRIAD_PRO_REGULAR.getTypeface( this )
-            );
-*/
             LibUI.setupButton
             (
                 this,

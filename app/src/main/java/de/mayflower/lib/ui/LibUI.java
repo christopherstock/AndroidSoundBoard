@@ -10,7 +10,7 @@
     import  android.support.v4.view.ViewPager;
     import  android.text.Html;
     import  android.text.Spanned;
-    import android.view.LayoutInflater;
+    import  android.view.LayoutInflater;
     import  android.view.View;
     import  android.widget.Button;
     import  android.widget.ImageView;
@@ -44,7 +44,7 @@
             button.setText( text, TextView.BufferType.SPANNABLE );
             button.setTypeface( typeface );
 
-            setOnClickAction( button, action );
+            setOnClickAction( button, action, true );
         }
 
         /************************************************************************
@@ -66,13 +66,12 @@
         }
 
         /************************************************************************
-         *   Sets up a {@link TextView} with the major attributes.
-         *
-         *   @param  activity       The current system context.
-         *   @param  textViewId     The ID of the TextView to configure.
-         *   @param  text           The text to set.
-         *   @param  typeface       The custom typeface to use for this TextView.
-         ************************************************************************/
+        *   Sets up a {@link TextView} with the major attributes.
+        *
+        *   @param  textView        The TextView to configure.
+        *   @param  text            The text to set.
+        *   @param  typeface        The custom typeface to use for this TextView.
+        ************************************************************************/
         public static final void setupTextView( TextView textView, String text, Typeface typeface )
         {
             Spanned  spanned  = Html.fromHtml( text );
@@ -151,10 +150,16 @@
         *   The action is invoked if the view's OnClick-event is invoked.
         *   The view is marked as selected in addition.
         *
-        *   @param  view    The view to assign the action to.
-        *   @param  action  The OnClick-action to assign.
+        *   @param  view                   The view to assign the action to.
+        *   @param  action                 The OnClick-action to assign.
+        *   @param  setViewSelectedOnClick Determines if the view shall be explicitly tagges as 'selected'.
         ************************************************************************/
-        public static final void setOnClickAction( final View view, final Runnable action )
+        public static final void setOnClickAction
+        (
+            final View     view,
+            final Runnable action,
+            final boolean  setViewSelectedOnClick
+        )
         {
             if ( action != null )
             {
@@ -165,10 +170,11 @@
                         @Override
                         public void onClick( View v)
                         {
-                            //mark this view as selected
-                            view.setSelected( true );
+                            if (setViewSelectedOnClick)
+                            {
+                                view.setSelected( true );
+                            }
 
-                            //perform action if not null
                             action.run();
                         }
                     }

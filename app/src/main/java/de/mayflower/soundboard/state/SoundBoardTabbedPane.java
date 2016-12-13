@@ -46,7 +46,12 @@
          *******************************************************************************************/
         public SoundBoardTabbedPane()
         {
-            super( SoundBoardAction.Event.RETURN_TO_ACTIVITY_WELCOME, true, true );
+            super
+            (
+                SoundBoardAction.Event.RETURN_TO_ACTIVITY_WELCOME,
+                SoundBoardActivity.ShowBackButton.YES,
+                SoundBoardActivity.ShowMenuButton.YES
+            );
         }
 
         @Override

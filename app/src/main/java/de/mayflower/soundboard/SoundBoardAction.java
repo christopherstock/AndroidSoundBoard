@@ -7,7 +7,8 @@
     import  de.mayflower.lib.Lib;
     import  de.mayflower.lib.LibLauncher;
     import  de.mayflower.lib.LibResource;
-    import de.mayflower.soundboard.ui.SoundBoardDialogAbout;
+    import  de.mayflower.soundboard.state.SoundBoardHelp;
+    import  de.mayflower.soundboard.ui.SoundBoardDialogAbout;
     import  de.mayflower.soundboard.state.SoundBoardRecorder;
     import  de.mayflower.soundboard.state.SoundBoardSettings;
     import  de.mayflower.soundboard.state.SoundBoardTabbedPane;
@@ -44,6 +45,9 @@
 
             /** Shows the 'settings' activity. */
             ENTER_ACTIVITY_SETTINGS,
+
+            /** Shows the 'help' activity. */
+            ENTER_ACTIVITY_HELP,
 
             /** Changes back to the 'welcome' activity. */
             RETURN_TO_ACTIVITY_WELCOME,
@@ -137,14 +141,26 @@
                     break;
                 }
 
+                case ENTER_ACTIVITY_HELP:
+                {
+                    LibLauncher.launchActivity
+                    (
+                        this.activity,
+                        SoundBoardHelp.class,
+                        R.anim.push_left_in,
+                        R.anim.push_left_out
+                    );
+                    break;
+                }
+
                 case RETURN_TO_ACTIVITY_WELCOME:
                 {
                     LibLauncher.launchActivity
                     (
-                            this.activity,
-                            SoundBoardWelcome.class,
-                            R.anim.push_right_in,
-                            R.anim.push_right_out
+                        this.activity,
+                        SoundBoardWelcome.class,
+                        R.anim.push_right_in,
+                        R.anim.push_right_out
                     );
                     break;
                 }

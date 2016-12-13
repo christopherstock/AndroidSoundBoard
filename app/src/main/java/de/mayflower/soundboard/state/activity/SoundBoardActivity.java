@@ -13,26 +13,36 @@
     *
     *   @author     Christopher Stock
     *   @version    1.0
-     **********************************************************************************************/
+    ***********************************************************************************************/
     public abstract class SoundBoardActivity extends AppCompatActivity
     {
+        /*******************************************************************************************
+        *   Specifies if the 'back softkey' shall be displayed in the title bar.
+        *******************************************************************************************/
+        public static enum ShowBackButton{ YES, NO, ; }
+
+        /*******************************************************************************************
+         *   Specifies if the 'menu' key shall be supported in this activity.
+         ******************************************************************************************/
+        public static enum ShowMenuButton{ YES, NO, ; }
+
         /** The event to launch when the backKey is pressed. */
-        private             SoundBoardAction.Event      backKeyEvent                    = null;
+        private             SoundBoardAction.Event              backKeyEvent                = null;
 
         /** Specifies if the back button should be shown in the title bar. */
-        private             boolean                     showBackButtonInActionBar       = false;
+        private             SoundBoardActivity.ShowBackButton   showBackButtonInActionBar   = null;
 
         /** Specifies if the menu button should be shown in the title bar. */
-        private             boolean                     showMenuButtonInActionBar       = false;
+        private             SoundBoardActivity.ShowMenuButton   showMenuButtonInActionBar   = null;
 
         /*******************************************************************************************
         *   Creates a new Activity with an assignable backKey.
         *******************************************************************************************/
         protected SoundBoardActivity
         (
-            SoundBoardAction.Event backKeyEvent,
-            boolean                showBackButtonInActionBar,
-            boolean                showMenuButtonInActionBar
+            SoundBoardAction.Event            backKeyEvent,
+            SoundBoardActivity.ShowBackButton showBackButtonInActionBar,
+            SoundBoardActivity.ShowMenuButton showMenuButtonInActionBar
         )
         {
             this.backKeyEvent              = backKeyEvent;
@@ -55,12 +65,16 @@
 
         /*******************************************************************************************
          *   Initializes the buttons for the action bar.
-         *******************************************************************************************/
+         ******************************************************************************************/
         private void initActionBar()
         {
             ActionBar ab = this.getSupportActionBar();
 
-            if ( this.showBackButtonInActionBar && ( ab != null ) )
+            if
+            (
+                    ( this.showBackButtonInActionBar == SoundBoardActivity.ShowBackButton.YES )
+                &&  ( ab != null )
+            )
             {
                 ab.setDisplayShowHomeEnabled( true );
                 ab.setDisplayHomeAsUpEnabled( true );
@@ -87,7 +101,7 @@
         @Override
         public boolean onCreateOptionsMenu( Menu menu )
         {
-            if ( this.showMenuButtonInActionBar )
+            if ( this.showMenuButtonInActionBar == SoundBoardActivity.ShowMenuButton.YES )
             {
                 MenuInflater inflater = this.getMenuInflater();
                 inflater.inflate( R.menu.menu_default, menu );
@@ -107,7 +121,7 @@
             {
                 case android.R.id.home:
                 {
-                    new SoundBoardAction(this.backKeyEvent, this).run();
+                    new SoundBoardAction( this.backKeyEvent, this ).run();
 
                     //prevent system from handling this event
                     return true;
@@ -115,7 +129,7 @@
 
                 case R.id.menu_settings:
                 {
-                    new SoundBoardAction(SoundBoardAction.Event.ENTER_ACTIVITY_SETTINGS, this).run();
+                    new SoundBoardAction( SoundBoardAction.Event.ENTER_ACTIVITY_SETTINGS, this ).run();
 
                     //prevent system from handling this event
                     return true;
@@ -123,7 +137,15 @@
 
                 case R.id.menu_about:
                 {
-                    new SoundBoardAction(SoundBoardAction.Event.SHOW_DIALOG_ABOUT, this).run();
+                    new SoundBoardAction( SoundBoardAction.Event.SHOW_DIALOG_ABOUT, this ).run();
+
+                    //prevent system from handling this event
+                    return true;
+                }
+
+                case R.id.menu_help:
+                {
+                    new SoundBoardAction( SoundBoardAction.Event.ENTER_ACTIVITY_HELP, this ).run();
 
                     //prevent system from handling this event
                     return true;

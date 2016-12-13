@@ -8,7 +8,7 @@
     import  de.mayflower.soundboard.R;
     import  de.mayflower.soundboard.SoundBoardAction;
     import  de.mayflower.soundboard.state.activity.SoundBoardActivity;
-    import de.mayflower.soundboard.state.activity.SoundBoardFragment;
+    import  de.mayflower.soundboard.state.activity.SoundBoardFragment;
 
     /**********************************************************************************************
     *   The viewPager activity.
@@ -23,7 +23,12 @@
         *******************************************************************************************/
         public SoundBoardViewPager()
         {
-            super( SoundBoardAction.Event.RETURN_TO_ACTIVITY_WELCOME, true, true );
+            super
+            (
+                SoundBoardAction.Event.RETURN_TO_ACTIVITY_WELCOME,
+                SoundBoardActivity.ShowBackButton.YES,
+                SoundBoardActivity.ShowMenuButton.YES
+            );
         }
 
         /*****************************************************************************

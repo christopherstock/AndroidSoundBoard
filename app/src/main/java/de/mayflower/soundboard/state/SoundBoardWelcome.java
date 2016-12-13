@@ -11,9 +11,6 @@
     /*******************************************************************************************
     *   The main activity of the SoundBoardWelcome application.
     *
-    *   TODO ASAP   Create 'help' activity.
-    *   TODO ASAP   Check remaining goodies in the template project.
-    *
     *   @author     Christopher Stock
     *   @version    1.0
     *******************************************************************************************/
@@ -24,7 +21,12 @@
         *******************************************************************************************/
         public SoundBoardWelcome()
         {
-            super( SoundBoardAction.Event.SHOW_HOMESCREEN, false, true );
+            super
+            (
+                SoundBoardAction.Event.SHOW_HOMESCREEN,
+                SoundBoardActivity.ShowBackButton.NO,
+                SoundBoardActivity.ShowMenuButton.YES
+            );
         }
 
         /*******************************************************************************************

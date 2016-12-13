@@ -26,6 +26,8 @@
 
         <activity android:name="de.mayflower.soundboard.state.SoundBoardTabbedPane" android:label="@string/title_tabbedpane"/>
 
+        <activity android:name="de.mayflower.soundboard.state.SoundBoardHelp" android:label="@string/title_help"/>
+
     </application>
 
 </manifest>

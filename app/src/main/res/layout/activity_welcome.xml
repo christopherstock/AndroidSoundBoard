@@ -57,29 +57,6 @@
             android:id="@+id/button_show_tabbedpane"
             />
 
-
-        <include
-            layout="@layout/button_default"
-            android:id="@+id/button_unlinked_1"
-            />
-<!--
-        <include
-            layout="@layout/text_default_centered"
-            android:id="@+id/text_welcome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/element_padding_y"
-            android:layout_marginBottom="@dimen/element_padding_y"
-            />
-
-        <include
-            layout="@layout/text_default_centered"
-            android:id="@+id/text_credits"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/element_padding_y"
-            />
--->
     </LinearLayout>
 
 </ScrollView>

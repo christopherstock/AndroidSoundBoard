@@ -69,14 +69,5 @@
                 new SoundBoardAction( SoundBoardAction.Event.ENTER_ACTIVITY_TABBEDPANE, this ),
                 SoundBoardFont.TYPEFACE_MYRIAD_PRO_REGULAR.getTypeface( this )
             );
-
-            LibUI.setupButton
-            (
-                this,
-                R.id.button_unlinked_1,
-                R.string.button_back,
-                new SoundBoardAction( SoundBoardAction.Event.NOTHING, this ),
-                SoundBoardFont.TYPEFACE_MYRIAD_PRO_REGULAR.getTypeface( this )
-            );
         }
     }

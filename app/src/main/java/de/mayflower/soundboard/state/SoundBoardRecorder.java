@@ -50,12 +50,11 @@
 
             this.setContentView( R.layout.activity_recorder );
 
-            LibUI.setupButton
+            LibUI.setupTextView
             (
                 this,
-                R.id.button_test,
-                R.string.button_back,
-                new SoundBoardAction( SoundBoardAction.Event.RETURN_TO_ACTIVITY_WELCOME, this ),
+                R.id.text_recorder,
+                R.string.text_recorder,
                 SoundBoardFont.TYPEFACE_MYRIAD_PRO_REGULAR.getTypeface( this )
             );
 
@@ -65,14 +64,6 @@
                 R.id.button_voice_input,
                 R.string.button_show_voice_input,
                 new SoundBoardAction( SoundBoardAction.Event.SHOW_DIALOG_VOICE_INPUT, this ),
-                SoundBoardFont.TYPEFACE_MYRIAD_PRO_REGULAR.getTypeface( this )
-            );
-
-            LibUI.setupTextView
-            (
-                this,
-                R.id.text_recorder,
-                R.string.text_recorder,
                 SoundBoardFont.TYPEFACE_MYRIAD_PRO_REGULAR.getTypeface( this )
             );
         }

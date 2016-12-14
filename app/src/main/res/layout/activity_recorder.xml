@@ -35,27 +35,7 @@
 
         <include
             layout="@layout/button_default"
-            android:id="@+id/button_test"
-            />
-
-        <include
-            layout="@layout/button_default"
             android:id="@+id/button_voice_input"
-            />
-
-        <include
-            layout="@layout/image_title_splash"
-            android:id="@+id/image_title_logo_4"
-            />
-
-        <include
-            layout="@layout/image_title_splash"
-            android:id="@+id/image_title_logo_5"
-            />
-
-        <include
-            layout="@layout/image_title_splash"
-            android:id="@+id/image_title_logo_6"
             />
 
     </LinearLayout>

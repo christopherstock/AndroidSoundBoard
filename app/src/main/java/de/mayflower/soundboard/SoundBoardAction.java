@@ -7,7 +7,7 @@
     import  de.mayflower.lib.Lib;
     import  de.mayflower.lib.LibLauncher;
     import  de.mayflower.lib.LibResource;
-    import  de.mayflower.lib.io.LibSound;
+    import de.mayflower.lib.io.LibSound;
     import  de.mayflower.soundboard.state.SoundBoardHelp;
     import  de.mayflower.soundboard.ui.SoundBoardDialogAbout;
     import  de.mayflower.soundboard.state.SoundBoardRecorder;
@@ -92,7 +92,7 @@
             this.activity = activity;
         }
 
-        @SuppressWarnings("OverlyLongMethod")
+        @SuppressWarnings( { "OverlyLongMethod", "OverlyComplexMethod" } )
         @Override
         public void run()
         {

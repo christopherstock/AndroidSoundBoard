@@ -57,7 +57,7 @@
         ************************************************************************/
         public static final void setupTextView( Activity activity, int textViewId, int textId, Typeface typeface )
         {
-            LibUI.setupTextView
+            setupTextView
             (
                 (TextView)activity.findViewById( textViewId ),
                 LibResource.getResourceString( activity, textId ),
@@ -91,7 +91,7 @@
         {
             ImageView imageView = (ImageView)activity.findViewById( imageViewId );
 
-            LibUI.setupAnimatedImageView( imageView, animationId );
+            setupAnimatedImageView( imageView, animationId );
         }
 
         /************************************************************************

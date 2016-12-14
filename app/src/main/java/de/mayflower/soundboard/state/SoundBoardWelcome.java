@@ -11,7 +11,6 @@
     /*******************************************************************************************
     *   The main activity of the SoundBoardWelcome application.
     *
-    *   TODO INIT Perform global code inspection.
     *   TODO WEAK Generate Javadoc.
     *
     *   @author     Christopher Stock

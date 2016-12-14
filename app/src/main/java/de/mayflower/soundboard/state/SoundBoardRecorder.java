@@ -91,7 +91,7 @@
                         ArrayList<String> matches = data.getStringArrayListExtra( RecognizerIntent.EXTRA_RESULTS );
 
                         SoundBoardPlaybackService service = new SoundBoardPlaybackService();
-                        service.handleReceivedSpeechStrings( this, matches.toArray( new String[] {} ) );
+                        service.handleReceivedSpeechStrings( this, matches.toArray( new String[ matches.size() ] ) );
                     }
                     else
                     {

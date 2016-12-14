@@ -130,6 +130,7 @@
         *
         *   @param  fragmentActivity The current system context.
         *   @param  viewPagerId      The ID of the ViewPager to setup.
+        *   @param  fragments        The fragments to append to the ViewPager.
         ************************************************************************/
         public static final void setupViewPagerAdapter
         (

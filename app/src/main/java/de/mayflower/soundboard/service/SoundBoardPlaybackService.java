@@ -14,6 +14,12 @@
      ***********************************************************************************************/
     public class SoundBoardPlaybackService
     {
+        /***********************************************************************************************
+        *   Handles the recognized speech strings and plays a sound, if a phrase has been recognized.
+        *
+        *   @param  activity    The current activity context.
+        *   @param  matches     All possible recognized phrases recognized from speech input.
+        **********************************************************************************************/
         public void handleReceivedSpeechStrings( Activity activity, String[] matches )
         {
             for ( String match : matches )

@@ -11,8 +11,6 @@
     /*******************************************************************************************
     *   The main activity of the SoundBoardWelcome application.
     *
-    *   TODO WEAK Generate Javadoc.
-    *
     *   @author     Christopher Stock
     *   @version    1.0
     *******************************************************************************************/

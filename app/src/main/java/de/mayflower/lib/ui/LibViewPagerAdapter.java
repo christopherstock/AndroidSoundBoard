@@ -14,11 +14,18 @@
     ************************************************************************/
     public class LibViewPagerAdapter extends FragmentPagerAdapter
     {
+        /** All fragments this ViewPager consists of. */
         private             List<LibViewPagerFragment>      fragments           = null;
 
-        public LibViewPagerAdapter(FragmentManager fm, List<LibViewPagerFragment> fragments )
+        /************************************************************************
+        *   Creates a new ViewPager adapter.
+        *
+        *   @param  fragmentManager The FragmentManager that should handle this ViewPager.
+        *   @param  fragments       The fragments to add to this adapter.
+        ************************************************************************/
+        public LibViewPagerAdapter( FragmentManager fragmentManager, List<LibViewPagerFragment> fragments )
         {
-            super( fm );
+            super( fragmentManager );
 
             this.fragments = fragments;
         }

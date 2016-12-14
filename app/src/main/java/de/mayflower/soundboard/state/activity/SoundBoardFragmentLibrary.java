@@ -15,15 +15,22 @@
     import  de.mayflower.soundboard.ui.SoundBoardFont;
 
     /***********************************************************************************************
-    *   The concrete class for a fragment.
+    *   One fragment for the 'library' ViewPager.
     *
     *   @author     Christopher Stock
     *   @version    1.0
     **********************************************************************************************/
     public class SoundBoardFragmentLibrary extends LibViewPagerFragment
     {
+        /** This fragment's index in the ViewPager. */
         private                     int             index               = 0;
 
+        /***********************************************************************************************
+        *   Creates a new fragment for the 'library' ViewPager.
+        *
+        *   @param  index   This fragment's index in the ViewPager.
+        *   @param  title   This fragment's title.
+        **********************************************************************************************/
         public SoundBoardFragmentLibrary( int index, String title )
         {
             this.index = index;

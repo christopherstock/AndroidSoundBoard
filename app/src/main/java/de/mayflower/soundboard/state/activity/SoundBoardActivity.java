@@ -19,12 +19,30 @@
         /*******************************************************************************************
         *   Specifies if the 'back softkey' shall be displayed in the title bar.
         *******************************************************************************************/
-        public static enum ShowBackButton{ YES, NO, ; }
+        public static enum ShowBackButton
+        {
+            /** Do show the back button. */
+            YES,
+
+            /** Do not show the back button. */
+            NO,
+
+            ;
+        }
 
         /*******************************************************************************************
-         *   Specifies if the 'menu' key shall be supported in this activity.
-         ******************************************************************************************/
-        public static enum ShowMenuButton{ YES, NO, ; }
+        *   Specifies if the 'menu' key shall be supported in this activity.
+        ******************************************************************************************/
+        public static enum ShowMenuButton
+        {
+            /** Do show the menu button. */
+            YES,
+
+            /** Do not show the menu button. */
+            NO,
+
+            ;
+        }
 
         /** The event to launch when the backKey is pressed. */
         private             SoundBoardAction.Event              backKeyEvent                = null;
@@ -37,6 +55,11 @@
 
         /*******************************************************************************************
         *   Creates a new Activity with an assignable backKey.
+        *
+        *   @param  backKeyEvent                The event to invoke when the back key is pressed.
+        *   @param  showBackButtonInActionBar   Determines if the 'back' button should be displayed
+        *                                       in this activitie's title bar.
+        *   @param  showMenuButtonInActionBar   Determines if this activity supports the menu button.
         *******************************************************************************************/
         protected SoundBoardActivity
         (

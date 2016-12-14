@@ -13,13 +13,18 @@
     import  de.mayflower.soundboard.ui.SoundBoardFont;
 
     /***********************************************************************************************
-    *   The concrete class for a fragment.
+    *   One fragment for the TabbedPane.
     *
     *   @author     Christopher Stock
     *   @version    1.0
     **********************************************************************************************/
     public class SoundBoardFragmentTabbedPane extends LibViewPagerFragment
     {
+        /***********************************************************************************************
+        *   Creates a new fragment for the TabbedPane.
+        *
+        *   @param  title   This fragment's title.
+        **********************************************************************************************/
         public SoundBoardFragmentTabbedPane(String title )
         {
             this.setTitle( title );

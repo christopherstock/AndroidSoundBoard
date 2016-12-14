@@ -21,6 +21,7 @@
          ************************************************************************/
         public static final Typeface createTypefaceFromAsset( Context context, String assetName )
         {
+            // TODO replace by application context?
             return Typeface.createFromAsset( context.getAssets(), assetName );
         }
     }

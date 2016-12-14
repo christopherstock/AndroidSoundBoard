@@ -6,9 +6,11 @@
     import  android.view.View;
     import  android.view.ViewGroup;
     import  android.widget.TextView;
+    import  de.mayflower.lib.ui.LibUI;
     import  de.mayflower.lib.ui.LibViewPagerFragment;
     import  de.mayflower.soundboard.R;
     import  de.mayflower.soundboard.SoundBoardDebug;
+    import  de.mayflower.soundboard.ui.SoundBoardFont;
 
     /***********************************************************************************************
     *   The concrete class for a fragment.
@@ -36,7 +38,8 @@
 
             View     rootView = inflater.inflate( R.layout.activity_viewpager_fragment_tabbedpane, container, false );
             TextView tv       = (TextView)rootView.findViewById( R.id.text_viewpager );
-            tv.setText( R.string.text_fragment_tabbedpane);
+
+            LibUI.setupTextView( tv, this.getTitle(), SoundBoardFont.TYPEFACE_MYRIAD_PRO_REGULAR.getTypeface( this.getContext() ) );
 
             return rootView;
         }

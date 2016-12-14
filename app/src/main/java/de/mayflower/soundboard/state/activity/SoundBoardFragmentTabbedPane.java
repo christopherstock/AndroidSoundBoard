@@ -39,7 +39,12 @@
             View     rootView = inflater.inflate( R.layout.activity_viewpager_fragment_tabbedpane, container, false );
             TextView tv       = (TextView)rootView.findViewById( R.id.text_viewpager );
 
-            LibUI.setupTextView( tv, this.getTitle(), SoundBoardFont.TYPEFACE_MYRIAD_PRO_REGULAR.getTypeface( this.getContext() ) );
+            LibUI.setupTextView
+            (
+                tv,
+                this.getTitle(),
+                SoundBoardFont.TYPEFACE_MYRIAD_PRO_REGULAR.getTypeface( this.getContext() )
+            );
 
             return rootView;
         }

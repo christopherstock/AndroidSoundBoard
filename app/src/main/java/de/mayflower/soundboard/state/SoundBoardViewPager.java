@@ -49,10 +49,10 @@
                 (
                     new LibViewPagerFragment[]
                     {
-                        new SoundBoardFragmentLibrary( "Default" ),
-                        new SoundBoardFragmentLibrary( "Funny" ),
-                        new SoundBoardFragmentLibrary( "Thrilling" ),
-                        new SoundBoardFragmentLibrary( "Weird" ),
+                        new SoundBoardFragmentLibrary( 0, "Default" ),
+                        new SoundBoardFragmentLibrary( 1, "Funny" ),
+                        new SoundBoardFragmentLibrary( 2, "Thrilling" ),
+                        new SoundBoardFragmentLibrary( 3, "Weird" ),
                     }
                 )
             );

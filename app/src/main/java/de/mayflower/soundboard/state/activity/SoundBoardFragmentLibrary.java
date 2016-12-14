@@ -6,9 +6,11 @@
     import  android.view.View;
     import  android.view.ViewGroup;
     import  android.widget.TextView;
+    import  de.mayflower.lib.ui.LibUI;
     import  de.mayflower.lib.ui.LibViewPagerFragment;
     import  de.mayflower.soundboard.R;
     import  de.mayflower.soundboard.SoundBoardDebug;
+    import  de.mayflower.soundboard.ui.SoundBoardFont;
 
     /***********************************************************************************************
     *   The concrete class for a fragment.
@@ -18,12 +20,15 @@
     **********************************************************************************************/
     public class SoundBoardFragmentLibrary extends LibViewPagerFragment
     {
+        private                     int             index               = 0;
+
         public SoundBoardFragmentLibrary()
         {
         }
 
-        public SoundBoardFragmentLibrary(String title )
+        public SoundBoardFragmentLibrary( int index, String title )
         {
+            this.index = index;
             this.setTitle( title );
         }
 
@@ -32,13 +37,21 @@
         {
             super.onCreateView( inflater, container, savedInstanceState );
 
-
-
             SoundBoardDebug.major.out("onCreateView for fragment with [" + this.getTitle() + "]");
 
             View     rootView = inflater.inflate( R.layout.activity_viewpager_fragment_tabbedpane, container, false );
+
+
             TextView tv       = (TextView)rootView.findViewById( R.id.text_viewpager );
-            tv.setText( R.string.text_fragment_library);
+
+            LibUI.setupTextView
+            (
+                tv,
+                "ViewPager<br>Example content<br>Page " + ( this.index + 1 ),
+                SoundBoardFont.TYPEFACE_MYRIAD_PRO_REGULAR.getTypeface( this.getContext() )
+            );
+
+
 
             //ViewGroup sv       = (ViewGroup)rootView.findViewById( R.id.view_pager_scrollview_content );
 /*

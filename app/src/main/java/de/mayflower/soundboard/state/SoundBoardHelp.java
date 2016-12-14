@@ -2,12 +2,11 @@
     package de.mayflower.soundboard.state;
 
     import  android.os.Bundle;
-
-    import de.mayflower.lib.ui.LibUI;
+    import  de.mayflower.lib.ui.LibUI;
     import  de.mayflower.soundboard.R;
     import  de.mayflower.soundboard.SoundBoardAction;
     import  de.mayflower.soundboard.state.activity.SoundBoardActivity;
-    import de.mayflower.soundboard.ui.SoundBoardFont;
+    import  de.mayflower.soundboard.ui.SoundBoardFont;
 
     /*******************************************************************************************
     *   The 'help' activity.

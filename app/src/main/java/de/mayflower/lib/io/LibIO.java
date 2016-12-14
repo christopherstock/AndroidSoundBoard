@@ -1,8 +1,8 @@
 
     package de.mayflower.lib.io;
 
-    import android.content.Context;
-    import android.graphics.Typeface;
+    import  android.content.Context;
+    import  android.graphics.Typeface;
 
     /*********************************************************************************
     *   Manages input and output streams.

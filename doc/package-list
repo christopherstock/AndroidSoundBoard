@@ -1,0 +1,9 @@
+de.mayflower.lib
+de.mayflower.lib.io
+de.mayflower.lib.ui
+de.mayflower.lib.ui.dialog
+de.mayflower.soundboard
+de.mayflower.soundboard.service
+de.mayflower.soundboard.state
+de.mayflower.soundboard.state.activity
+de.mayflower.soundboard.ui

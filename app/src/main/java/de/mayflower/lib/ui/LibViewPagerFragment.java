@@ -1,7 +1,7 @@
 
     package de.mayflower.lib.ui;
 
-    import android.support.v4.app.*;
+    import  android.support.v4.app.*;
 
     /************************************************************************
     *   The fragment for the ViewPager.

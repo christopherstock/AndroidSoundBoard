@@ -39,66 +39,27 @@
 
             SoundBoardDebug.major.out("onCreateView for fragment with [" + this.getTitle() + "]");
 
-            View     rootView = inflater.inflate( R.layout.activity_viewpager_fragment_tabbedpane, container, false );
+            View      rootView          = inflater.inflate( R.layout.activity_viewpager_fragment_tabbedpane, container, false );
+            ViewGroup fragmentContainer = (ViewGroup)rootView.findViewById( R.id.viewpager_fragment_container );
 
 
-            TextView tv       = (TextView)rootView.findViewById( R.id.text_viewpager );
-
-            LibUI.setupTextView
-            (
-                tv,
-                "ViewPager<br>Example content<br>Page " + ( this.index + 1 ),
-                SoundBoardFont.TYPEFACE_MYRIAD_PRO_REGULAR.getTypeface( this.getContext() )
-            );
-
-
-
-            //ViewGroup sv       = (ViewGroup)rootView.findViewById( R.id.view_pager_scrollview_content );
-/*
-            LibUI.setupTextView
-            (
-                this.getActivity(),
-                R.id.text_viewpager,
-                R.string.text_viewpager
-            );
-
-            ViewGroup sv       = (ViewGroup)rootView.findViewById( R.id.view_pager_scrollview_content );
-*/
-/*
-            SoundBoardPatternCountService countService = new SoundBoardPatternCountService();
-            countService.init(this.getActivity());
-
-            Integer[] patternIds;
-
-            if ( Integer.valueOf(index).compareTo(SoundBoardPatternCountService.TOP_10_CATEGORY_ID) == 0) {
-                patternIds = countService.getSortedTopPatternIdList(10, SoundBoardHydrator.patterns);
-            } else {
-                patternIds = SoundBoardHydrator.categories[index].getPatterns();
-            }
-
-            for ( int i = 0; i < patternIds.length; ++i )
+            // show temporary items
+            if ( this.index == 0 )
             {
-                LinearLayout item     = (LinearLayout)inflater.inflate(R.layout.SoundBoard_list_item, container, false);
-                TextView     textView = (TextView)item.findViewById(R.id.text_item_title);
 
-                String patternLabel = SoundBoardHydrator.patterns[i].getName();
-
-                if ( Integer.valueOf(index).compareTo(SoundBoardPatternCountService.TOP_10_CATEGORY_ID) == 0) {
-                    patternLabel = SoundBoardHydrator.patterns[i].getNameWithCounter();
-                }
-
-                textView.setText( patternLabel );
-
-                SoundBoardItemClickListener clickListener = new SoundBoardItemClickListener(
-                    i,
-                    this.getActivity()
-                );
-
-                item.setOnClickListener( clickListener );
-
-                sv.addView( item );
             }
-*/
+            else
+            {
+                TextView tv = (TextView)rootView.findViewById( R.id.text_viewpager );
+
+                LibUI.setupTextView
+                (
+                    tv,
+                    "ViewPager<br>Example content<br>Page " + ( this.index + 1 ),
+                    SoundBoardFont.TYPEFACE_MYRIAD_PRO_REGULAR.getTypeface( this.getContext() )
+                );
+            }
+
             return rootView;
         }
     }

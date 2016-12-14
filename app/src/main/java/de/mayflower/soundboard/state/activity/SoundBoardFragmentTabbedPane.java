@@ -20,10 +20,6 @@
     **********************************************************************************************/
     public class SoundBoardFragmentTabbedPane extends LibViewPagerFragment
     {
-        public SoundBoardFragmentTabbedPane()
-        {
-        }
-
         public SoundBoardFragmentTabbedPane(String title )
         {
             this.setTitle( title );

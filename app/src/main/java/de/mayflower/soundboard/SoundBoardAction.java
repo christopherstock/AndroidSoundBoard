@@ -7,6 +7,7 @@
     import  de.mayflower.lib.Lib;
     import  de.mayflower.lib.LibLauncher;
     import  de.mayflower.lib.LibResource;
+    import  de.mayflower.lib.io.LibSound;
     import  de.mayflower.soundboard.state.SoundBoardHelp;
     import  de.mayflower.soundboard.ui.SoundBoardDialogAbout;
     import  de.mayflower.soundboard.state.SoundBoardRecorder;
@@ -60,6 +61,15 @@
 
             /** Shows the 'about' dialog. */
             SHOW_DIALOG_ABOUT,
+
+            /** Plays 1st sound fx. */
+            PLAY_SOUND_1,
+
+            /** Plays 2nd sound fx. */
+            PLAY_SOUND_2,
+
+            /** Plays 3rd sound fx. */
+            PLAY_SOUND_3,
 
             ;
         }
@@ -215,6 +225,24 @@
                         true,
                         actionOnClose
                     );
+                    break;
+                }
+
+                case PLAY_SOUND_1:
+                {
+                    LibSound.playSound( this.activity, R.raw.sound_attack );
+                    break;
+                }
+
+                case PLAY_SOUND_2:
+                {
+                    LibSound.playSound( this.activity, R.raw.sound_retreat );
+                    break;
+                }
+
+                case PLAY_SOUND_3:
+                {
+                    LibSound.playSound( this.activity, R.raw.sound_resign );
                     break;
                 }
             }

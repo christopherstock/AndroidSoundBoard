@@ -16,13 +16,13 @@
     *   @author     Christopher Stock
     *   @version    1.0
     **********************************************************************************************/
-    public class SoundBoardFragment extends LibViewPagerFragment
+    public class SoundBoardFragmentLibrary extends LibViewPagerFragment
     {
-        public SoundBoardFragment()
+        public SoundBoardFragmentLibrary()
         {
         }
 
-        public SoundBoardFragment(String title )
+        public SoundBoardFragmentLibrary(String title )
         {
             this.setTitle( title );
         }
@@ -34,11 +34,11 @@
 
 
 
-            SoundBoardDebug.major.out("onCreateView for fragment with [" + this.title + "]");
+            SoundBoardDebug.major.out("onCreateView for fragment with [" + this.getTitle() + "]");
 
-            View     rootView = inflater.inflate( R.layout.activity_viewpager_fragment, container, false );
+            View     rootView = inflater.inflate( R.layout.activity_viewpager_fragment_tabbedpane, container, false );
             TextView tv       = (TextView)rootView.findViewById( R.id.text_viewpager );
-            tv.setText( R.string.text_fragment);
+            tv.setText( R.string.text_fragment_library);
 
             //ViewGroup sv       = (ViewGroup)rootView.findViewById( R.id.view_pager_scrollview_content );
 /*

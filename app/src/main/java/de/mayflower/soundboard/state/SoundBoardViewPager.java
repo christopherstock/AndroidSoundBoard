@@ -8,7 +8,7 @@
     import  de.mayflower.soundboard.R;
     import  de.mayflower.soundboard.SoundBoardAction;
     import  de.mayflower.soundboard.state.activity.SoundBoardActivity;
-    import  de.mayflower.soundboard.state.activity.SoundBoardFragment;
+    import  de.mayflower.soundboard.state.activity.SoundBoardFragmentLibrary;
 
     /**********************************************************************************************
     *   The viewPager activity.
@@ -49,10 +49,10 @@
                 (
                     new LibViewPagerFragment[]
                     {
-                        new SoundBoardFragment( "Fragment A" ),
-                        new SoundBoardFragment( "Fragment B" ),
-                        new SoundBoardFragment( "Fragment C" ),
-                        new SoundBoardFragment( "Fragment D" ),
+                        new SoundBoardFragmentLibrary( "Default" ),
+                        new SoundBoardFragmentLibrary( "Funny" ),
+                        new SoundBoardFragmentLibrary( "Thrilling" ),
+                        new SoundBoardFragmentLibrary( "Weird" ),
                     }
                 )
             );

@@ -11,7 +11,7 @@
     ************************************************************************/
     public class LibViewPagerFragment extends Fragment
     {
-        protected               String                  title                   = null;
+        private                 String                  title                   = null;
 
         public void setTitle( String title )
         {

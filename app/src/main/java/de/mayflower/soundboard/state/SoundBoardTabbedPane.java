@@ -15,7 +15,7 @@
     import  de.mayflower.soundboard.R;
     import  de.mayflower.soundboard.SoundBoardAction;
     import  de.mayflower.soundboard.state.activity.SoundBoardActivity;
-    import  de.mayflower.soundboard.state.activity.SoundBoardFragment;
+    import de.mayflower.soundboard.state.activity.SoundBoardFragmentTabbedPane;
 
     /**********************************************************************************************
     *   Represents the tabbed pane.
@@ -132,10 +132,10 @@
                 (
                     new LibViewPagerFragment[]
                     {
-                        new SoundBoardFragment( "Fragment A" ),
-                        new SoundBoardFragment( "Fragment B" ),
-                        new SoundBoardFragment( "Fragment C" ),
-                        new SoundBoardFragment( "Fragment D" ),
+                        new SoundBoardFragmentTabbedPane( "Fragment A" ),
+                        new SoundBoardFragmentTabbedPane( "Fragment B" ),
+                        new SoundBoardFragmentTabbedPane( "Fragment C" ),
+                        new SoundBoardFragmentTabbedPane( "Fragment D" ),
                     }
                 )
             );

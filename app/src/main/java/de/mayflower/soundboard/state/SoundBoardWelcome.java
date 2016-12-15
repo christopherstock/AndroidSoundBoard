@@ -11,7 +11,6 @@
     /*******************************************************************************************
     *   The main activity of the SoundBoardWelcome application.
     *
-    *   TODO ASAP Selector inoperative in Android 2.3.
     *   TODO ASAP Menu softkey missing in Android 2.3.
     *   TODO INIT Unify all comment blocks.
     *

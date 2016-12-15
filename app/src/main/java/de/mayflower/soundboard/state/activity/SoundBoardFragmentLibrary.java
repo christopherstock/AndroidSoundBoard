@@ -69,9 +69,9 @@
                 LibUI.setupTextView( textView2, "Ich ziehe mich zurück!", typeface );
                 LibUI.setupTextView( textView3, "Ich gebe auf!",          typeface );
 
-                LibUI.setOnClickAction( item1, new SoundBoardAction( SoundBoardAction.Event.PLAY_SOUND_1, this.getActivity() ), false );
-                LibUI.setOnClickAction( item2, new SoundBoardAction( SoundBoardAction.Event.PLAY_SOUND_2, this.getActivity() ), false );
-                LibUI.setOnClickAction( item3, new SoundBoardAction( SoundBoardAction.Event.PLAY_SOUND_3, this.getActivity() ), false );
+                LibUI.setOnClickAction( textView1, new SoundBoardAction( SoundBoardAction.Event.PLAY_SOUND_1, this.getActivity() ), false );
+                LibUI.setOnClickAction( textView2, new SoundBoardAction( SoundBoardAction.Event.PLAY_SOUND_2, this.getActivity() ), false );
+                LibUI.setOnClickAction( textView3, new SoundBoardAction( SoundBoardAction.Event.PLAY_SOUND_3, this.getActivity() ), false );
 
                 fragmentContainer.addView( item1 );
                 fragmentContainer.addView( separator1 );

@@ -74,7 +74,7 @@
 
                 LibUI.setOnClickAction
                 (
-                    item,
+                    textView,
                     new SoundBoardAction( SoundBoardAction.Event.NOTHING, this ),
                     false
                 );

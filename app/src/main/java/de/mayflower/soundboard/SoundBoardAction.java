@@ -16,20 +16,20 @@
     import  de.mayflower.soundboard.state.SoundBoardViewPager;
     import  de.mayflower.soundboard.state.SoundBoardWelcome;
 
-    /*****************************************************************************
+    /*******************************************************************************************************************
     *   The action system.
     *
     *   @author     Christopher Stock
-    *   @version    1.0
-    *****************************************************************************/
+    *   @version    0.0.1
+    *******************************************************************************************************************/
     public class SoundBoardAction implements Runnable
     {
-        /*****************************************************************************
+        /***************************************************************************************************************
         *   All actions being performed accross the app.
         *
         *   @author     Christopher Stock
-        *   @version    1.0
-        *****************************************************************************/
+        *   @version    0.0.1
+        ***************************************************************************************************************/
         public enum Event
         {
             /** A no op event that does nothing for everybody. */
@@ -80,12 +80,12 @@
         /** The activity that invoked this action. */
         private         Activity                    activity            = null;
 
-        /*****************************************************************************
+        /***************************************************************************************************************
         *   Launched a new action.
         *
         *   @param  event    The ID of the event to launch.
         *   @param  activity The activity that launched this action.
-        *****************************************************************************/
+        ***************************************************************************************************************/
         public SoundBoardAction( SoundBoardAction.Event event, Activity activity )
         {
             this.event    = event;

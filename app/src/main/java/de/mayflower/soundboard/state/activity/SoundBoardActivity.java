@@ -8,17 +8,17 @@
     import  de.mayflower.soundboard.R;
     import  de.mayflower.soundboard.SoundBoardAction;
 
-    /***********************************************************************************************
+    /*******************************************************************************************************************
     *   The parent class for all activities. Has a mechanism to directly assign the backKey event.
     *
     *   @author     Christopher Stock
-    *   @version    1.0
-    ***********************************************************************************************/
+    *   @version    0.0.1
+    *******************************************************************************************************************/
     public abstract class SoundBoardActivity extends AppCompatActivity
     {
-        /*******************************************************************************************
+        /***************************************************************************************************************
         *   Specifies if the 'back softkey' shall be displayed in the title bar.
-        *******************************************************************************************/
+        ***************************************************************************************************************/
         public static enum ShowBackButton
         {
             /** Do show the back button. */
@@ -30,9 +30,9 @@
             ;
         }
 
-        /*******************************************************************************************
+        /***************************************************************************************************************
         *   Specifies if the 'menu' key shall be supported in this activity.
-        ******************************************************************************************/
+        ***************************************************************************************************************/
         public static enum ShowMenuButton
         {
             /** Do show the menu button. */
@@ -53,14 +53,14 @@
         /** Specifies if the menu button should be shown in the title bar. */
         private             SoundBoardActivity.ShowMenuButton   showMenuButtonInActionBar   = null;
 
-        /*******************************************************************************************
+        /***************************************************************************************************************
         *   Creates a new Activity with an assignable backKey.
         *
         *   @param  backKeyEvent                The event to invoke when the back key is pressed.
         *   @param  showBackButtonInActionBar   Determines if the 'back' button should be displayed
         *                                       in this activitie's title bar.
         *   @param  showMenuButtonInActionBar   Determines if this activity supports the menu button.
-        *******************************************************************************************/
+        ***************************************************************************************************************/
         protected SoundBoardActivity
         (
             SoundBoardAction.Event            backKeyEvent,
@@ -73,11 +73,11 @@
             this.showMenuButtonInActionBar = showMenuButtonInActionBar;
         }
 
-        /*******************************************************************************************
+        /***************************************************************************************************************
         *   Being invoked when the application starts and resumes.
         *
         *   @param savedInstanceState The data bundle being passed if any.
-        *******************************************************************************************/
+        ***************************************************************************************************************/
         @Override
         protected void onCreate(Bundle savedInstanceState)
         {
@@ -86,9 +86,9 @@
             this.initActionBar();
         }
 
-        /*******************************************************************************************
+        /***************************************************************************************************************
          *   Initializes the buttons for the action bar.
-         ******************************************************************************************/
+         **************************************************************************************************************/
         private void initActionBar()
         {
             ActionBar ab = this.getSupportActionBar();

@@ -1,15 +1,15 @@
 
     package de.mayflower.soundboard;
 
-    /***************************************************************************************************
+    /*******************************************************************************************************************
     *   Logs all versions of this app.
     *
     *   @author     Christopher Stock
-    *   @version    1.0
-    ***************************************************************************************************/
+    *   @version    0.0.1
+    *******************************************************************************************************************/
     public enum SoundBoardVersion
     {
-        /** */  VERSION_0_0_1(  "0.0.1 alpha",  1,      "none",             "14.12.2016 12:38:17",      "PROOF_OF_CONCEPT",      "" ),
+        /** */  VERSION_0_0_1( "0.0.1 alpha", 1, "none", "14.12.2016 12:38:17", "PROOF_OF_CONCEPT", "" ),
 
         ;
 
@@ -26,71 +26,79 @@
         /** The log for this version contains latest changes. */
         private         String              log                         = null;
 
-        /******************************************************************************************
+        /***************************************************************************************************************
         *   Creates one app version enum constant.
         *
-        *   @param  aClientVersionNumber    The version string for this client.
-        *   @param  aVersionCode            The integer version code for the Android Manifest.
-        *   @param  aBackendVersionNumber   The version string of the according backend.
-        *   @param  aReleaseDate            The last compilation time of this version.
-        *   @param  aCodename               The internal codename for this version.
-        *   @param  aLog                    A log-text with latest changes for this version.
-        ******************************************************************************************/
-        private SoundBoardVersion(String aClientVersionNumber, int aVersionCode, String aBackendVersionNumber, String aReleaseDate, String aCodename, String aLog)
+        *   @param  clientVersionNumber  The version string for this client.
+        *   @param  versionCode          The integer version code for the Android Manifest.
+        *   @param  backendVersionNumber The version string of the according backend.
+        *   @param  releaseDate          The last compilation time of this version.
+        *   @param  codename             The internal codename for this version.
+        *   @param  log                  A log-text with latest changes for this version.
+        ***************************************************************************************************************/
+        private SoundBoardVersion
+        (
+            String clientVersionNumber,
+            int    versionCode,
+            String backendVersionNumber,
+            String releaseDate,
+            String codename,
+            String log
+        )
         {
-            this.clientVersionNumber  = aClientVersionNumber;
-            this.versionCode          = aVersionCode;
-            this.backendVersionNumber = aBackendVersionNumber;
-            this.releaseDate          = aReleaseDate;
-            this.codeName             = aCodename;
-            this.log                  = aLog;
+            this.clientVersionNumber  = clientVersionNumber;
+            this.versionCode          = versionCode;
+            this.backendVersionNumber = backendVersionNumber;
+            this.releaseDate          = releaseDate;
+            this.codeName             = codename;
+            this.log                  = log;
         }
 
-        /******************************************************************************************
+        /***************************************************************************************************************
         *   Returns the release date.
         *
         *   @return     The last release date for this version.
-        ******************************************************************************************/
+        ***************************************************************************************************************/
         public final String getReleaseDate()
         {
             return this.releaseDate;
         }
 
-        /******************************************************************************************
+        /***************************************************************************************************************
         *   Returns the version string for the client version.
         *
         *   @return     The version string for the client.
-        ******************************************************************************************/
+        ***************************************************************************************************************/
         public final String getClientVersionNumber()
         {
             return this.clientVersionNumber;
         }
 
-        /******************************************************************************************
+        /***************************************************************************************************************
         *   Returns the version string for the backend version.
         *
         *   @return     The version string for the backend.
-        ******************************************************************************************/
+        ***************************************************************************************************************/
         public final String getBackendVersionNumber()
         {
             return this.backendVersionNumber;
         }
 
-        /******************************************************************************************
+        /***************************************************************************************************************
          *   Shows the current version number.
          *
          *   @return     The version-number of the latest version.
-         ******************************************************************************************/
+         **************************************************************************************************************/
         public static final String getCurrentVersionId()
         {
             return SoundBoardVersion.values()[ 0 ].clientVersionNumber;
         }
 
-        /******************************************************************************************
+        /***************************************************************************************************************
         *   Shows the current version number.
         *
         *   @return     The version-number of the latest version.
-        ******************************************************************************************/
+        ***************************************************************************************************************/
         public static final String getVersion()
         {
             return
@@ -106,12 +114,12 @@
             );
         }
 
-        /******************************************************************************************
+        /***************************************************************************************************************
         *   Returns a list of the project history.
         *
         *   @return     Returns a list of all versions with all version-numbers, codenames,
         *               release-dates and the according log.
-        ******************************************************************************************/
+        ***************************************************************************************************************/
         public static final String getVersionLog()
         {
             StringBuffer ret = new StringBuffer();

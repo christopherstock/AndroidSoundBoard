@@ -6,23 +6,23 @@
     import  android.support.v4.app.FragmentPagerAdapter;
     import  java.util.List;
 
-    /************************************************************************
+    /*******************************************************************************************************************
     *   The adapter for a ViewPager.
     *
     *   @author     Christopher Stock
-    *   @version    1.0
-    ************************************************************************/
+    *   @version    0.0.1
+    *******************************************************************************************************************/
     public class LibViewPagerAdapter extends FragmentPagerAdapter
     {
         /** All fragments this ViewPager consists of. */
         private             List<LibViewPagerFragment>      fragments           = null;
 
-        /************************************************************************
+        /***************************************************************************************************************
         *   Creates a new ViewPager adapter.
         *
         *   @param  fragmentManager The FragmentManager that should handle this ViewPager.
         *   @param  fragments       The fragments to add to this adapter.
-        ************************************************************************/
+        ***************************************************************************************************************/
         public LibViewPagerAdapter( FragmentManager fragmentManager, List<LibViewPagerFragment> fragments )
         {
             super( fragmentManager );

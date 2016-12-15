@@ -5,15 +5,15 @@
     import  android.content.Context;
     import  android.content.DialogInterface;
 
-    /*****************************************************************************
+    /*******************************************************************************************************************
     *   Creates a default dialog.
     *
     *   @author     Christopher Stock
-    *   @version    1.0
-    *****************************************************************************/
+    *   @version    0.0.1
+    *******************************************************************************************************************/
     public abstract class LibDialogDefault
     {
-        /*****************************************************************************
+        /***************************************************************************************************************
         *   Shows a default dialog.
         *
         *   @param  context             The current system context.
@@ -25,7 +25,7 @@
         *   @param  buttonAction2       The action to perform if the 2nd button is pressed.
         *   @param  cancelable          Specifies if this dialog can be canceled via the back button.
         *   @param  cancelAction        The action to perform if this dialog is canceled.
-        *****************************************************************************/
+        ***************************************************************************************************************/
         public static final void show
         (
                     Context      context,

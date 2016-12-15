@@ -14,23 +14,23 @@
     import  de.mayflower.soundboard.SoundBoardDebug;
     import  de.mayflower.soundboard.ui.SoundBoardFont;
 
-    /***********************************************************************************************
+    /*******************************************************************************************************************
     *   One fragment for the 'library' ViewPager.
     *
     *   @author     Christopher Stock
-    *   @version    1.0
-    **********************************************************************************************/
+    *   @version    0.0.1
+    *******************************************************************************************************************/
     public class SoundBoardFragmentLibrary extends LibViewPagerFragment
     {
         /** This fragment's index in the ViewPager. */
         private                     int             index               = 0;
 
-        /***********************************************************************************************
+        /***************************************************************************************************************
         *   Creates a new fragment for the 'library' ViewPager.
         *
         *   @param  index   This fragment's index in the ViewPager.
         *   @param  title   This fragment's title.
-        **********************************************************************************************/
+        ***************************************************************************************************************/
         public SoundBoardFragmentLibrary( int index, String title )
         {
             this.index = index;
@@ -44,10 +44,10 @@
 
             SoundBoardDebug.major.out("onCreateView for fragment with [" + this.getTitle() + "]");
 
-            View      rootView          = inflater.inflate( R.layout.activity_viewpager_fragment_tabbedpane, container, false );
-            ViewGroup fragmentContainer = (ViewGroup)rootView.findViewById( R.id.viewpager_fragment_container );
-            Typeface  typeface          = SoundBoardFont.TYPEFACE_MYRIAD_PRO_REGULAR.getTypeface( this.getContext() );
-            TextView  tv                = (TextView)rootView.findViewById( R.id.text_viewpager );
+            View      rootView      = inflater.inflate( R.layout.activity_viewpager_fragment, container, false );
+            ViewGroup fragContainer = (ViewGroup)rootView.findViewById( R.id.viewpager_fragment_container );
+            Typeface  typeface      = SoundBoardFont.TYPEFACE_MYRIAD_PRO_REGULAR.getTypeface( this.getContext() );
+            TextView  tv            = (TextView)rootView.findViewById( R.id.text_viewpager );
 
             // show temporary items
             if ( this.index == 0 )
@@ -69,15 +69,30 @@
                 LibUI.setupTextView( textView2, "Ich ziehe mich zurück!", typeface );
                 LibUI.setupTextView( textView3, "Ich gebe auf!",          typeface );
 
-                LibUI.setOnClickAction( textView1, new SoundBoardAction( SoundBoardAction.Event.PLAY_SOUND_1, this.getActivity() ), false );
-                LibUI.setOnClickAction( textView2, new SoundBoardAction( SoundBoardAction.Event.PLAY_SOUND_2, this.getActivity() ), false );
-                LibUI.setOnClickAction( textView3, new SoundBoardAction( SoundBoardAction.Event.PLAY_SOUND_3, this.getActivity() ), false );
+                LibUI.setOnClickAction
+                (
+                    textView1,
+                    new SoundBoardAction( SoundBoardAction.Event.PLAY_SOUND_1, this.getActivity() ),
+                    false
+                );
+                LibUI.setOnClickAction
+                (
+                    textView2,
+                    new SoundBoardAction( SoundBoardAction.Event.PLAY_SOUND_2, this.getActivity() ),
+                    false
+                );
+                LibUI.setOnClickAction
+                (
+                    textView3,
+                    new SoundBoardAction( SoundBoardAction.Event.PLAY_SOUND_3, this.getActivity() ),
+                    false
+                );
 
-                fragmentContainer.addView( item1 );
-                fragmentContainer.addView( separator1 );
-                fragmentContainer.addView( item2 );
-                fragmentContainer.addView( separator2 );
-                fragmentContainer.addView( item3 );
+                fragContainer.addView( item1 );
+                fragContainer.addView( separator1 );
+                fragContainer.addView( item2 );
+                fragContainer.addView( separator2 );
+                fragContainer.addView( item3 );
             }
             else
             {

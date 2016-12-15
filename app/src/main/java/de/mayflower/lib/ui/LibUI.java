@@ -18,16 +18,15 @@
     import  java.util.List;
     import  de.mayflower.lib.LibResource;
 
-    /************************************************************************
+    /*******************************************************************************************************************
     *   All independent UI-functions.
     *
-    *   @author     $Author: schristopher $
-    *   @version    $Rev: 50546 $ $Date: 2013-08-09 16:19:00 +0200 (Fr, 09 Aug 2013) $
-    *   @see        "$URL: http://svn.synapsy.net/svn/Synapsy/PicFood/android/PicFood_1_0/trunk/src_lib/com/synapsy/android/lib/ui/LibUI.java $"
-    ************************************************************************/
+    *   @author     Christopher Stock
+    *   @version    0.0.1
+    *******************************************************************************************************************/
     public abstract class LibUI
     {
-        /************************************************************************
+        /***************************************************************************************************************
         *   Sets up a {@link Button} with the major attributes.
         *
         *   @param  activity        The current system context.
@@ -35,8 +34,15 @@
         *   @param  textId          The resource-ID for the caption of this button.
         *   @param  action          The OnClick-action.
         *   @param  typeface        The custom typeface to use for this button.
-        ************************************************************************/
-        public static final void setupButton( Activity activity, int buttonId, int textId, Runnable action, Typeface typeface )
+        ***************************************************************************************************************/
+        public static final void setupButton
+        (
+            Activity activity,
+            int      buttonId,
+            int      textId,
+            Runnable action,
+            Typeface typeface
+        )
         {
             Button button = (Button)activity.findViewById( buttonId );
             String text   = LibResource.getResourceString( activity, textId );
@@ -47,14 +53,14 @@
             setOnClickAction( button, action, true );
         }
 
-        /************************************************************************
+        /***************************************************************************************************************
         *   Sets up a {@link TextView} with the major attributes.
         *
         *   @param  activity        The current system context.
         *   @param  textViewId      The ID of the TextView to configure.
         *   @param  textId          The ID of the text to set for the TextView.
         *   @param  typeface        The custom typeface to use for this TextView.
-        ************************************************************************/
+        ***************************************************************************************************************/
         public static final void setupTextView( Activity activity, int textViewId, int textId, Typeface typeface )
         {
             setupTextView
@@ -65,13 +71,13 @@
             );
         }
 
-        /************************************************************************
+        /***************************************************************************************************************
         *   Sets up a {@link TextView} with the major attributes.
         *
         *   @param  textView        The TextView to configure.
         *   @param  text            The text to set.
         *   @param  typeface        The custom typeface to use for this TextView.
-        ************************************************************************/
+        ***************************************************************************************************************/
         public static final void setupTextView( TextView textView, String text, Typeface typeface )
         {
             Spanned  spanned  = Html.fromHtml( text );
@@ -80,13 +86,13 @@
             textView.setText( spanned );
         }
 
-        /************************************************************************
+        /***************************************************************************************************************
         *   Sets up an animated {@link ImageView} with the major attributes.
         *
         *   @param  activity        The current system context.
         *   @param  imageViewId     The ID of the ImageView to configure.
         *   @param  animationId     The ID of the animation drawable to apply.
-        ************************************************************************/
+        ***************************************************************************************************************/
         public static final void setupAnimatedImageView( Activity activity, int imageViewId, int animationId )
         {
             ImageView imageView = (ImageView)activity.findViewById( imageViewId );
@@ -94,12 +100,12 @@
             setupAnimatedImageView( imageView, animationId );
         }
 
-        /************************************************************************
+        /***************************************************************************************************************
         *   Sets up an animated {@link ImageView} with the major attributes.
         *
         *   @param  imageView       The ImageView to configure.
         *   @param  animationId     The ID of the animation drawable to apply.
-        ************************************************************************/
+        ***************************************************************************************************************/
         public static final void setupAnimatedImageView( ImageView imageView, int animationId )
         {
             imageView.setBackgroundResource( animationId );
@@ -108,14 +114,14 @@
             frameAnimation.start();
         }
 
-        /************************************************************************
+        /***************************************************************************************************************
         *   Creates a {@link ImageView} that holds the specified image.
         *
         *   @param  context     The current context.
         *   @param  imageID     The resource-ID of the image to set into the ImageView.
         *   @param  scaleType   The ScaleType to set for this ImageView.
         *   @return             The created ImageView holding the given image.
-        ************************************************************************/
+        ***************************************************************************************************************/
         public static final ImageView createImageView(Context context, int imageID, ImageView.ScaleType scaleType )
         {
             ImageView ret = new ImageView( context );
@@ -125,13 +131,13 @@
             return ret;
         }
 
-        /************************************************************************
+        /***************************************************************************************************************
         *   Sets up a {@link TextView} with the major attributes.
         *
         *   @param  fragmentActivity The current system context.
         *   @param  viewPagerId      The ID of the ViewPager to setup.
         *   @param  fragments        The fragments to append to the ViewPager.
-        ************************************************************************/
+        ***************************************************************************************************************/
         public static final void setupViewPagerAdapter
         (
             FragmentActivity           fragmentActivity,
@@ -146,7 +152,7 @@
             viewPager.setAdapter( pagerAdapter );
         }
 
-        /************************************************************************
+        /***************************************************************************************************************
         *   Assigns the specified action to the specified view.
         *   The action is invoked if the view's OnClick-event is invoked.
         *   The view is marked as selected in addition.
@@ -154,7 +160,7 @@
         *   @param  view                   The view to assign the action to.
         *   @param  action                 The OnClick-action to assign.
         *   @param  setViewSelectedOnClick Determines if the view shall be explicitly tagges as 'selected'.
-        ************************************************************************/
+        ***************************************************************************************************************/
         public static final void setOnClickAction
         (
             final View     view,
@@ -183,14 +189,14 @@
             }
         }
 
-        /*********************************************************************************
+        /***************************************************************************************************************
         *   Inflates and returns a view by id
         *   even if the View is not set as the current activitie's content-view.
         *
         *   @param  context     The current system context.
         *   @param  id          The resource-layout-id of the layout to inflate.
         *   @return             The inflated View.
-        *********************************************************************************/
+        ***************************************************************************************************************/
         public static final View getInflatedLayoutById( Context context, int id )
         {
             LayoutInflater inflator    = (LayoutInflater)context.getSystemService( Context.LAYOUT_INFLATER_SERVICE );

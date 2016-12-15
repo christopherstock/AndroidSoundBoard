@@ -17,13 +17,15 @@
     import  de.mayflower.soundboard.state.activity.SoundBoardActivity;
     import  de.mayflower.soundboard.state.activity.SoundBoardFragmentTabbedPane;
 
-    /**********************************************************************************************
+    /*******************************************************************************************************************
     *   Represents the tabbed pane.
     *
     *   @author     Christopher Stock
-    *   @version    1.0
-    **********************************************************************************************/
-    public class SoundBoardTabbedPane extends SoundBoardActivity implements TabHost.OnTabChangeListener, ViewPager.OnPageChangeListener
+    *   @version    0.0.1
+    *******************************************************************************************************************/
+    public class SoundBoardTabbedPane
+        extends SoundBoardActivity
+        implements TabHost.OnTabChangeListener, ViewPager.OnPageChangeListener
     {
         /** The tag for the tab 'wall'. */
         public      static  final   String                              TAB_TAG_WALL                    = "tab_wall";
@@ -41,9 +43,9 @@
         /** The adapter that serves the ViewPager with Fragments. */
         public                      LibViewPagerAdapter                 pagerAdapter                    = null;
 
-        /*******************************************************************************************
+        /***************************************************************************************************************
          *   Creates a new Activity specifying the backKey event.
-         *******************************************************************************************/
+         **************************************************************************************************************/
         public SoundBoardTabbedPane()
         {
             super
@@ -65,9 +67,9 @@
             this.initPivotal();
         }
 
-        /**********************************************************************************************
+        /***************************************************************************************************************
         *   Inits the pivotal state.
-        **********************************************************************************************/
+        ***************************************************************************************************************/
         private void initPivotal()
         {
             //init TabHost
@@ -103,25 +105,33 @@
             this.tabHost.setCurrentTab( position );
         }
 
-        /**********************************************************************************************
+        /***************************************************************************************************************
         *   Initialise the Tab Host
-        **********************************************************************************************/
+        ***************************************************************************************************************/
         private void initialiseTabHost()
         {
             this.tabHost = (TabHost)this.findViewById( R.id.tabbedpane_tabhost );
             this.tabHost.setup();
 
-            this.addTab( this.tabHost, this.tabHost.newTabSpec( TAB_TAG_WALL    ).setIndicator( LibUI.createImageView( this, R.drawable.tabbed_pane_tab_item_fg, ImageView.ScaleType.CENTER_INSIDE ) ) );
-            this.addTab( this.tabHost, this.tabHost.newTabSpec( TAB_TAG_EXPLORE ).setIndicator( LibUI.createImageView( this, R.drawable.tabbed_pane_tab_item_fg, ImageView.ScaleType.CENTER_INSIDE ) ) );
-            this.addTab( this.tabHost, this.tabHost.newTabSpec( TAB_TAG_UPLOAD  ).setIndicator( LibUI.createImageView( this, R.drawable.tabbed_pane_tab_item_fg, ImageView.ScaleType.CENTER_INSIDE ) ) );
-            this.addTab( this.tabHost, this.tabHost.newTabSpec( TAB_TAG_PROFILE ).setIndicator( LibUI.createImageView( this, R.drawable.tabbed_pane_tab_item_fg, ImageView.ScaleType.CENTER_INSIDE ) ) );
+            this.addTab( this.tabHost, this.tabHost.newTabSpec( TAB_TAG_WALL    ).setIndicator(
+                LibUI.createImageView( this, R.drawable.tabbed_pane_tab_item_fg, ImageView.ScaleType.CENTER_INSIDE ) )
+            );
+            this.addTab( this.tabHost, this.tabHost.newTabSpec( TAB_TAG_EXPLORE ).setIndicator(
+                LibUI.createImageView( this, R.drawable.tabbed_pane_tab_item_fg, ImageView.ScaleType.CENTER_INSIDE ) )
+            );
+            this.addTab( this.tabHost, this.tabHost.newTabSpec( TAB_TAG_UPLOAD  ).setIndicator(
+                LibUI.createImageView( this, R.drawable.tabbed_pane_tab_item_fg, ImageView.ScaleType.CENTER_INSIDE ) )
+            );
+            this.addTab( this.tabHost, this.tabHost.newTabSpec( TAB_TAG_PROFILE ).setIndicator(
+                LibUI.createImageView( this, R.drawable.tabbed_pane_tab_item_fg, ImageView.ScaleType.CENTER_INSIDE ) )
+            );
 
             this.tabHost.setOnTabChangedListener( this );
         }
 
-        /**********************************************************************************************
+        /***************************************************************************************************************
         *   Initialise ViewPager
-        **********************************************************************************************/
+        ***************************************************************************************************************/
         private void intialiseViewPager()
         {
             //setup PagerAdapter
@@ -146,9 +156,9 @@
             this.viewPager.addOnPageChangeListener( this );
         }
 
-        /**********************************************************************************************
+        /***************************************************************************************************************
         *   Init the backgrounds for all tabs
-        **********************************************************************************************/
+        ***************************************************************************************************************/
         private void initTabWidgetBgs()
         {
             TabWidget tabWidget = this.tabHost.getTabWidget();
@@ -158,12 +168,12 @@
             }
         }
 
-        /**********************************************************************************************
+        /***************************************************************************************************************
         *   Adds a tab to the Tabhost
         *
         *   @param  tabHost     The TabHost to add a tab to.
         *   @param  tabSpec     The specification of the new tab to add.
-        **********************************************************************************************/
+        ***************************************************************************************************************/
         private void addTab( TabHost tabHost, TabHost.TabSpec tabSpec )
         {
             //create anonymous content-factory class

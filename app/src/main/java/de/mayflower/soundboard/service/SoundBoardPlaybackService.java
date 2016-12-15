@@ -6,20 +6,20 @@
     import  de.mayflower.soundboard.R;
     import  de.mayflower.soundboard.SoundBoardDebug;
 
-    /**********************************************************************************************
-     *   This class handles recognized speech strings.
-     *
-     *   @author     Christopher Stock.
-     *   @version    1.0
-     ***********************************************************************************************/
+    /*******************************************************************************************************************
+    *   This class handles recognized speech strings.
+    *
+    *   @author     Christopher Stock.
+    *   @version    0.0.1
+    *******************************************************************************************************************/
     public class SoundBoardPlaybackService
     {
-        /***********************************************************************************************
+        /***************************************************************************************************************
         *   Handles the recognized speech strings and plays a sound, if a phrase has been recognized.
         *
         *   @param  activity    The current activity context.
         *   @param  matches     All possible recognized phrases recognized from speech input.
-        **********************************************************************************************/
+        ***************************************************************************************************************/
         public void handleReceivedSpeechStrings( Activity activity, String[] matches )
         {
             for ( String match : matches )

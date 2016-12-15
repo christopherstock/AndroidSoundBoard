@@ -12,19 +12,19 @@
     import  de.mayflower.soundboard.SoundBoardDebug;
     import  de.mayflower.soundboard.ui.SoundBoardFont;
 
-    /***********************************************************************************************
+    /*******************************************************************************************************************
     *   One fragment for the TabbedPane.
     *
     *   @author     Christopher Stock
-    *   @version    1.0
-    **********************************************************************************************/
+    *   @version    0.0.1
+    *******************************************************************************************************************/
     public class SoundBoardFragmentTabbedPane extends LibViewPagerFragment
     {
-        /***********************************************************************************************
+        /***************************************************************************************************************
         *   Creates a new fragment for the TabbedPane.
         *
         *   @param  title   This fragment's title.
-        **********************************************************************************************/
+        ***************************************************************************************************************/
         public SoundBoardFragmentTabbedPane(String title )
         {
             this.setTitle( title );
@@ -37,7 +37,7 @@
 
             SoundBoardDebug.major.out("onCreateView for fragment with [" + this.getTitle() + "]");
 
-            View     rootView = inflater.inflate( R.layout.activity_viewpager_fragment_tabbedpane, container, false );
+            View     rootView = inflater.inflate( R.layout.activity_viewpager_fragment, container, false );
             TextView tv       = (TextView)rootView.findViewById( R.id.text_viewpager );
 
             LibUI.setupTextView

@@ -110,8 +110,20 @@
         {
             imageView.setBackgroundResource( animationId );
 
-            AnimationDrawable frameAnimation = (AnimationDrawable)imageView.getBackground();
-            frameAnimation.start();
+            final AnimationDrawable frameAnimation = (AnimationDrawable)imageView.getBackground();
+
+            //this is a workaround for a bug in Android 2.x
+            imageView.post
+            (
+                new Runnable()
+                {
+                    @Override
+                    public void run()
+                    {
+                        frameAnimation.start();
+                    }
+                }
+            );
         }
 
         /***************************************************************************************************************

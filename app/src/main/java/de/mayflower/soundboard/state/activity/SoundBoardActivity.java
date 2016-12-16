@@ -4,6 +4,7 @@
     import  android.os.Bundle;
     import  android.support.v7.app.ActionBar;
     import  android.support.v7.app.AppCompatActivity;
+    import  android.support.v7.view.menu.ActionMenuItemView;
     import  android.view.*;
     import  de.mayflower.soundboard.R;
     import  de.mayflower.soundboard.SoundBoardAction;
@@ -105,7 +106,7 @@
         }
 
         @Override
-        public boolean onKeyDown( int keyCode, KeyEvent event )
+        public boolean onKeyUp( int keyCode, KeyEvent event )
         {
             switch ( keyCode )
             {
@@ -115,6 +116,19 @@
 
                     //prevent system from handling this event
                     return true;
+                }
+
+                case KeyEvent.KEYCODE_MENU:
+                {
+                    if ( this.showMenuButtonInActionBar == SoundBoardActivity.ShowMenuButton.YES )
+                    {
+                        //reference the menu button and propagate a click on it
+                        ActionMenuItemView menuButton = (ActionMenuItemView)this.findViewById( R.id.menu_button );
+                        menuButton.performClick();
+
+                        //prevent system from handling this event
+                        return true;
+                    }
                 }
             }
 
@@ -136,7 +150,7 @@
         }
 
         @Override
-        public boolean onOptionsItemSelected(MenuItem item)
+        public boolean onOptionsItemSelected( MenuItem item )
         {
             int id = item.getItemId();
 

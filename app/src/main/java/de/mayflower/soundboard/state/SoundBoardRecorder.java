@@ -71,7 +71,7 @@
         @Override
         protected void onActivityResult( int requestCode, int resultCode, Intent data )
         {
-            SoundBoardDebug.soundReceiver.out(
+            SoundBoardDebug.externalAudioRecorder.out(
                 "onActivityResult in TestScreen Activity .. [" + requestCode + "][" + resultCode + "][" + data + "]"
             );
 
@@ -82,11 +82,11 @@
             {
                 case REQUEST_CODE_RECORD_AUDIO:
                 {
-                    SoundBoardDebug.soundReceiver.out("Response from audio recorder ..");
+                    SoundBoardDebug.externalAudioRecorder.out("Response from audio recorder ..");
 
                     if (resultCode == Activity.RESULT_OK)
                     {
-                        SoundBoardDebug.soundReceiver.out("Received correct audio.");
+                        SoundBoardDebug.externalAudioRecorder.out("Received correct audio.");
 
                         ArrayList<String> matches = data.getStringArrayListExtra( RecognizerIntent.EXTRA_RESULTS );
 
@@ -95,7 +95,7 @@
                     }
                     else
                     {
-                        SoundBoardDebug.soundReceiver.out("Received error code from audio activity.");
+                        SoundBoardDebug.externalAudioRecorder.out("Received error code from audio activity.");
                     }
                     break;
                 }

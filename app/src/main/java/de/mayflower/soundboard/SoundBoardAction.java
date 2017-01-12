@@ -199,11 +199,7 @@
 
                 case SHOW_DIALOG_ABOUT:
                 {
-                    Runnable actionOnClose = new SoundBoardAction
-                    (
-                        SoundBoardAction.Event.NOTHING,
-                        this.activity
-                    );
+                    Runnable actionOnClose = new SoundBoardAction( SoundBoardAction.Event.NOTHING, this.activity );
 
                     String body =
                     (

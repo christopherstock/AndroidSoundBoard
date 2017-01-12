@@ -11,8 +11,6 @@
     /*******************************************************************************************************************
     *   The main activity of the SoundBoardWelcome application.
     *
-    *   TODO ASAP Alter blue hover color on pressing system buttons (menu key etc.).
-    *
     *   @author     Christopher Stock
     *   @version    0.0.1
     *******************************************************************************************************************/

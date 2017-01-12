@@ -23,7 +23,7 @@
         /** Shows speech results. */
         speechResults(              true                        ),
         /** Logs external  */
-        soundReceiver(              true                        ),
+        externalAudioRecorder(      true                        ),
 
         ;
 

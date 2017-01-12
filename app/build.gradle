@@ -1,6 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        christopherstock_de {
+            keyAlias 'mayflower'
+            keyPassword 'soundboard'
+            storeFile file('C:/Users/Stock/workspaces/android/AndroidSoundBoard/_ASSETS/cer/keystore.jks')
+            storePassword 'soundboard'
+        }
+    }
     compileSdkVersion 24
     buildToolsVersion "25.0.1"
     defaultConfig {
@@ -10,19 +18,19 @@ android {
         versionCode 1
         versionName "0.0.1a"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.christopherstock_de
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.christopherstock_de
         }
     }
     lintOptions {
         checkReleaseBuilds false
     }
     productFlavors {
-        SoundBoard {
-        }
     }
 }
 

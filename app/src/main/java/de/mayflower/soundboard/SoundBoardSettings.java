@@ -24,6 +24,6 @@
         public static final class Debug
         {
             /** Enables or disabled the debug mode. */
-            public      static      final   boolean     DEBUG_MODE              = true;
+            public      static      final   boolean     DEBUG_MODE              = BuildConfig.DEBUG;
         }
     }

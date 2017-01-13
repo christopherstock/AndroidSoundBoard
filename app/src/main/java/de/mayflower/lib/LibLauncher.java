@@ -2,7 +2,11 @@
     package de.mayflower.lib;
 
     import  android.app.Activity;
+    import  android.app.AlarmManager;
+    import  android.app.PendingIntent;
+    import  android.content.Context;
     import  android.content.Intent;
+    import  android.os.SystemClock;
 
     /*******************************************************************************************************************
     *   Launches internal or external system activities.
@@ -34,5 +38,23 @@
                     Lib.overridePendingTransition(from, animIn, animOut);
                 }
             }
+        }
+
+        /***************************************************************************************************************
+        *   Launches a service in the current application package.
+        *
+        *   @param  context      The according system context.
+        *   @param  serviceClass The class of the service to launch.
+        *   @param  timeout      The timeout in millis till the service is invoked.
+        ***************************************************************************************************************/
+        public static final void launchService( Context context, Class<?> serviceClass, long timeout )
+        {
+            Intent intent = new Intent();
+            intent.setClassName( context, serviceClass.getName() );
+
+            PendingIntent pendingIntent = PendingIntent.getService( context, 0, intent, 0 );
+
+            AlarmManager alarmManager = (AlarmManager)( context.getSystemService( Context.ALARM_SERVICE ) );
+            alarmManager.set( AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime() + timeout, pendingIntent );
         }
     }

@@ -24,6 +24,8 @@
         speechResults(              true                        ),
         /** Logs external  */
         externalAudioRecorder(      true                        ),
+        /** Logs background listener service. */
+        bgListener(                 true                        ),
 
         ;
 

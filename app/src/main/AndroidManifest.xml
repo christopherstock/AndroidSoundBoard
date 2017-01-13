@@ -2,8 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="de.mayflower.soundboard">
 
+    <!-- permissions -->
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
+    <!-- application 'SoundBoard' -->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/app_icon"
@@ -13,6 +15,7 @@
         android:name="de.mayflower.soundboard.SoundBoard"
         >
 
+        <!-- startup activity -->
         <activity android:name="de.mayflower.soundboard.state.SoundBoardWelcome" android:label="@string/app_name">
             <intent-filter android:label="@string/app_name">
                 <action android:name="android.intent.action.MAIN" />
@@ -20,15 +23,15 @@
             </intent-filter>
         </activity>
 
+        <!-- activities -->
         <activity android:name="de.mayflower.soundboard.state.SoundBoardRecorder" android:label="@string/title_recorder"/>
-
         <activity android:name="de.mayflower.soundboard.state.SoundBoardViewPager" android:label="@string/title_viewpager"/>
-
         <activity android:name="de.mayflower.soundboard.state.SoundBoardSettings" android:label="@string/title_settings"/>
-
         <activity android:name="de.mayflower.soundboard.state.SoundBoardTabbedPane" android:label="@string/title_tabbedpane"/>
-
         <activity android:name="de.mayflower.soundboard.state.SoundBoardHelp" android:label="@string/title_help"/>
+
+        <!-- background services -->
+        <service android:name="de.mayflower.soundboard.service.SoundBoardBgListener" />
 
     </application>
 

@@ -22,6 +22,7 @@
     <string name="button_show_viewpager">Browse Library</string>
     <string name="button_show_tabbedpane">Show TabbedPane</string>
     <string name="button_show_voice_input">Test Speech Recognition</string>
+    <string name="button_test_bg_service">Test background service</string>
 
     <string name="menu">Menu</string>
     <string name="menu_settings">Settings</string>

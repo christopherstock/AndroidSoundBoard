@@ -10,7 +10,7 @@
     import  de.mayflower.soundboard.R;
     import  de.mayflower.soundboard.SoundBoardAction;
     import  de.mayflower.soundboard.SoundBoardDebug;
-    import  de.mayflower.soundboard.service.SoundBoardPlaybackService;
+    import de.mayflower.soundboard.service.SoundBoardSpeechRecognizer;
     import  de.mayflower.soundboard.state.activity.SoundBoardActivity;
     import  de.mayflower.soundboard.ui.SoundBoardFont;
 
@@ -66,6 +66,15 @@
                 new SoundBoardAction( SoundBoardAction.Event.SHOW_DIALOG_VOICE_INPUT, this ),
                 SoundBoardFont.TYPEFACE_MYRIAD_PRO_REGULAR.getTypeface( this )
             );
+
+            LibUI.setupButton
+            (
+                this,
+                R.id.button_service_test,
+                R.string.button_test_bg_service,
+                new SoundBoardAction( SoundBoardAction.Event.TEST_BG_SERVICE, this ),
+                SoundBoardFont.TYPEFACE_MYRIAD_PRO_REGULAR.getTypeface( this )
+            );
         }
 
         @Override
@@ -90,7 +99,7 @@
 
                         ArrayList<String> matches = data.getStringArrayListExtra( RecognizerIntent.EXTRA_RESULTS );
 
-                        SoundBoardPlaybackService service = new SoundBoardPlaybackService();
+                        SoundBoardSpeechRecognizer service = new SoundBoardSpeechRecognizer();
                         service.handleReceivedSpeechStrings( this, matches.toArray( new String[ matches.size() ] ) );
                     }
                     else

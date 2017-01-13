@@ -38,5 +38,10 @@
             android:id="@+id/button_voice_input"
             />
 
+        <include
+            layout="@layout/button_default"
+            android:id="@+id/button_service_test"
+            />
+
     </LinearLayout>
 </ScrollView>

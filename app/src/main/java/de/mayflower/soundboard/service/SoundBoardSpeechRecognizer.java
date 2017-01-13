@@ -12,7 +12,7 @@
     *   @author     Christopher Stock.
     *   @version    0.0.1
     *******************************************************************************************************************/
-    public class SoundBoardPlaybackService
+    public class SoundBoardSpeechRecognizer
     {
         /***************************************************************************************************************
         *   Handles the recognized speech strings and plays a sound, if a phrase has been recognized.

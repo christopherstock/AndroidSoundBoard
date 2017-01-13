@@ -8,6 +8,7 @@
     import  de.mayflower.lib.LibLauncher;
     import  de.mayflower.lib.LibResource;
     import  de.mayflower.lib.io.LibSound;
+    import de.mayflower.soundboard.service.SoundBoardBgListener;
     import  de.mayflower.soundboard.state.SoundBoardHelp;
     import  de.mayflower.soundboard.ui.SoundBoardDialogAbout;
     import  de.mayflower.soundboard.state.SoundBoardRecorder;
@@ -61,6 +62,9 @@
 
             /** Shows the 'about' dialog. */
             SHOW_DIALOG_ABOUT,
+
+            /** Tests the background speech listener service. */
+            TEST_BG_SERVICE,
 
             /** Plays 1st sound fx. */
             PLAY_SOUND_1,
@@ -221,6 +225,15 @@
                         true,
                         actionOnClose
                     );
+                    break;
+                }
+
+                case TEST_BG_SERVICE:
+                {
+                    SoundBoardDebug.major.out( "Start the bg 'Speech Listener' service .." );
+
+                    LibLauncher.launchService( this.activity, SoundBoardBgListener.class, 0 );
+
                     break;
                 }
 

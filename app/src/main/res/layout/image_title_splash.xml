@@ -8,6 +8,6 @@
     android:layout_weight="0.0"
     android:scaleType="centerInside"
     android:adjustViewBounds="true"
-    android:src="@drawable/title_splash"
+    android:src="@drawable/title_splash_default"
     android:paddingBottom="@dimen/element_padding_y"
     />

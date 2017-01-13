@@ -112,6 +112,6 @@
             this.findViewById( R.id.button_stop_listener_service  ).setVisibility( View.GONE    );
             this.findViewById( R.id.button_stop_listener_service  ).setSelected( false );
 
-            ( (ImageView)this.findViewById( R.id.image_title_splash ) ).setImageResource( R.drawable.title_splash );
+            ( (ImageView)this.findViewById( R.id.image_title_splash ) ).setImageResource( R.drawable.title_splash_default);
         }
     }

@@ -1,7 +1,7 @@
 
     package de.mayflower.soundboard.service;
 
-    import  android.app.Activity;
+    import  android.content.Context;
     import  de.mayflower.lib.io.LibSound;
     import  de.mayflower.soundboard.R;
     import  de.mayflower.soundboard.SoundBoardDebug;
@@ -17,10 +17,10 @@
         /***************************************************************************************************************
         *   Handles the recognized speech strings and plays a sound, if a phrase has been recognized.
         *
-        *   @param  activity    The current activity context.
+        *   @param  context     The current activity context.
         *   @param  matches     All possible recognized phrases recognized from speech input.
         ***************************************************************************************************************/
-        public void handleReceivedSpeechStrings( Activity activity, String[] matches )
+        public void handleReceivedSpeechStrings( Context context, String[] matches )
         {
             for ( String match : matches )
             {
@@ -29,19 +29,19 @@
                 if ( match.equalsIgnoreCase( "ich greife an" ) )
                 {
                     SoundBoardDebug.speechResults.out("Play sound 'attack'");
-                    LibSound.playSound( activity, R.raw.sound_attack );
+                    LibSound.playSound( context, R.raw.sound_attack );
                     break;
                 }
                 else if ( match.equalsIgnoreCase( "ich ziehe mich zurück" ) )
                 {
                     SoundBoardDebug.speechResults.out("Play sound 'retreat'");
-                    LibSound.playSound( activity, R.raw.sound_retreat );
+                    LibSound.playSound( context, R.raw.sound_retreat );
                     break;
                 }
                 else if ( match.equalsIgnoreCase( "ich gebe auf" ) )
                 {
                     SoundBoardDebug.speechResults.out("Play sound 'resign'");
-                    LibSound.playSound( activity, R.raw.sound_resign );
+                    LibSound.playSound( context, R.raw.sound_resign );
                     break;
                 }
             }

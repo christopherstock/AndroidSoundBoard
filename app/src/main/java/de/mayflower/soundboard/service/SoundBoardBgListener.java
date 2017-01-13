@@ -28,7 +28,7 @@
         private                         SpeechRecognizer        speechRecognizer                    = null;
 
         /** Specifies if this service is destroyed. */
-        private                         boolean                 serviceIsDestroyed                  = false;
+        private                         boolean                 serviceAlive                        = false;
 
         @Override
         public void onCreate()
@@ -36,7 +36,7 @@
             super.onCreate();
             SoundBoardDebug.bgListener.out( "> Service onCreate" );
 
-            this.serviceIsDestroyed = false;
+            this.serviceAlive = true;
 
             SoundBoardDebug.bgListener.out( "> Show notification" );
             LibNotification.show
@@ -58,7 +58,7 @@
             super.onDestroy();
             SoundBoardDebug.bgListener.out( "> Service onDestroy" );
 
-            this.serviceIsDestroyed = true;
+            this.serviceAlive = false;
 
             SoundBoardDebug.bgListener.out( "> Show notification" );
             LibNotification.hide( this, SoundBoardSettings.Notification.NOTIFICATION_ID_BG_SERVICE_RUNNING_INFO );
@@ -145,19 +145,12 @@
         ***************************************************************************************************************/
         private void handleResults( Bundle results )
         {
-            ArrayList<String> matchesList = results.getStringArrayList( SpeechRecognizer.RESULTS_RECOGNITION );
+            ArrayList<String> matches = results.getStringArrayList( SpeechRecognizer.RESULTS_RECOGNITION );
 
-            if ( matchesList != null )
+            if ( matches != null )
             {
-                String[] matches = matchesList.toArray(new String[]{});
-
-                //SoundBoardSpeechRecognizer service = new SoundBoardSpeechRecognizer();
-                //service.handleReceivedSpeechStrings( this, matches.toArray( new String[ matches.size() ] ) );
-
-                for ( String match : matches )
-                {
-                    SoundBoardDebug.bgListener.out( " > [" + match + "]" );
-                }
+                SoundBoardSpeechRecognizer service = new SoundBoardSpeechRecognizer();
+                service.handleReceivedSpeechStrings( this, matches.toArray( new String[ matches.size() ] ) );
             }
         }
 
@@ -166,7 +159,7 @@
         ***************************************************************************************************************/
         private void createAndStartSpeechRecognizer()
         {
-            if ( !this.serviceIsDestroyed )
+            if ( this.serviceAlive)
             {
                 Intent recognizerIntent = new Intent( RecognizerIntent.ACTION_RECOGNIZE_SPEECH );
 

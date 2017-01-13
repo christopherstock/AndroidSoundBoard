@@ -7,7 +7,9 @@
     *   The global application context. Long-living variables should be
     *
     *   TODO ASAP Remove old solution via speech dialog.
-    *   TODO ASAP Add notifications to inform if the bg service is running!
+    *
+    *   TODO ASAP Actually play sounds if speech is recognized.
+    *
     *   TODO ASAP Alter two button into one toggle button.
     *   TODO ASAP Remove activity 'recorder'.
     *   TODO ASAP Alter blue hover color on pressing system buttons (menu key etc.).

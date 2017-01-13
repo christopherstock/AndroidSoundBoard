@@ -21,7 +21,6 @@
     <string name="button_show_recorder">Launch Recorder</string>
     <string name="button_show_viewpager">Browse Library</string>
     <string name="button_show_tabbedpane">Show TabbedPane</string>
-    <string name="button_show_voice_input">Test Speech Recognition</string>
     <string name="button_start_bg_listener_service">START background service</string>
     <string name="button_stop_bg_listener_service">STOP background service</string>
 

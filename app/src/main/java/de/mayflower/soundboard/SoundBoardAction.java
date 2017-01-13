@@ -57,9 +57,6 @@
             /** Eclipses the app and shows the android homescreen. */
             SHOW_HOMESCREEN,
 
-            /** Shows the 'voice input' dialog. */
-            SHOW_DIALOG_VOICE_INPUT,
-
             /** Shows the 'about' dialog. */
             SHOW_DIALOG_ABOUT,
 
@@ -185,22 +182,6 @@
                 case SHOW_HOMESCREEN:
                 {
                     Lib.showHomescreenActivity( this.activity );
-                    break;
-                }
-
-                case SHOW_DIALOG_VOICE_INPUT:
-                {
-                    SoundBoardDebug.major.out( "Show the voice input dialog.." );
-
-                    Intent intent = new Intent( RecognizerIntent.ACTION_RECOGNIZE_SPEECH );
-
-                    intent.putExtra( RecognizerIntent.EXTRA_LANGUAGE,       "de-DE" );
-                    intent.putExtra( RecognizerIntent.EXTRA_LANGUAGE_MODEL, "de-DE" );
-
-                    this.activity.startActivityForResult(
-                        intent,
-                        SoundBoardRecorder.REQUEST_CODE_RECORD_AUDIO
-                    );
                     break;
                 }
 

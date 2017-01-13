@@ -119,7 +119,7 @@
         {
             SoundBoardDebug.bgListener.out( "> Listener onResults" );
 
-            this.showResults( results );
+            this.handleResults( results );
 
             this.createAndStartSpeechRecognizer();
         }
@@ -129,7 +129,7 @@
         {
             SoundBoardDebug.bgListener.out( "> Listener onPartialResults" );
 
-            this.showResults( partialResults );
+            this.handleResults( partialResults );
         }
 
         @Override
@@ -143,7 +143,7 @@
         *
         *   @param results The bundled data.
         ***************************************************************************************************************/
-        private void showResults( Bundle results )
+        private void handleResults( Bundle results )
         {
             ArrayList<String> matchesList = results.getStringArrayList( SpeechRecognizer.RESULTS_RECOGNITION );
 
@@ -170,11 +170,13 @@
             {
                 Intent recognizerIntent = new Intent( RecognizerIntent.ACTION_RECOGNIZE_SPEECH );
 
-                recognizerIntent.putExtra( RecognizerIntent.EXTRA_LANGUAGE_MODEL, "de-DE" );
                 recognizerIntent.putExtra( RecognizerIntent.EXTRA_MAX_RESULTS, 10 );
                 recognizerIntent.putExtra( RecognizerIntent.EXTRA_CALLING_PACKAGE, this.getPackageName() );
 
                 recognizerIntent.putExtra( RecognizerIntent.EXTRA_SPEECH_INPUT_COMPLETE_SILENCE_LENGTH_MILLIS, 100 );
+
+                recognizerIntent.putExtra( RecognizerIntent.EXTRA_LANGUAGE,       "de-DE" );
+                recognizerIntent.putExtra( RecognizerIntent.EXTRA_LANGUAGE_MODEL, "de-DE" );
 /*
                 recognizerIntent.putExtra( RecognizerIntent.EXTRA_SPEECH_INPUT_MINIMUM_LENGTH_MILLIS, 100 );
                 recognizerIntent.putExtra( RecognizerIntent.EXTRA_SPEECH_INPUT_POSSIBLY_COMPLETE_SILENCE_LENGTH_MILLIS, 1000 );

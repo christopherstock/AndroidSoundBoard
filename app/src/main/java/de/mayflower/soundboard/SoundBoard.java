@@ -6,7 +6,6 @@
     /*******************************************************************************************************************
     *   The global application context. Long-living variables should be
     *
-    *   TODO ASAP Alter blue hover color on pressing system buttons (menu key etc.).
     *   TODO ASAP Release via FastLane.
     *   TODO ASAP Create Wiki page.
     *   TODO ASAP Complete 'Apps' wiki page.

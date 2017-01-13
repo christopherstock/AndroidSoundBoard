@@ -2,9 +2,13 @@
     package de.mayflower.soundboard.state;
 
     import  android.os.Bundle;
+    import  android.view.View;
+    import  android.widget.ImageView;
+    import  de.mayflower.lib.Lib;
     import  de.mayflower.lib.ui.LibUI;
     import  de.mayflower.soundboard.R;
     import  de.mayflower.soundboard.SoundBoardAction;
+    import  de.mayflower.soundboard.service.SoundBoardBgListener;
     import  de.mayflower.soundboard.state.activity.SoundBoardActivity;
     import  de.mayflower.soundboard.ui.SoundBoardFont;
 
@@ -76,5 +80,38 @@
                 new SoundBoardAction( SoundBoardAction.Event.ENTER_ACTIVITY_TABBEDPANE, this ),
                 SoundBoardFont.TYPEFACE_MYRIAD_PRO_REGULAR.getTypeface( this )
             );
+
+            if ( Lib.isServiceRunning( this, SoundBoardBgListener.class ) )
+            {
+                this.startRecorder();
+            }
+            else
+            {
+                this.stopRecorder();
+            }
+        }
+
+        /***************************************************************************************************************
+        *   Alters UI components when the recorder is started.
+        ***************************************************************************************************************/
+        public void startRecorder()
+        {
+            this.findViewById( R.id.button_start_listener_service ).setVisibility( View.GONE    );
+            this.findViewById( R.id.button_stop_listener_service  ).setVisibility( View.VISIBLE );
+            this.findViewById( R.id.button_start_listener_service ).setSelected( false );
+
+            ( (ImageView)this.findViewById( R.id.image_title_splash ) ).setImageResource( R.drawable.title_splash_recording );
+        }
+
+        /***************************************************************************************************************
+        *   Alters UI components when the recorder is stopped.
+        ***************************************************************************************************************/
+        public void stopRecorder()
+        {
+            this.findViewById( R.id.button_start_listener_service ).setVisibility( View.VISIBLE );
+            this.findViewById( R.id.button_stop_listener_service  ).setVisibility( View.GONE    );
+            this.findViewById( R.id.button_stop_listener_service  ).setSelected( false );
+
+            ( (ImageView)this.findViewById( R.id.image_title_splash ) ).setImageResource( R.drawable.title_splash );
         }
     }

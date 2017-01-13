@@ -1,16 +1,15 @@
 
     package de.mayflower.soundboard.service;
 
-    import android.app.Service;
+    import  android.app.Service;
     import  android.content.Intent;
     import  android.os.Bundle;
-    import android.os.IBinder;
+    import  android.os.IBinder;
     import  android.speech.RecognitionListener;
-    import  android.speech.RecognitionService;
-    import android.speech.RecognizerIntent;
+    import  android.speech.RecognizerIntent;
     import  android.speech.SpeechRecognizer;
-    import android.support.annotation.Nullable;
-
+    import  android.support.annotation.Nullable;
+    import  java.util.ArrayList;
     import  de.mayflower.soundboard.SoundBoardDebug;
 
     /*******************************************************************************************************************
@@ -19,61 +18,30 @@
     *   @author     Christopher Stock.
     *   @version    0.0.1
     *******************************************************************************************************************/
-    public class SoundBoardBgListener extends /* RecognitionService */ Service implements RecognitionListener
+    public class SoundBoardBgListener extends Service implements RecognitionListener
     {
         /** The speech recognizer instance. */
-        private SpeechRecognizer speechRecognizer = null;
+        private                         SpeechRecognizer        speechRecognizer                    = null;
 
         @Override
         public void onCreate()
         {
             super.onCreate();
-
-SoundBoardDebug.bgListener.out("> Service onCreate");
-
-            this.speechRecognizer = SpeechRecognizer.createSpeechRecognizer( this.getApplicationContext() );
-
-SoundBoardDebug.bgListener.out("> Check 1");
-
+            SoundBoardDebug.bgListener.out( "> Service onCreate" );
 
             Intent recognizerIntent = new Intent( RecognizerIntent.ACTION_RECOGNIZE_SPEECH );
-            recognizerIntent.putExtra("android.speech.extra.DICTATION_MODE", true);
-            recognizerIntent.putExtra( RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM );
-            // accept partial results if they come
-            recognizerIntent.putExtra( RecognizerIntent.EXTRA_PARTIAL_RESULTS, true );
 
+            recognizerIntent.putExtra( RecognizerIntent.EXTRA_LANGUAGE_MODEL, "de-DE" );
+            recognizerIntent.putExtra( RecognizerIntent.EXTRA_MAX_RESULTS, 10 );
+            recognizerIntent.putExtra( RecognizerIntent.EXTRA_CALLING_PACKAGE, this.getPackageName() );
 
+            recognizerIntent.putExtra( RecognizerIntent.EXTRA_SPEECH_INPUT_COMPLETE_SILENCE_LENGTH_MILLIS, 1000 );
+            recognizerIntent.putExtra( RecognizerIntent.EXTRA_SPEECH_INPUT_MINIMUM_LENGTH_MILLIS, 100 );
+            recognizerIntent.putExtra( RecognizerIntent.EXTRA_SPEECH_INPUT_POSSIBLY_COMPLETE_SILENCE_LENGTH_MILLIS, 1000 );
 
-     Intent recognizerIntent2 = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
-        recognizerIntent2.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
-        recognizerIntent2.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, "en-US");
-        recognizerIntent2.putExtra(RecognizerIntent.EXTRA_MAX_RESULTS,1);
-        recognizerIntent2.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE,this.getPackageName());
-
-
-/*
-            recognizerIntent.putExtra
-            (
-                RecognizerIntent.EXTRA_LANGUAGE_MODEL,
-                RecognizerIntent.LANGUAGE_MODEL_FREE_FORM
-            );
-*/
-SoundBoardDebug.bgListener.out("> Check 2");
-
-/*
-            // accept partial results if they come
-            recognizerIntent.putExtra( RecognizerIntent.EXTRA_PARTIAL_RESULTS, true );
-*/
-
-SoundBoardDebug.bgListener.out("> Check 3");
-
+            this.speechRecognizer = SpeechRecognizer.createSpeechRecognizer( this.getApplicationContext() );
             this.speechRecognizer.setRecognitionListener(this);
-
-SoundBoardDebug.bgListener.out("> Check 4");
-
-            this.speechRecognizer.startListening( recognizerIntent2 );
-
-SoundBoardDebug.bgListener.out("> Check 5");
+            this.speechRecognizer.startListening( recognizerIntent );
         }
 
         @Override
@@ -81,10 +49,10 @@ SoundBoardDebug.bgListener.out("> Check 5");
         {
             super.onDestroy();
 
-            SoundBoardDebug.bgListener.out("> Service onDestroy");
+            SoundBoardDebug.bgListener.out( "> Service onDestroy" );
+
+            this.speechRecognizer.stopListening();
         }
-
-
 
         @Nullable
         @Override
@@ -92,87 +60,83 @@ SoundBoardDebug.bgListener.out("> Check 5");
         {
             return null;
         }
-/*
-        @Override
-        protected void onCancel( RecognitionService.Callback listener )
-        {
-            SoundBoardDebug.bgListener.out("> Service onCancel");
-
-            this.speechRecognizer.cancel();
-        }
-
-        @Override
-        protected void onStartListening( Intent recognizerIntent, RecognitionService.Callback listener )
-        {
-            SoundBoardDebug.bgListener.out("> Service onStartListening");
-
-            this.speechRecognizer.setRecognitionListener(this);
-            this.speechRecognizer.startListening(recognizerIntent);
-        }
-
-        @Override
-        protected void onStopListening( RecognitionService.Callback listener )
-        {
-            SoundBoardDebug.bgListener.out("> Service onStopListening");
-
-            this.speechRecognizer.stopListening();
-        }
-*/
-
-
-
 
         @Override
         public void onReadyForSpeech( Bundle params )
         {
-            SoundBoardDebug.bgListener.out("> Listener onReadyForSpeech");
+            SoundBoardDebug.bgListener.out( "> Listener onReadyForSpeech" );
         }
 
         @Override
         public void onBeginningOfSpeech()
         {
-            SoundBoardDebug.bgListener.out("> Listener onBeginningOfSpeech");
+            SoundBoardDebug.bgListener.out( "> Listener onBeginningOfSpeech" );
         }
 
         @Override
         public void onRmsChanged( float rmsdB )
         {
-            SoundBoardDebug.bgListener.out("> Listener onRmsChanged");
+            //SoundBoardDebug.bgListener.out( "> Listener onRmsChanged" );
         }
 
         @Override
         public void onBufferReceived( byte[] buffer )
         {
-            SoundBoardDebug.bgListener.out("> Listener onBufferReceived");
+            //SoundBoardDebug.bgListener.out( "> Listener onBufferReceived" );
+
+            // no readable output!
+            //SoundBoardDebug.bgListener.out( " > " + new String(buffer) );
         }
 
         @Override
         public void onEndOfSpeech()
         {
-            SoundBoardDebug.bgListener.out("> Listener onEndOfSpeech");
+            SoundBoardDebug.bgListener.out( "> Listener onEndOfSpeech" );
         }
 
         @Override
         public void onError( int error )
         {
-            SoundBoardDebug.bgListener.out("> Listener onError [" + error + "]");
+            SoundBoardDebug.bgListener.out( "> Listener onError [" + error + "]" );
         }
 
         @Override
         public void onResults( Bundle results )
         {
-            SoundBoardDebug.bgListener.out("> Listener onResults");
+            SoundBoardDebug.bgListener.out( "> Listener onResults" );
+
+            this.showResults( results );
         }
 
         @Override
         public void onPartialResults( Bundle partialResults )
         {
-            SoundBoardDebug.bgListener.out("> Listener onPartialResults");
+            SoundBoardDebug.bgListener.out( "> Listener onPartialResults" );
+
+            this.showResults( partialResults );
         }
 
         @Override
         public void onEvent( int eventType, Bundle params )
         {
-            SoundBoardDebug.bgListener.out("> Listener onEvent");
+            SoundBoardDebug.bgListener.out( "> Listener onEvent" );
+        }
+
+        private void showResults( Bundle results )
+        {
+            ArrayList<String> matchesList = results.getStringArrayList( SpeechRecognizer.RESULTS_RECOGNITION );
+
+            if ( matchesList != null )
+            {
+                String[] matches = matchesList.toArray(new String[]{});
+
+                //SoundBoardSpeechRecognizer service = new SoundBoardSpeechRecognizer();
+                //service.handleReceivedSpeechStrings( this, matches.toArray( new String[ matches.size() ] ) );
+
+                for ( String match : matches )
+                {
+                    SoundBoardDebug.bgListener.out( " > [" + match + "]" );
+                }
+            }
         }
     }

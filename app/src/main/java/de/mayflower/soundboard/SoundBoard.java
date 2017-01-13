@@ -11,6 +11,7 @@
     *   TODO ASAP Create Wiki page.
     *   TODO ASAP Complete 'Apps' wiki page.
     *   TODO ASAP Alter blue hover color on pressing system buttons (menu key etc.).
+    *   TODO ASAP Add notifications to inform if the bg service is running!
     *
     *   @author     Christopher Stock
     *   @version    0.0.1

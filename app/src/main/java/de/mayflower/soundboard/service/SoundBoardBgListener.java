@@ -29,24 +29,7 @@
             super.onCreate();
             SoundBoardDebug.bgListener.out( "> Service onCreate" );
 
-            Intent recognizerIntent = new Intent( RecognizerIntent.ACTION_RECOGNIZE_SPEECH );
-
-            recognizerIntent.putExtra( RecognizerIntent.EXTRA_LANGUAGE_MODEL, "de-DE" );
-            recognizerIntent.putExtra( RecognizerIntent.EXTRA_MAX_RESULTS, 10 );
-            recognizerIntent.putExtra( RecognizerIntent.EXTRA_CALLING_PACKAGE, this.getPackageName() );
-
-            recognizerIntent.putExtra( RecognizerIntent.EXTRA_SPEECH_INPUT_COMPLETE_SILENCE_LENGTH_MILLIS, 500 );
-/*
-            recognizerIntent.putExtra( RecognizerIntent.EXTRA_SPEECH_INPUT_MINIMUM_LENGTH_MILLIS, 100 );
-            recognizerIntent.putExtra( RecognizerIntent.EXTRA_SPEECH_INPUT_POSSIBLY_COMPLETE_SILENCE_LENGTH_MILLIS, 1000 );
-*/
-/*
-            recognizerIntent.putExtra( "android.speech.extra.DICTATION_MODE", true );
-*/
-
-            this.speechRecognizer = SpeechRecognizer.createSpeechRecognizer( this.getApplicationContext() );
-            this.speechRecognizer.setRecognitionListener(this);
-            this.speechRecognizer.startListening( recognizerIntent );
+            this.createAndStartSpeechRecognizer();
         }
 
         @Override
@@ -103,6 +86,8 @@
         public void onError( int error )
         {
             SoundBoardDebug.bgListener.out( "> Listener onError [" + error + "]" );
+
+            this.createAndStartSpeechRecognizer();
         }
 
         @Override
@@ -111,6 +96,8 @@
             SoundBoardDebug.bgListener.out( "> Listener onResults" );
 
             this.showResults( results );
+
+            this.createAndStartSpeechRecognizer();
         }
 
         @Override
@@ -127,6 +114,11 @@
             SoundBoardDebug.bgListener.out( "> Listener onEvent" );
         }
 
+        /***************************************************************************************************************
+        *   Shows received speech results.
+        *
+        *   @param results The bundled data.
+        ***************************************************************************************************************/
         private void showResults( Bundle results )
         {
             ArrayList<String> matchesList = results.getStringArrayList( SpeechRecognizer.RESULTS_RECOGNITION );
@@ -143,5 +135,32 @@
                     SoundBoardDebug.bgListener.out( " > [" + match + "]" );
                 }
             }
+        }
+
+        /***************************************************************************************************************
+        *   Created and starts or restarts the speech recognizer.
+        ***************************************************************************************************************/
+        private void createAndStartSpeechRecognizer()
+        {
+            Intent recognizerIntent = new Intent( RecognizerIntent.ACTION_RECOGNIZE_SPEECH );
+
+            recognizerIntent.putExtra( RecognizerIntent.EXTRA_LANGUAGE_MODEL, "de-DE" );
+            recognizerIntent.putExtra( RecognizerIntent.EXTRA_MAX_RESULTS, 10 );
+            recognizerIntent.putExtra( RecognizerIntent.EXTRA_CALLING_PACKAGE, this.getPackageName() );
+
+            recognizerIntent.putExtra( RecognizerIntent.EXTRA_SPEECH_INPUT_COMPLETE_SILENCE_LENGTH_MILLIS, 100 );
+/*
+            recognizerIntent.putExtra( RecognizerIntent.EXTRA_SPEECH_INPUT_MINIMUM_LENGTH_MILLIS, 100 );
+            recognizerIntent.putExtra( RecognizerIntent.EXTRA_SPEECH_INPUT_POSSIBLY_COMPLETE_SILENCE_LENGTH_MILLIS, 1000 );
+            recognizerIntent.putExtra( "android.speech.extra.DICTATION_MODE", true );
+*/
+
+            if ( this.speechRecognizer == null )
+            {
+                this.speechRecognizer = SpeechRecognizer.createSpeechRecognizer( this.getApplicationContext() );
+                this.speechRecognizer.setRecognitionListener(this);
+            }
+
+            this.speechRecognizer.startListening( recognizerIntent );
         }
     }

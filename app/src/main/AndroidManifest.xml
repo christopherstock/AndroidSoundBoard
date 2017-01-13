@@ -24,7 +24,6 @@
         </activity>
 
         <!-- activities -->
-        <activity android:name="de.mayflower.soundboard.state.SoundBoardRecorder" android:label="@string/title_recorder"/>
         <activity android:name="de.mayflower.soundboard.state.SoundBoardViewPager" android:label="@string/title_viewpager"/>
         <activity android:name="de.mayflower.soundboard.state.SoundBoardSettings" android:label="@string/title_settings"/>
         <activity android:name="de.mayflower.soundboard.state.SoundBoardTabbedPane" android:label="@string/title_tabbedpane"/>

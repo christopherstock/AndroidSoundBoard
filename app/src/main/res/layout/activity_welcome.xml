@@ -32,26 +32,22 @@
             layout="@layout/image_title_splash"
             android:id="@+id/image_title_splash"
             />
-<!--
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            >
--->
-            <include
-                layout="@layout/button_default"
-                android:id="@+id/button_welcome"
-                />
 
-            <include
-                layout="@layout/button_default"
-                android:id="@+id/button_show_viewpager"
-                />
-<!--
-        </LinearLayout>
--->
+        <include
+            layout="@layout/button_default"
+            android:id="@+id/button_start_listener_service"
+            />
+
+        <include
+            layout="@layout/button_default"
+            android:id="@+id/button_stop_listener_service"
+            />
+
+        <include
+            layout="@layout/button_default"
+            android:id="@+id/button_show_viewpager"
+            />
+
         <include
             layout="@layout/button_default"
             android:id="@+id/button_show_tabbedpane"

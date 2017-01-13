@@ -2,8 +2,6 @@
     package de.mayflower.soundboard;
 
     import  android.app.Activity;
-    import  android.content.Intent;
-    import  android.speech.RecognizerIntent;
     import  de.mayflower.lib.Lib;
     import  de.mayflower.lib.LibLauncher;
     import  de.mayflower.lib.LibResource;
@@ -11,7 +9,6 @@
     import  de.mayflower.soundboard.service.SoundBoardBgListener;
     import  de.mayflower.soundboard.state.SoundBoardHelp;
     import  de.mayflower.soundboard.ui.SoundBoardDialogAbout;
-    import  de.mayflower.soundboard.state.SoundBoardRecorder;
     import  de.mayflower.soundboard.state.SoundBoardSettings;
     import  de.mayflower.soundboard.state.SoundBoardTabbedPane;
     import  de.mayflower.soundboard.state.SoundBoardViewPager;
@@ -35,9 +32,6 @@
         {
             /** A no op event that does nothing for everybody. */
             NOTHING,
-
-            /** Shows the 'recorder' activity. */
-            ENTER_ACTIVITY_RECORDER,
 
             /** Shows the 'viewpager' activity. */
             ENTER_ACTIVITY_VIEWPAGER,
@@ -104,18 +98,6 @@
             {
                 case NOTHING:
                 {
-                    break;
-                }
-
-                case ENTER_ACTIVITY_RECORDER:
-                {
-                    LibLauncher.launchActivity
-                    (
-                        this.activity,
-                        SoundBoardRecorder.class,
-                        R.anim.push_left_in,
-                        R.anim.push_left_out
-                    );
                     break;
                 }
 

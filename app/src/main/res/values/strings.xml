@@ -6,7 +6,6 @@
     <string name="app_name">SoundBoard</string>
     <string name="copyright">\u00A9 2016 Mayflower GmbH</string>
 
-    <string name="title_recorder">Recorder</string>
     <string name="title_viewpager">Library</string>
     <string name="title_help">Help</string>
     <string name="title_settings">Settings</string>
@@ -18,7 +17,6 @@
     <string name="text_recorder">This is the &lt;b&gt;SoundRecorder&lt;/b&gt; activity.&lt;br&gt;&lt;br&gt;Please hit the Button in order to invoke the SpeechRecognition dialog.</string>
 
     <string name="button_back">Back</string>
-    <string name="button_show_recorder">Launch Recorder</string>
     <string name="button_show_viewpager">Browse Library</string>
     <string name="button_show_tabbedpane">Show TabbedPane</string>
     <string name="button_start_bg_listener_service">START background service</string>

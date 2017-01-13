@@ -3,6 +3,6 @@
     *   Default input / output tasks.
     *
     *   @author     Christopher Stock
-    *   @version    0.0.1
+    *   @version    1.0.0
     *******************************************************************************************************************/
     package de.mayflower.lib.io;

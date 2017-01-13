@@ -16,7 +16,7 @@
     *   One fragment for the TabbedPane.
     *
     *   @author     Christopher Stock
-    *   @version    0.0.1
+    *   @version    1.0.0
     *******************************************************************************************************************/
     public class SoundBoardFragmentTabbedPane extends LibViewPagerFragment
     {

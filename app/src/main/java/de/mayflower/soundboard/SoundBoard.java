@@ -12,7 +12,7 @@
     *   TODO ASAP Perform code inspection and remove all warnings etc.
     *
     *   @author     Christopher Stock
-    *   @version    0.0.1
+    *   @version    1.0.0
     *******************************************************************************************************************/
     public class SoundBoard extends Application
     {

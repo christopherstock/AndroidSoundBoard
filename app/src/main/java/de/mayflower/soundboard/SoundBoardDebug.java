@@ -9,7 +9,7 @@
     *   formed by the enum constants. Grouped debug outs can be toggled.
     *
     *   @author     Christopher Stock
-    *   @version    0.0.1
+    *   @version    1.0.0
     *******************************************************************************************************************/
     public enum SoundBoardDebug implements LibDebug
     {

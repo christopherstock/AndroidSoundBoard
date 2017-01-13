@@ -5,7 +5,7 @@
     *   Logs all versions of this app.
     *
     *   @author     Christopher Stock
-    *   @version    0.0.1
+    *   @version    1.0.0
     *******************************************************************************************************************/
     public enum SoundBoardVersion
     {

@@ -8,7 +8,7 @@
     *   All functions for accessing system resources.
     *
     *   @author     Christopher Stock
-    *   @version    0.0.1
+    *   @version    1.0.0
     *******************************************************************************************************************/
     public abstract class LibResource
     {

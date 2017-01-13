@@ -8,6 +8,12 @@ android {
             storeFile file('C:/Users/Stock/workspaces/android/AndroidSoundBoard/_ASSETS/cer/keystore.jks')
             storePassword 'soundboard'
         }
+        mayflower {
+            keyAlias 'alias_name'
+            keyPassword 'kochzauber'
+            storeFile file('C:/Users/Stock/workspaces/android/kochzauber-android/app/keystore.jks')
+            storePassword 'kochzauber'
+        }
     }
     compileSdkVersion 24
     buildToolsVersion "25.0.1"
@@ -16,7 +22,7 @@ android {
         minSdkVersion 9
         targetSdkVersion 24
         versionCode 1
-        versionName "0.0.1a"
+        versionName '1.0.0'
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         signingConfig signingConfigs.christopherstock_de
     }
@@ -24,7 +30,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.christopherstock_de
+            signingConfig signingConfigs.mayflower
         }
     }
     lintOptions {

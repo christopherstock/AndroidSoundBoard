@@ -20,7 +20,7 @@
     *   The action system.
     *
     *   @author     Christopher Stock
-    *   @version    0.0.1
+    *   @version    1.0.0
     *******************************************************************************************************************/
     public class SoundBoardAction implements Runnable
     {
@@ -28,7 +28,7 @@
         *   All actions being performed accross the app.
         *
         *   @author     Christopher Stock
-        *   @version    0.0.1
+        *   @version    1.0.0
         ***************************************************************************************************************/
         public enum Event
         {

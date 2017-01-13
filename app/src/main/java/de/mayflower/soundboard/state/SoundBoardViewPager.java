@@ -14,7 +14,7 @@
     *   The viewPager activity.
     *
     *   @author     Christopher Stock
-    *   @version    0.0.1
+    *   @version    1.0.0
     *******************************************************************************************************************/
     public class SoundBoardViewPager extends SoundBoardActivity
     {

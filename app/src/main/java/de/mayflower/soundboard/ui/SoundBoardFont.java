@@ -9,7 +9,7 @@
     *   Lazy loads all required custom typefaces.
     *
     *   @author     Christopher Stock.
-    *   @version    0.0.1
+    *   @version    1.0.0
     *******************************************************************************************************************/
     public enum SoundBoardFont
     {

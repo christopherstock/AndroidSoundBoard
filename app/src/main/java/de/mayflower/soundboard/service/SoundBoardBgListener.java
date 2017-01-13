@@ -23,11 +23,16 @@
         /** The speech recognizer instance. */
         private                         SpeechRecognizer        speechRecognizer                    = null;
 
+        /** Specifies if this service is destroyed. */
+        private                         boolean                 serviceIsDestroyed                  = false;
+
         @Override
         public void onCreate()
         {
             super.onCreate();
             SoundBoardDebug.bgListener.out( "> Service onCreate" );
+
+            this.serviceIsDestroyed = false;
 
             this.createAndStartSpeechRecognizer();
         }
@@ -36,8 +41,9 @@
         public void onDestroy()
         {
             super.onDestroy();
-
             SoundBoardDebug.bgListener.out( "> Service onDestroy" );
+
+            this.serviceIsDestroyed = true;
 
             this.speechRecognizer.stopListening();
         }
@@ -142,25 +148,28 @@
         ***************************************************************************************************************/
         private void createAndStartSpeechRecognizer()
         {
-            Intent recognizerIntent = new Intent( RecognizerIntent.ACTION_RECOGNIZE_SPEECH );
+            if ( !this.serviceIsDestroyed )
+            {
+                Intent recognizerIntent = new Intent( RecognizerIntent.ACTION_RECOGNIZE_SPEECH );
 
-            recognizerIntent.putExtra( RecognizerIntent.EXTRA_LANGUAGE_MODEL, "de-DE" );
-            recognizerIntent.putExtra( RecognizerIntent.EXTRA_MAX_RESULTS, 10 );
-            recognizerIntent.putExtra( RecognizerIntent.EXTRA_CALLING_PACKAGE, this.getPackageName() );
+                recognizerIntent.putExtra( RecognizerIntent.EXTRA_LANGUAGE_MODEL, "de-DE" );
+                recognizerIntent.putExtra( RecognizerIntent.EXTRA_MAX_RESULTS, 10 );
+                recognizerIntent.putExtra( RecognizerIntent.EXTRA_CALLING_PACKAGE, this.getPackageName() );
 
-            recognizerIntent.putExtra( RecognizerIntent.EXTRA_SPEECH_INPUT_COMPLETE_SILENCE_LENGTH_MILLIS, 100 );
+                recognizerIntent.putExtra( RecognizerIntent.EXTRA_SPEECH_INPUT_COMPLETE_SILENCE_LENGTH_MILLIS, 100 );
 /*
-            recognizerIntent.putExtra( RecognizerIntent.EXTRA_SPEECH_INPUT_MINIMUM_LENGTH_MILLIS, 100 );
-            recognizerIntent.putExtra( RecognizerIntent.EXTRA_SPEECH_INPUT_POSSIBLY_COMPLETE_SILENCE_LENGTH_MILLIS, 1000 );
-            recognizerIntent.putExtra( "android.speech.extra.DICTATION_MODE", true );
+                recognizerIntent.putExtra( RecognizerIntent.EXTRA_SPEECH_INPUT_MINIMUM_LENGTH_MILLIS, 100 );
+                recognizerIntent.putExtra( RecognizerIntent.EXTRA_SPEECH_INPUT_POSSIBLY_COMPLETE_SILENCE_LENGTH_MILLIS, 1000 );
+                recognizerIntent.putExtra( "android.speech.extra.DICTATION_MODE", true );
 */
 
-            if ( this.speechRecognizer == null )
-            {
-                this.speechRecognizer = SpeechRecognizer.createSpeechRecognizer( this.getApplicationContext() );
-                this.speechRecognizer.setRecognitionListener(this);
-            }
+                if ( this.speechRecognizer == null )
+                {
+                    this.speechRecognizer = SpeechRecognizer.createSpeechRecognizer( this.getApplicationContext() );
+                    this.speechRecognizer.setRecognitionListener(this);
+                }
 
-            this.speechRecognizer.startListening( recognizerIntent );
+                this.speechRecognizer.startListening( recognizerIntent );
+            }
         }
     }

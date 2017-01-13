@@ -70,9 +70,18 @@
             LibUI.setupButton
             (
                 this,
-                R.id.button_service_test,
-                R.string.button_test_bg_service,
-                new SoundBoardAction( SoundBoardAction.Event.TEST_BG_SERVICE, this ),
+                R.id.button_start_listener_service,
+                R.string.button_start_bg_listener_service,
+                new SoundBoardAction( SoundBoardAction.Event.TEST_START_BG_SERVICE, this ),
+                SoundBoardFont.TYPEFACE_MYRIAD_PRO_REGULAR.getTypeface( this )
+            );
+
+            LibUI.setupButton
+            (
+                this,
+                R.id.button_stop_listener_service,
+                R.string.button_stop_bg_listener_service,
+                new SoundBoardAction( SoundBoardAction.Event.TEST_STOP_BG_SERVICE, this ),
                 SoundBoardFont.TYPEFACE_MYRIAD_PRO_REGULAR.getTypeface( this )
             );
         }

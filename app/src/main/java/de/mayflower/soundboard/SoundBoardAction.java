@@ -63,8 +63,11 @@
             /** Shows the 'about' dialog. */
             SHOW_DIALOG_ABOUT,
 
-            /** Tests the background speech listener service. */
-            TEST_BG_SERVICE,
+            /** Starts the background speech listener service. */
+            TEST_START_BG_SERVICE,
+
+            /** Stopd the background speech listener service. */
+            TEST_STOP_BG_SERVICE,
 
             /** Plays 1st sound fx. */
             PLAY_SOUND_1,
@@ -228,11 +231,20 @@
                     break;
                 }
 
-                case TEST_BG_SERVICE:
+                case TEST_START_BG_SERVICE:
                 {
-                    SoundBoardDebug.major.out( "Start the bg 'Speech Listener' service .." );
+                    SoundBoardDebug.major.out( "START the bg 'Speech Listener' service .." );
 
-                    LibLauncher.launchService( this.activity, SoundBoardBgListener.class );
+                    LibLauncher.startService( this.activity, SoundBoardBgListener.class );
+
+                    break;
+                }
+
+                case TEST_STOP_BG_SERVICE:
+                {
+                    SoundBoardDebug.major.out( "STOP the bg 'Speech Listener' service .." );
+
+                    LibLauncher.stopService( this.activity, SoundBoardBgListener.class );
 
                     break;
                 }

@@ -41,16 +41,30 @@
         }
 
         /***************************************************************************************************************
-        *   Launches a service in the current application package.
+        *   Starts a service of the current application package.
         *
         *   @param  context      The according system context.
         *   @param  serviceClass The class of the service to launch.
         ***************************************************************************************************************/
-        public static final void launchService( Context context, Class<?> serviceClass )
+        public static final void startService(Context context, Class<?> serviceClass )
         {
             Intent intent = new Intent();
             intent.setClassName( context, serviceClass.getName() );
 
             context.startService( intent );
+        }
+
+        /***************************************************************************************************************
+        *   Stops a service of the current application package.
+        *
+        *   @param  context      The according system context.
+        *   @param  serviceClass The class of the service to launch.
+        ***************************************************************************************************************/
+        public static final void stopService(Context context, Class<?> serviceClass )
+        {
+            Intent intent = new Intent();
+            intent.setClassName( context, serviceClass.getName() );
+
+            context.stopService( intent );
         }
     }

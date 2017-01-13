@@ -40,7 +40,12 @@
 
         <include
             layout="@layout/button_default"
-            android:id="@+id/button_service_test"
+            android:id="@+id/button_start_listener_service"
+            />
+
+        <include
+            layout="@layout/button_default"
+            android:id="@+id/button_stop_listener_service"
             />
 
     </LinearLayout>

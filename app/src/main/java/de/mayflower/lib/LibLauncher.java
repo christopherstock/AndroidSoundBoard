@@ -45,16 +45,12 @@
         *
         *   @param  context      The according system context.
         *   @param  serviceClass The class of the service to launch.
-        *   @param  timeout      The timeout in millis till the service is invoked.
         ***************************************************************************************************************/
-        public static final void launchService( Context context, Class<?> serviceClass, long timeout )
+        public static final void launchService( Context context, Class<?> serviceClass )
         {
             Intent intent = new Intent();
             intent.setClassName( context, serviceClass.getName() );
 
-            PendingIntent pendingIntent = PendingIntent.getService( context, 0, intent, 0 );
-
-            AlarmManager alarmManager = (AlarmManager)( context.getSystemService( Context.ALARM_SERVICE ) );
-            alarmManager.set( AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime() + timeout, pendingIntent );
+            context.startService( intent );
         }
     }

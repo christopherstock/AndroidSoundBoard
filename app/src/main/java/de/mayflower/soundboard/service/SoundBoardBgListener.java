@@ -10,7 +10,11 @@
     import  android.speech.SpeechRecognizer;
     import  android.support.annotation.Nullable;
     import  java.util.ArrayList;
+    import  de.mayflower.lib.ui.LibNotification;
+    import  de.mayflower.soundboard.R;
     import  de.mayflower.soundboard.SoundBoardDebug;
+    import  de.mayflower.soundboard.SoundBoardSettings;
+    import  de.mayflower.soundboard.state.SoundBoardWelcome;
 
     /*******************************************************************************************************************
     *   The background service that listens for speech input.
@@ -34,6 +38,17 @@
 
             this.serviceIsDestroyed = false;
 
+            SoundBoardDebug.bgListener.out( "> Show notification" );
+            LibNotification.show
+            (
+                this,
+                R.drawable.notification_icon,
+                "SoundBoard listening",
+                "SoundBoard is listening in background.",
+                SoundBoardSettings.Notification.NOTIFICATION_ID_BG_SERVICE_RUNNING_INFO,
+                new Intent( this, SoundBoardWelcome.class )
+            );
+
             this.createAndStartSpeechRecognizer();
         }
 
@@ -44,6 +59,9 @@
             SoundBoardDebug.bgListener.out( "> Service onDestroy" );
 
             this.serviceIsDestroyed = true;
+
+            SoundBoardDebug.bgListener.out( "> Show notification" );
+            LibNotification.hide( this, SoundBoardSettings.Notification.NOTIFICATION_ID_BG_SERVICE_RUNNING_INFO );
 
             this.speechRecognizer.stopListening();
         }

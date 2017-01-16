@@ -14,17 +14,13 @@
         ***************************************************************************************************************/
         public static final class Paramounts
         {
-            /** The internal name of this project. This value is used in the exception emails. */
-            public      static      final   String      PROJECT_NAME                                = "SoundBoardWelcome";
         }
 
         /***************************************************************************************************************
-        *   All switches made for debug purposes.
+        *   All debug workaround switches.
         ***************************************************************************************************************/
         public static final class Debug
         {
-            /** Enables or disabled the debug mode. */
-            public      static      final   boolean     DEBUG_MODE                                  = BuildConfig.DEBUG;
         }
 
         /***************************************************************************************************************

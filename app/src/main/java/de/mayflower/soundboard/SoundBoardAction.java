@@ -2,8 +2,6 @@
     package de.mayflower.soundboard;
 
     import  android.app.Activity;
-    import android.view.View;
-
     import  de.mayflower.lib.Lib;
     import  de.mayflower.lib.LibLauncher;
     import  de.mayflower.lib.LibResource;
@@ -200,6 +198,7 @@
                 {
                     SoundBoardDebug.major.out( "START the bg 'Speech Listener' service .." );
 
+                    //noinspection CastToConcreteClass
                     ((SoundBoardWelcome)this.activity ).startRecorder();
 
                     LibLauncher.startService( this.activity, SoundBoardBgListener.class );
@@ -211,6 +210,7 @@
                 {
                     SoundBoardDebug.major.out( "STOP the bg 'Speech Listener' service .." );
 
+                    //noinspection CastToConcreteClass
                     ((SoundBoardWelcome)this.activity ).stopRecorder();
 
                     LibLauncher.stopService( this.activity, SoundBoardBgListener.class );

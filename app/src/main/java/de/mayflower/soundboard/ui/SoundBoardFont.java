@@ -13,10 +13,10 @@
     *******************************************************************************************************************/
     public enum SoundBoardFont
     {
-        /** A default typeface. */
+        /** The regular default typeface. */
         TYPEFACE_MYRIAD_PRO_REGULAR( "font_myriad_pro_regular.ttf" ),
 
-        /** A bold typeface. */
+        /** The bold default typeface. */
         TYPEFACE_MYRIAD_PRO_BOLD( "font_myriad_pro_bold.ttf" ),
 
         ;

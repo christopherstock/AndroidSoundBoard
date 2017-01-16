@@ -29,8 +29,8 @@
 
         ;
 
-        /** The stacktrace-String to send via email. */
-        public      static  final   boolean             DEBUG_MODE              = SoundBoardSettings.Debug.DEBUG_MODE;
+        /** The global debug mode switch. */
+        public      static  final   boolean             DEBUG_MODE              = BuildConfig.DEBUG;
 
         /** The debug flag for this debug group. */
         private                     boolean             debug                   = false;

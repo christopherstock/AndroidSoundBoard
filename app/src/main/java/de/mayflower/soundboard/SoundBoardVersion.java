@@ -9,6 +9,7 @@
     *******************************************************************************************************************/
     public enum SoundBoardVersion
     {
+        /** */  VERSION_1_0_0( "1.0.0",       2, "none", "13.01.2017 17:37:46", "1ST RELEASE",      "" ),
         /** */  VERSION_0_0_1( "0.0.1 alpha", 1, "none", "14.12.2016 12:38:17", "PROOF_OF_CONCEPT", "" ),
 
         ;
@@ -103,8 +104,7 @@
         {
             return
             (
-                    SoundBoardSettings.Paramounts.PROJECT_NAME
-                +   ", SoundBoardVersion ["
+                    "["
                 +   SoundBoardVersion.values()[ 0 ].clientVersionNumber
                 +   "] codename ["
                 +   SoundBoardVersion.values()[ 0 ].codeName

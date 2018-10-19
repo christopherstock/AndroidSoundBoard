@@ -27,10 +27,15 @@ android {
         signingConfig signingConfigs.christopherstock_de
     }
     buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+            debuggable true
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.mayflower
+            debuggable false
         }
     }
     lintOptions {
@@ -41,13 +46,12 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile "com.android.support:support-core-utils:28.0.0"
-    compile 'com.android.support:appcompat-v7:28.0.0'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:support-core-utils:28.0.0'
     implementation 'com.android.support:support-v13:28.0.0'
     implementation 'com.android.support:appcompat-v7:28.0.0'
-    testCompile 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.12'
 }

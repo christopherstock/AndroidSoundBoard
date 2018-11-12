@@ -5,14 +5,8 @@ android {
         christopherstock_de {
             keyAlias 'mayflower'
             keyPassword 'soundboard'
-            storeFile file('C:/Users/Stock/workspaces/android/AndroidSoundBoard/_ASSETS/cer/keystore.jks')
+            storeFile file('_ASSETS/cer/keystore.jks')
             storePassword 'soundboard'
-        }
-        mayflower {
-            keyAlias 'alias_name'
-            keyPassword 'kochzauber'
-            storeFile file('C:/Users/Stock/workspaces/android/kochzauber-android/app/keystore.jks')
-            storePassword 'kochzauber'
         }
     }
     compileSdkVersion 28
@@ -34,7 +28,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.mayflower
+            signingConfig signingConfigs.christopherstock_de
             debuggable false
         }
     }
